@@ -1,4 +1,4 @@
-﻿@model ElderAbuse.Models.Response
+﻿@model NewModel
 
 @{
     ViewBag.Title = "Questionnaire";
@@ -7,26 +7,19 @@
 
 
 
-<div class="questionArea">
-
+@*<div class="questionArea">
     <hr />
     <div class="questionNumber">
-
-
     </div>
     <div class="question">
-        <span>  @Html.DisplayFor(model => model.QuestionId). &nbsp; @Html.DisplayFor(model => model.Question1)</span>
+        <span>  @Html.DisplayFor(model => model.question.QuestionId). &nbsp; @Html.DisplayFor(model => model.question.Question1)</span>
     </div>
-</div>
-<p>
+</div>*@
+@*<p>
+    <div class="nextQuestion"> <span> @Html.ActionLink("Submit", "Questionnaire", new { id = Model.question.QuestionId + 1 }, new { @class = "btn btn-primary btn-lg" })</span></div><br /><br />
+    <div class="previousQuestion">@Html.ActionLink("Previous", "Questionnaire", new { id = Model.question.QuestionId - 1 })</div>
 
-
-
-
-    <div class="nextQuestion"> <span> @Html.ActionLink("Submit", "Questionnaire", new { id = Model.QuestionId + 1 }, new { @class = "btn btn-primary btn-lg" })</span></div><br /><br />
-    <div class="previousQuestion">@Html.ActionLink("Previous", "Questionnaire", new { id = Model.QuestionId - 1 })</div>
-
-</p>
+</p>*@
 
 
 @using (Html.BeginForm())
@@ -34,23 +27,28 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-
+        <h4>Response</h4>
+        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         
 
         <div class="form-group">
-            @Html.LabelFor(model => model.QuestionId, "QuestionId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("QuestionId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.QuestionId, "", new { @class = "text-danger" })
+            <div class="questionArea">
+                <hr />
+                <div class="questionNumber">
+                </div>
+                <div class="question">
+                    <span>  @Html.DisplayFor(model => model.question.QuestionId). &nbsp; @Html.DisplayFor(model => model.question.Question1)</span>
+                </div>
             </div>
+            
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.response.Answer, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.response.Answer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.response.Answer, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -62,9 +60,8 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}

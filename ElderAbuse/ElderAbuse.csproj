@@ -190,6 +190,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HelpEldersModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewModel.cs" />
     <Compile Include="Models\Question.cs">
       <DependentUpon>HelpEldersModel.tt</DependentUpon>
     </Compile>

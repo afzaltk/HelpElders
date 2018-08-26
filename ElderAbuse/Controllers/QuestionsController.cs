@@ -31,12 +31,14 @@ namespace ElderAbuse.Controllers
             {
                 return RedirectToAction("Index");
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            //Question question = db.Questions.Find(id);
+            NewModel newModel = new NewModel();
+            newModel.question= db.Questions.Find(id);
+            if (newModel.question == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(newModel);
         }
 
         // GET: Questions/Create
