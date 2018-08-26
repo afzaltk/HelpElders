@@ -28,5 +28,7 @@ namespace ElderAbuse.Models
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Response> Responses { get; set; }
         public virtual DbSet<ResponseType> ResponseTypes { get; set; }
+
+        public virtual DbSet<NewModel> NewModel { get; set; }
     }
 }
