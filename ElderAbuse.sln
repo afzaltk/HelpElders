@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElderAbuse", "ElderAbuse\ElderAbuse.csproj", "{78C03CBC-EE74-4BE6-A510-62A7E223D189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElderAbuse.Tests", "ElderAbuse.Tests\ElderAbuse.Tests.csproj", "{FE0C839F-C2EF-4346-BA7A-AF97F262D1BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78C03CBC-EE74-4BE6-A510-62A7E223D189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C03CBC-EE74-4BE6-A510-62A7E223D189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C03CBC-EE74-4BE6-A510-62A7E223D189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C03CBC-EE74-4BE6-A510-62A7E223D189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0C839F-C2EF-4346-BA7A-AF97F262D1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0C839F-C2EF-4346-BA7A-AF97F262D1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0C839F-C2EF-4346-BA7A-AF97F262D1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0C839F-C2EF-4346-BA7A-AF97F262D1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {224973BB-0FE5-4506-BB32-92F9B4D417A0}
+	EndGlobalSection
+EndGlobal

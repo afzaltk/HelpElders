@@ -1,0 +1,53 @@
+﻿@Scripts.Render("~/Scripts/app.js")
+@Styles.Render("~/Content/style.css")
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="slider" >
+    <img class="mySlides" src="~/img/img0.jpg" >
+    <img class="mySlides" src="~/img/img3.jpg" >
+    <img class="mySlides" src="~/img/img2.png" >
+</div>
+
+<div class="row home_options">
+    <a href="@Url.Action("Questionnaire","Questions", new { id=1 }) ">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+            <h2>Questionnaire</h2>
+            <p>
+                Take a simple quiz to check if you or someone you are concerned about is suffering from elder abuse
+            </p>
+        </div>
+    </a>
+    <a href="@Url.Action("Index","Information")">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+            <h2>Information</h2>
+            <p>
+                You can gain more support information from this site. Get information for identifying the Abuse Types, Signs and Risk factors
+                for elder abuse.
+            </p>
+        </div>
+    </a>
+</div>
+
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 4000); // Change image every 2 seconds
+    }
+</script>
+
+
