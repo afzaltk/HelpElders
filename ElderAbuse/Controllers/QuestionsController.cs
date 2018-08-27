@@ -33,8 +33,9 @@ namespace ElderAbuse.Controllers
             }
             //Question question = db.Questions.Find(id);
             NewModel newModel = new NewModel();
-            newModel.question= db.Questions.Find(id);
-            if (newModel.question == null)
+            newModel.questions= db.Questions.Find(id);
+            
+            if (newModel.questions == null)
             {
                 return HttpNotFound();
             }
@@ -68,13 +69,24 @@ namespace ElderAbuse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Questionnaire(NewModel newModel)
         {
+            
+            newModel.responses.ResponseNumber = 1;
+            
             if (ModelState.IsValid)
             {
-                db.Responses.Add(newModel.response);
-                db.SaveChanges();
-                return View(newModel.question.QuestionId + 1); 
-            }
 
+                db.Responses.Add(newModel.responses);
+                db.SaveChanges();
+                NewModel newModel1 = new NewModel();
+                newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);
+
+                if (newModel1.questions == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(newModel1); 
+            }
+            
             return RedirectToAction("Index");
         }
 

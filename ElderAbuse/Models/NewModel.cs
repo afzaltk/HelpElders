@@ -2,7 +2,7 @@
 
 public class NewModel 
     {
-    public Question question { get; set; }
+    public Question questions { get; set; }
 
-    public Response response { get; set; }
+    public Response responses { get; set; }
     }
