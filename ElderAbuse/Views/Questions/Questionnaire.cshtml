@@ -51,7 +51,7 @@
         @Html.ValidationMessageFor(newModel => newModel.responses.Answer, "", new { @class = "text-danger" })*@
             <span>
                 <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "1", new { @class = "class_radio" }) Yes</label>   &nbsp &nbsp &nbsp
-                <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "0") No</label>
+                <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "0", new { @class = "class_radio" }) No</label>
             </span>
         
     </div>
