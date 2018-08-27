@@ -37,7 +37,7 @@
     line-height: 200px;
     text-align: center;
 }
-span {
+.span {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -60,5 +60,13 @@ span {
     font-size:40px
 }
 
+.btn_area {
+    text-align:center
+}
+
+.class_radio {
+    width: 20em;
+    height: 20em;
+}
 
 
