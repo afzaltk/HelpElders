@@ -61,7 +61,8 @@
 }
 
 .btn_area {
-    text-align:center
+    display: flex;
+    justify-content: center;
 }
 
 .class_radio {
