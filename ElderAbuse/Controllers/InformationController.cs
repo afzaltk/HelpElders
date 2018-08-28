@@ -1,5 +1,4 @@
-﻿using ElderAbuse.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,143 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ElderAbuse.Models;
 
 namespace ElderAbuse.Controllers
 {
-    public class QuestionsController : Controller
+    public class InformationController : Controller
     {
         private HelpEldersDBEntities db = new HelpEldersDBEntities();
 
-        // GET: Questions
+        // GET: Information
         public ActionResult Index()
         {
-            return View(db.Questions.ToList());
+            return View(db.ResponseTypes.ToList());
         }
 
-        // GET: Questions/Questionnaire/5
-        public ActionResult Questionnaire(int? id)
+        // GET: Information/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            else if (id == 0)
-            {
-                return RedirectToAction("Index");
-            }
-            //Question question = db.Questions.Find(id);
-            NewModel newModel = new NewModel();
-            newModel.questions= db.Questions.Find(id);
-            
-            if (newModel.questions == null)
+            ResponseType responseType = db.ResponseTypes.Find(id);
+            if (responseType == null)
             {
                 return HttpNotFound();
             }
-            return View(newModel);
+            return View(responseType);
         }
 
-        // GET: Questions/Create
+        // GET: Information/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Questions/Create
+        // POST: Information/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestionId,Question1")] Question question)
+        public ActionResult Create([Bind(Include = "ResponseNumber,AbuseType")] ResponseType responseType)
         {
             if (ModelState.IsValid)
             {
-                db.Questions.Add(question);
+                db.ResponseTypes.Add(responseType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(question);
+            return View(responseType);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Questionnaire(NewModel newModel)
-        {
-            
-            newModel.responses.ResponseNumber = 1;
-            
-            if (ModelState.IsValid)
-            {
-
-                db.Responses.Add(newModel.responses);
-                db.SaveChanges();
-                NewModel newModel1 = new NewModel();
-                newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);
-
-                if (newModel1.questions == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(newModel1); 
-            }
-            
-            return RedirectToAction("Index");
-        }
-
-        // GET: Questions/Edit/5
+        // GET: Information/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            ResponseType responseType = db.ResponseTypes.Find(id);
+            if (responseType == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(responseType);
         }
 
-        //POST: Questions/Edit/5
+        // POST: Information/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuestionId,Question1")] Question question)
+        public ActionResult Edit([Bind(Include = "ResponseNumber,AbuseType")] ResponseType responseType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(question).State = EntityState.Modified;
+                db.Entry(responseType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(question);
+            return View(responseType);
         }
 
-        // GET: Questions/Delete/5
+        // GET: Information/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            ResponseType responseType = db.ResponseTypes.Find(id);
+            if (responseType == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(responseType);
         }
 
-        // POST: Questions/Delete/5
+        // POST: Information/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Question question = db.Questions.Find(id);
-            db.Questions.Remove(question);
+            ResponseType responseType = db.ResponseTypes.Find(id);
+            db.ResponseTypes.Remove(responseType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
