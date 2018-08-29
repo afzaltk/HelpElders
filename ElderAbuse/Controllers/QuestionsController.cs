@@ -85,21 +85,22 @@ namespace ElderAbuse.Controllers
 
                 db.Responses.Add(newModel.responses);
                 db.SaveChanges();
+                //Check if the question number is less than 12 to load the next question
                 if (newModel.responses.QuestionId<12)
                 { 
                 NewModel newModel1 = new NewModel();
-                newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);
-                
+                newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);                
                 if (newModel1.questions == null)
-                {
-                    return HttpNotFound();
-                }
+                    {
+                        return HttpNotFound();
+                    }
                 return View(newModel1);
                 }
+                //check if it is on the last question
                 else if (newModel.responses.QuestionId == 12)
                 {
                     
-                    //Calculate points of each question
+                    //Get points of each question from database
                     var points1 = from c in db.Responses
                                  where c.ResponseNumber == max
                                  where c.QuestionId == 1
@@ -148,11 +149,11 @@ namespace ElderAbuse.Controllers
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 12
                                   select c.Answer).Single();
+
+                    //Get the total sum of the answers to compare
                     List<int> answrlst = new List<int>();
                     answrlst = (from c in db.Responses where c.ResponseNumber == max where c.QuestionId > 2 select c.Answer).ToList();
-
                     int Total = 0;
-
                     if (answrlst != null)
                     {
                         for (int i = 0; i < answrlst.Count; i++)
@@ -160,30 +161,35 @@ namespace ElderAbuse.Controllers
                             Total += answrlst[i];
                         }
                     }
+
                     //Get the result of physically abused
                     if (points3 == 1 && points4 == 1 && Total==2)
                     {
-                        TempData["AbuseType"] = "Physically Abused";
+                        TempData["AbuseType"] = "being Physically Abused";
                     }
                     //Get the result of ginancially abused
                     else if (points5 == 1 && points6 == 1 && Total == 2)
                     {
-                        TempData["AbuseType"] = "Financially Abused";
+                        TempData["AbuseType"] = "being Financially Abused";
                     }
                     //Get the result of Emotionally abused
                     else if (points7 == 1 && points8 == 1 && Total == 2)
                     {
-                        TempData["AbuseType"] = "Emotionally Abused";
+                        TempData["AbuseType"] = "being Emotionally Abused";
                     }
                     //Get the result of Sexually abused
                     else if (points9 == 1 && points10 == 1 && Total == 2)
                     {
-                        TempData["AbuseType"] = "Sexually Abused";
+                        TempData["AbuseType"] = "being Sexually Abused";
                     }
                     //Get the result of neglect
-                    if (points11 == 1 && points12 == 1 && Total == 2)
+                    else if (points11 == 1 && points12 == 1 && Total == 2)
                     {
-                        TempData["AbuseType"] = "Neglected";
+                        TempData["AbuseType"] = "being Neglected";
+                    }
+                    else if (Total == 0)
+                    {
+                        TempData["AbuseType"] = "not being Abused";
                     }
                     return RedirectToAction("Index");
                 }
