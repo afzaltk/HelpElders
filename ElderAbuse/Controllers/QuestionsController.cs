@@ -116,42 +116,74 @@ namespace ElderAbuse.Controllers
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 4
                                   select c.Answer).Single();
-                    var points5 = from c in db.Responses
+                    var points5 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 5
-                                  select c.Answer;
-                    var points6 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points6 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 6
-                                  select c.Answer;
-                    var points7 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points7 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 7
-                                  select c.Answer;
-                    var points8 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points8 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 8
-                                  select c.Answer;
-                    var points9 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points9 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 9
-                                  select c.Answer;
-                    var points10 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points10 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 10
-                                  select c.Answer;
-                    var points11 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points11 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 11
-                                  select c.Answer;
-                    var points12 = from c in db.Responses
+                                  select c.Answer).Single();
+                    var points12 = (from c in db.Responses
                                   where c.ResponseNumber == max
                                   where c.QuestionId == 12
-                                  select c.Answer;
+                                  select c.Answer).Single();
+                    List<int> answrlst = new List<int>();
+                    answrlst = (from c in db.Responses where c.ResponseNumber == max where c.QuestionId > 2 select c.Answer).ToList();
 
-                    if (points3 == 1 && points4 == 1 )
+                    int Total = 0;
+
+                    if (answrlst != null)
+                    {
+                        for (int i = 0; i < answrlst.Count; i++)
+                        {
+                            Total += answrlst[i];
+                        }
+                    }
+                    //Get the result of physically abused
+                    if (points3 == 1 && points4 == 1 && Total==2)
                     {
                         TempData["AbuseType"] = "Physically Abused";
+                    }
+                    //Get the result of ginancially abused
+                    else if (points5 == 1 && points6 == 1 && Total == 2)
+                    {
+                        TempData["AbuseType"] = "Financially Abused";
+                    }
+                    //Get the result of Emotionally abused
+                    else if (points7 == 1 && points8 == 1 && Total == 2)
+                    {
+                        TempData["AbuseType"] = "Emotionally Abused";
+                    }
+                    //Get the result of Sexually abused
+                    else if (points9 == 1 && points10 == 1 && Total == 2)
+                    {
+                        TempData["AbuseType"] = "Sexually Abused";
+                    }
+                    //Get the result of neglect
+                    if (points11 == 1 && points12 == 1 && Total == 2)
+                    {
+                        TempData["AbuseType"] = "Neglected";
                     }
                     return RedirectToAction("Index");
                 }
