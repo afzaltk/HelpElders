@@ -69,9 +69,16 @@ namespace ElderAbuse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Questionnaire(NewModel newModel)
         {
-            
-            newModel.responses.ResponseNumber = 1;
-            
+            int max = db.Responses.Max(p => p.ResponseNumber);
+            if (newModel.responses.QuestionId==1)
+            {                
+                newModel.responses.ResponseNumber = max + 1;
+
+            }
+            else
+            {
+                newModel.responses.ResponseNumber = max;
+            }
             if (ModelState.IsValid)
             {
 

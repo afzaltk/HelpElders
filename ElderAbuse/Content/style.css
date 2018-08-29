@@ -38,7 +38,11 @@
 }
 .questionArea {
     height: 200px;
-    line-height: 200px;
+    
+    text-align: center;
+}
+.answerArea {
+    height: 150px;
     text-align: center;
 }
 .span {
@@ -47,11 +51,11 @@
     line-height: normal;
 }
 .questionNumber {
-    font-size:60px
+    font-size:40px
 }
 
 .question {
-    font-size:60px
+    font-size:40px
 }
 
 .previousQuestion {
