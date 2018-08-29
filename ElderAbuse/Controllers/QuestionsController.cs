@@ -17,7 +17,8 @@ namespace ElderAbuse.Controllers
         // GET: Questions
         public ActionResult Index()
         {
-            return View(db.Questions.ToList());
+            ViewBag.AbuseType = TempData["AbuseType"].ToString();
+            return View();
         }
 
         // GET: Questions/Questionnaire/5
@@ -84,14 +85,76 @@ namespace ElderAbuse.Controllers
 
                 db.Responses.Add(newModel.responses);
                 db.SaveChanges();
+                if (newModel.responses.QuestionId<12)
+                { 
                 NewModel newModel1 = new NewModel();
                 newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);
-
+                
                 if (newModel1.questions == null)
                 {
                     return HttpNotFound();
                 }
-                return View(newModel1); 
+                return View(newModel1);
+                }
+                else if (newModel.responses.QuestionId == 12)
+                {
+                    
+                    //Calculate points of each question
+                    var points1 = from c in db.Responses
+                                 where c.ResponseNumber == max
+                                 where c.QuestionId == 1
+                                 select c.Answer;
+                    var points2 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 2
+                                  select c.Answer;
+                    var points3 = (from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 3
+                                  select c.Answer).Single();
+                    var points4 = (from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 4
+                                  select c.Answer).Single();
+                    var points5 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 5
+                                  select c.Answer;
+                    var points6 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 6
+                                  select c.Answer;
+                    var points7 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 7
+                                  select c.Answer;
+                    var points8 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 8
+                                  select c.Answer;
+                    var points9 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 9
+                                  select c.Answer;
+                    var points10 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 10
+                                  select c.Answer;
+                    var points11 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 11
+                                  select c.Answer;
+                    var points12 = from c in db.Responses
+                                  where c.ResponseNumber == max
+                                  where c.QuestionId == 12
+                                  select c.Answer;
+
+                    if (points3 == 1 && points4 == 1 )
+                    {
+                        TempData["AbuseType"] = "Physically Abused";
+                    }
+                    return RedirectToAction("Index");
+                }
             }
             
             return RedirectToAction("Index");

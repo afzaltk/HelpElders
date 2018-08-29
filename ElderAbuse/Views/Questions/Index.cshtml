@@ -1,29 +1,19 @@
 ﻿@model IEnumerable<ElderAbuse.Models.Question>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Questionnaire</h2>
+<h2>Questionnaire Result</h2>
 
 
 
 
 
 
-<table class="table">
-    
-
-
-    <tr>
-        
-        <td>
-           
-            @Html.ActionLink("Start", "Details", new { id=1 }) 
-            
-        </td>
-    </tr>
-
-
-</table>
+<p>
+    <span>
+        Based on the answers that you gave, there is a very high likelihood that you are being @ViewBag.AbuseType
+    </span>
+</p>
