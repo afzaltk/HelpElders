@@ -11,9 +11,13 @@
         <main id="main" role="main" class="main">
 
             <section class="lp-staticslider">
-                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/static.jpg" />
+                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/static.jpg" style="margin-top:70px;width:auto;height:auto"/>
                 <div class="staticslider-caption">
-                    <h2 class="staticslider-caption-title">H.E.L.P</h2>			<span class="staticslider-sep"></span>			 <div class="staticslider-caption-text">Help Elders Live Peacefully</div>			<div class="staticslider-caption-buttons">
+                    <h2 class="staticslider-caption-title">H.E.L.P</h2>	
+                    
+                    <span class="staticslider-sep"></span>		
+                    <div class="staticslider-caption-text">Help Elders Live Peacefully</div>	
+                    <div class="staticslider-caption-buttons">
                     </div>
                 </div>
             </section><!-- .lp-staticslider -->
@@ -21,22 +25,23 @@
             <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-2">
                 <div class="lp-blocks-inside">
                     <div class="lp-block block1">
-                        <i class="blicon-puzzle"></i>
+                        <i class="glyphicon glyphicon-question-sign"></i>
                         <a href="@Url.Action("Questionnaire","Questions", new { id=1 }) ">
                             <div class="lp-block-content">
 
-                                <h5 class="lp-block-title">Questionnaire</h5>
-                                <div class="lp-block-text">Take a simple quiz to check if you or the one you concerned about is suffering from elder abuse.</div>			
-                                <a class="lp-block-readmore" href="http://34.237.249.28/questionnaire/"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
+                                <h5 class="lp-block-title" style="font-size:25px;font:bold">Questionnaire</h5>
+                                <div class="lp-block-text" style="text-align:justify;font-size:22px">Take a simple quiz to assess yourself regarding elder abuse. You can even use this quiz to assess someone that you are concerned about as well .</div>			
+                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Questionnaire","Questions", new { id=1 })"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
                             </div>
                             </a>
                     </div><!-- lp-block -->
                     <div class="lp-block block2">
-                        <i class="blicon-info"></i>
+                        <i class="glyphicon glyphicon-info-sign"></i>
                         <a href="@Url.Action("Index","Information")">
                             <div class="lp-block-content">
-                                <h5 class="lp-block-title">Information</h5>
-                                <div class="lp-block-text">You can gain more support information from this site. Identifying Elder Abuse Types &amp; Signs Risk factors for elder abuse The following are known indicators/precursors to abuse: Social and geographical isolation Confusion regarding property, belongings...</div>						<a class="lp-block-readmore" href="http://34.237.249.28/about/"> Read More <em class="screen-reader-text">"Information"</em> </a>
+                                <h5 class="lp-block-title" style="font-size:25px;font:bold">Information</h5>
+                                <div class="lp-block-text" style="text-align:justify;font-size:22px">You can gain more support information like identifying Elder Abuse Types, &amp; the Signs of abuse and Risk factors. </div>
+                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Information")"> Read More <em class="screen-reader-text">"Information"</em> </a>
                             </div>
                             </a>
                     </div><!-- lp-block -->
@@ -47,52 +52,8 @@
     </div><!-- #container -->
     <footer id="footer" class="cryout" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
         <div id="footer-inside">
-            <a id="toTop"> <span class="screen-reader-text">Back to Top</span> <i class="icon-back2top"></i> </a><div id="site-copyright">H.E.L.P is a tool for senior and general public to detect elder abuse » <br><b></b> If you have any questions, please email us<a href="#"> the sentials@gmail.com</a></div><div style="display:block;float:right;clear: right;font-size: .9em;">Powered by<a target="_blank" href="http://www.cryoutcreations.eu/wordpress-themes/fluida" title="Fluida WordPress Theme by Cryout Creations"> Fluida</a> &amp; <a target="_blank" href="http://wordpress.org/" title="Semantic Personal Publishing Platform">  WordPress.</a></div>
+            <a id="toTop"> <span class="screen-reader-text">Back to Top</span> <i class="icon-back2top"></i> </a><div id="site-copyright">H.E.L.P is a tool for senior and general public to detect elder abuse »<b></b> If you have any questions, please email us<a href="#"> thesentials@gmail.com</a>
+                       
         </div> <!-- #footer-inside -->
     </footer>
    
-    @*<div class="slider">
-            <img class="mySlides" src="~/img/img0.jpg">
-            <img class="mySlides" src="~/img/img3.jpg">
-            <img class="mySlides" src="~/img/img2.png">
-        </div>
-
-        <div class="row home_options">
-            <a href="@Url.Action("Questionnaire","Questions", new { id=1 }) ">
-                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                    <h2>Questionnaire</h2>
-                    <p>
-                        Take a simple quiz to check if you or someone you are concerned about is suffering from elder abuse
-                    </p>
-                </div>
-            </a>
-            <a href="@Url.Action("Index","Information")">
-                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                    <h2>Information</h2>
-                    <p>
-                        You can gain more support information from this site. Get information for identifying the Abuse Types, Signs and Risk factors
-                        for elder abuse.
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-        <script>
-            var myIndex = 0;
-            carousel();
-
-            function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                myIndex++;
-                if (myIndex > x.length) { myIndex = 1 }
-                x[myIndex - 1].style.display = "block";
-                setTimeout(carousel, 4000); // Change image every 2 seconds
-            }
-        </script>*@
-
-
