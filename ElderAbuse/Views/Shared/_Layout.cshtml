@@ -89,27 +89,17 @@
     </style>
     <link rel='stylesheet' id='fluida-themefonts-css' href='~/content/fontfaces.css' type='text/css' media='all' />
     <link rel='stylesheet' id='fluida-googlefonts-css' href='//fonts.googleapis.com/css?family=Open+Sans%7COpen+Sans+Condensed300%7COpen+Sans%3A300%7COpen+Sans+Condensed%3A300%2C300%7COpen+Sans%3A700&#038;ver=1.5.6.1' type='text/css' media='all' />
-    <link rel="stylesheet" id='fluida-main-css' href="~/Content/style.css" type='text/css' media='all'/>
-    <link rel='stylesheet' id='fluida-main-inline-css' type='text/css' href="~/Content/inline.css"/>
+    <link rel="stylesheet" id='fluida-main-css' href="~/Content/style.css" type='text/css' media='all' />
+    <link rel='stylesheet' id='fluida-main-inline-css' type='text/css' href="~/Content/inline.css" />
+
+    <script type='text/javascript'src="~/Scripts/jquery.js"></script>
+    <script type='text/javascript'src="~/Scripts/jquery-migrate.min.js"></script>
     
-    <link rel='stylesheet' id='cryout-serious-slider-style-css' href='http://34.237.249.28/wp-content/plugins/cryout-serious-slider/resources/style.css?ver=1.1.1' type='text/css' media='all' />
-    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
     <script type='text/javascript'>
         //<![CDATA[
         var chained_i18n = { "please_answer": "Please answer the question" };
         //]]></script>
-    
-    <script type='text/javascript' src='http://34.237.249.28/wp-content/plugins/cryout-serious-slider/resources/jquery.mobile.custom.min.js?ver=1.1.1'></script>
-    <script type='text/javascript' src='http://34.237.249.28/wp-content/plugins/cryout-serious-slider/resources/slider.js?ver=1.1.1'></script>
-    <link rel='https://api.w.org/' href='http://34.237.249.28/wp-json/' />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://34.237.249.28/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://34.237.249.28/wp-includes/wlwmanifest.xml" />
-    <meta name="generator" content="WordPress 4.9.8" />
-    <link rel="canonical" href="http://34.237.249.28/" />
-    <link rel='shortlink' href='http://34.237.249.28/' />
-    <link rel="alternate" type="application/json+oembed" href="http://34.237.249.28/wp-json/oembed/1.0/embed?url=http%3A%2F%2F34.237.249.28%2F" />
-    <link rel="alternate" type="text/xml+oembed" href="http://34.237.249.28/wp-json/oembed/1.0/embed?url=http%3A%2F%2F34.237.249.28%2F&#038;format=xml" />
+
 </head>
 
 <body class="home page-template-default page page-id-2 fluida-landing-page fluida-image-one fluida-caption-two fluida-totop-normal fluida-stripped-table fluida-fixed-menu fluida-responsive-headerimage fluida-responsive-featured fluida-magazine-two fluida-magazine-layout fluida-comment-placeholder fluida-elementshadow fluida-normalizedtags fluida-article-animation-fade fluida-menu-animation" itemscope itemtype="http://schema.org/WebPage">
@@ -143,8 +133,8 @@
                     <div>
                         <ul id="prime_nav" class="">
                             <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-64">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://34.237.249.28/questionnaire/">@Html.ActionLink("Questions", "Questionnaire", "Questions", new { id = 1 })</li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://34.237.249.28/about/">@Html.ActionLink("Information", "Index", "Information")</li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">@Html.ActionLink("Questions", "Questionnaire", "Questions", new { id = 1 })</li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65">@Html.ActionLink("Information", "Index", "Information")</li>
                         </ul>
                     </div>
                 </nav><!-- #access -->
@@ -170,16 +160,16 @@
         //<![CDATA[
         var cryout_ajax_more = { "page_number_next": "2", "page_number_max": "0", "page_link_model": "http:\/\/34.237.249.28\/page\/9999999\/", "load_more_str": "info", "content_css_selector": "#lp-posts .lp-posts-inside", "pagination_css_selector": "#lp-posts nav.navigation" };
         //]]></script>
-    <script type='text/javascript' src='http://34.237.249.28/wp-content/themes/fluida/resources/js/ajax.js?ver=1.5.6.1'></script>
+    @*<script type='text/javascript' src='http://34.237.249.28/wp-content/themes/fluida/resources/js/ajax.js?ver=1.5.6.1'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/jquery.form.min.js?ver=4.2.1'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/jquery/ui/droppable.min.js?ver=1.11.4'></script>
-    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>*@
    
-    <script type='text/javascript'>
+    @*<script type='text/javascript'>
         //<![CDATA[
         var fluida_settings = { "masonry": "1", "rtl": "", "magazine": "2", "fitvids": "1", "autoscroll": "1", "articleanimation": "fade", "lpboxratios": [1.28, 1.2], "is_mobile": "" };
         //]]></script>
@@ -187,7 +177,7 @@
     <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
     <script type='text/javascript' defer src='http://34.237.249.28/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
     <script type='text/javascript' defer src='http://34.237.249.28/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b'></script>
-    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
+    <script type='text/javascript' src='http://34.237.249.28/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>*@
   
     <div class="container body-content">
         @RenderBody()
