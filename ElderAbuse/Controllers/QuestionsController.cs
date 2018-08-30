@@ -194,27 +194,27 @@ namespace ElderAbuse.Controllers
                     }
 
                     //Get the result of physically abused
-                    if (points[3] == 1 && points[4] == 1 && Total == 2)
+                    if (points[3] == 1 && points[2] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Physically Abused";
                     }
                     //Get the result of ginancially abused
-                    else if (points[6] == 1 && points[5] == 1 && Total == 2)
+                    else if (points[4] == 1 && points[5] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Financially Abused";
                     }
                     //Get the result of Emotionally abused
-                    else if (points[8] == 1 && points[7] == 1 && Total == 2)
+                    else if (points[6] == 1 && points[7] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Emotionally Abused";
                     }
                     //Get the result of Sexually abused
-                    else if (points[10] == 1 && points[9] == 1 && Total == 2)
+                    else if (points[8] == 1 && points[9] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Sexually Abused";
                     }
                     //Get the result of neglect
-                    else if (points[11] == 1 && points[12] == 1 && Total == 2)
+                    else if (points[11] == 1 && points[10] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Neglected";
                     }
