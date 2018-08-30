@@ -1,0 +1,82 @@
+﻿.bgimg {
+    background-color: white;
+    background-size: cover;
+}
+
+
+#responsive {
+    width: 100%;
+    height: auto;
+}
+
+    #responsive:hover {
+        content: url('~/img/helpred.png');
+    }
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%
+}
+
+
+
+.slider {
+    width: 100%;
+    max-width: 800px;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+    background: #e6e6e6;
+    margin-top: 20px;
+    margin: auto;
+    padding-top: 50px
+}
+
+.home_options {
+    color: black
+}
+.questionArea {
+    margin-top:50px;
+    height: auto;
+    text-align: center;
+}
+
+.answerArea {
+    height: auto;
+    text-align: center;
+}
+
+.span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.questionNumber {
+    font-size: 40px
+}
+
+.question {
+    font-size: 40px
+}
+
+.previousQuestion {
+    text-align: center;
+    font-size: 20px
+}
+
+.nextQuestion {
+    text-align: center;
+    font-size: 40px
+}
+
+.btn_area {
+    display: flex;
+    justify-content: center;
+}
+
+.class_radio {
+    width: 0.5em;
+    height: 0.5em;
+}
