@@ -6,4 +6,45 @@
 }
 
 <h2>Index</h2>
+<div>
+    <button id="basicButton" type="button" onclick="return showBasic()">Elder Abuse Basic information</button>
+    <button id="preventButton" type="button" onclick="return showPrevent()">How To Prevent Elder Abuse</button>
+    <button id ="afterButton"type="button" onclick="return showAfter()">What to do after being abused</button>
+    <div id="prezi-player">
+        <script src="lib/PreziPlayer/prezi_player.js">
+              
 
+            function showbBasic() {
+                document.getElementById("prezi-player").innerHTML = ""
+                var player1 = new PreziPlayer('prezi-player', {
+                    preziId: "hp08thgs3ifs",
+                    width: 500,
+                    height: 400,
+                    debug: true
+                });
+            }
+
+            function showPrevent() {
+                document.getElementById("prezi-player").innerHTML = ""
+                var player2 = new PreziPlayer('prezi-player', {
+                    preziId: "ubhhrado3yeg",
+                    width: 500,
+                    height: 400,
+                    debug: true
+                });
+            }
+
+            function showbasic() {
+                document.getElementById("prezi-player").innerHTML = ""
+                var player3 = new PreziPlayer('prezi-player', {
+                    preziId: "gzzv4zugpcar",
+                    width: 500,
+                    height: 400,
+                    debug: true
+                });
+            }
+        </script>
+
+    </div>
+
+</div>
