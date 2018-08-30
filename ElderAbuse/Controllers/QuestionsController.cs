@@ -24,6 +24,16 @@ namespace ElderAbuse.Controllers
         // GET: Questions/Questionnaire/5
         public ActionResult Questionnaire(int? id)
         {
+            if (id<12)
+            {
+          
+                ViewBag.ButtonValue = "Next Question";
+            }
+            else if (id==12)
+            {
+                
+                ViewBag.ButtonValue = "Submit";
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,8 +44,8 @@ namespace ElderAbuse.Controllers
             }
             //Question question = db.Questions.Find(id);
             NewModel newModel = new NewModel();
-            newModel.questions= db.Questions.Find(id);
-            
+            newModel.questions = db.Questions.Find(id);
+
             if (newModel.questions == null)
             {
                 return HttpNotFound();
@@ -71,8 +81,9 @@ namespace ElderAbuse.Controllers
         public ActionResult Questionnaire(NewModel newModel)
         {
             int max = db.Responses.Max(p => p.ResponseNumber);
-            if (newModel.responses.QuestionId==1)
-            {                
+            int QstnId = newModel.responses.QuestionId;
+            if (QstnId == 1)
+            {
                 newModel.responses.ResponseNumber = max + 1;
 
             }
@@ -85,70 +96,90 @@ namespace ElderAbuse.Controllers
 
                 db.Responses.Add(newModel.responses);
                 db.SaveChanges();
-                //Check if the question number is less than 12 to load the next question
-                if (newModel.responses.QuestionId<12)
-                { 
-                NewModel newModel1 = new NewModel();
-                newModel1.questions = db.Questions.Find(newModel.responses.QuestionId+1);                
-                if (newModel1.questions == null)
+                //Check if the question number is less than 12 to load the next question                
+                if (QstnId < 11)
+                {
+                    ViewBag.ButtonValue = "Next Question";
+                    NewModel newModel1 = new NewModel();
+                    newModel1.questions = db.Questions.Find(newModel.responses.QuestionId + 1);
+                    if (newModel1.questions == null)
                     {
                         return HttpNotFound();
                     }
-                return View(newModel1);
+                    return View(newModel1);
+                }
+                else if (QstnId == 11)
+                {
+                    ViewBag.ButtonValue = "Submit";
+                    NewModel newModel1 = new NewModel();
+                    newModel1.questions = db.Questions.Find(newModel.responses.QuestionId + 1);
+                    if (newModel1.questions == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(newModel1);
                 }
                 //check if it is on the last question
-                else if (newModel.responses.QuestionId == 12)
+                else if (QstnId == 12)
                 {
                     
+                    int[] points = new int[12];
                     //Get points of each question from database
-                    var points1 = from c in db.Responses
-                                 where c.ResponseNumber == max
-                                 where c.QuestionId == 1
-                                 select c.Answer;
-                    var points2 = from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 2
-                                  select c.Answer;
-                    var points3 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 3
-                                  select c.Answer).Single();
-                    var points4 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 4
-                                  select c.Answer).Single();
-                    var points5 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 5
-                                  select c.Answer).Single();
-                    var points6 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 6
-                                  select c.Answer).Single();
-                    var points7 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 7
-                                  select c.Answer).Single();
-                    var points8 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 8
-                                  select c.Answer).Single();
-                    var points9 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 9
-                                  select c.Answer).Single();
-                    var points10 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 10
-                                  select c.Answer).Single();
-                    var points11 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 11
-                                  select c.Answer).Single();
-                    var points12 = (from c in db.Responses
-                                  where c.ResponseNumber == max
-                                  where c.QuestionId == 12
-                                  select c.Answer).Single();
+                    for (int i = 0; i < 12; i++)
+                    {
+                        points[i] = (from c in db.Responses
+                                     where c.ResponseNumber == max
+                                     where c.QuestionId == i + 1
+                                     select c.Answer).Single();
+                    }
+                    //var points1 = from c in db.Responses
+                    //              where c.ResponseNumber == max
+                    //              where c.QuestionId == 1
+                    //              select c.Answer;
+                    //var points2 = from c in db.Responses
+                    //              where c.ResponseNumber == max
+                    //              where c.QuestionId == 2
+                    //              select c.Answer;
+                    //var points3 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 3
+                    //               select c.Answer).Single();
+                    //var points4 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 4
+                    //               select c.Answer).Single();
+                    //var points5 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 5
+                    //               select c.Answer).Single();
+                    //var points6 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 6
+                    //               select c.Answer).Single();
+                    //var points7 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 7
+                    //               select c.Answer).Single();
+                    //var points8 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 8
+                    //               select c.Answer).Single();
+                    //var points9 = (from c in db.Responses
+                    //               where c.ResponseNumber == max
+                    //               where c.QuestionId == 9
+                    //               select c.Answer).Single();
+                    //var points10 = (from c in db.Responses
+                    //                where c.ResponseNumber == max
+                    //                where c.QuestionId == 10
+                    //                select c.Answer).Single();
+                    //var points11 = (from c in db.Responses
+                    //                where c.ResponseNumber == max
+                    //                where c.QuestionId == 11
+                    //                select c.Answer).Single();
+                    //var points12 = (from c in db.Responses
+                    //                where c.ResponseNumber == max
+                    //                where c.QuestionId == 12
+                    //                select c.Answer).Single();
 
                     //Get the total sum of the answers to compare
                     List<int> answrlst = new List<int>();
@@ -163,38 +194,46 @@ namespace ElderAbuse.Controllers
                     }
 
                     //Get the result of physically abused
-                    if (points3 == 1 && points4 == 1 && Total==2)
+                    if (points[3] == 1 && points[4] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Physically Abused";
                     }
                     //Get the result of ginancially abused
-                    else if (points5 == 1 && points6 == 1 && Total == 2)
+                    else if (points[6] == 1 && points[5] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Financially Abused";
                     }
                     //Get the result of Emotionally abused
-                    else if (points7 == 1 && points8 == 1 && Total == 2)
+                    else if (points[8] == 1 && points[7] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Emotionally Abused";
                     }
                     //Get the result of Sexually abused
-                    else if (points9 == 1 && points10 == 1 && Total == 2)
+                    else if (points[10] == 1 && points[9] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Sexually Abused";
                     }
                     //Get the result of neglect
-                    else if (points11 == 1 && points12 == 1 && Total == 2)
+                    else if (points[11] == 1 && points[12] == 1 && Total == 2)
                     {
                         TempData["AbuseType"] = "being Neglected";
                     }
+
+                    //No abuse happening
                     else if (Total == 0)
                     {
                         TempData["AbuseType"] = "not being Abused";
                     }
+                    else if (Total >= 10)
+                    {
+                        TempData["AbuseType"] = "being badly Abused";
+                    }
+
+
                     return RedirectToAction("Index");
                 }
             }
-            
+
             return RedirectToAction("Index");
         }
 

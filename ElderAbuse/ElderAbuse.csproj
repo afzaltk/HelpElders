@@ -221,11 +221,6 @@
     <Content Include="img\bg.jpg" />
     <Content Include="img\helpblue.png" />
     <Content Include="img\helpred.png" />
-    <Content Include="img\img0.jpg" />
-    <Content Include="img\img1.jpg" />
-    <Content Include="img\img2.png" />
-    <Content Include="img\img3.jpg" />
-    <Content Include="img\logo.jpg" />
     <Content Include="img\static.jpg" />
     <Content Include="Models\HelpEldersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -269,7 +264,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
