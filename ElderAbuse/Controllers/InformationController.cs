@@ -17,22 +17,13 @@ namespace ElderAbuse.Controllers
         // GET: Information
         public ActionResult Index()
         {
-            return View(db.ResponseTypes.ToList());
+            return View();
         }
 
         // GET: Information/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ResponseType responseType = db.ResponseTypes.Find(id);
-            if (responseType == null)
-            {
-                return HttpNotFound();
-            }
-            return View(responseType);
+            return View();
         }
 
         // GET: Information/Create

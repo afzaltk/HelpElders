@@ -4,45 +4,103 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="http://prezi.github.io/prezi-player/lib/PreziPlayer/prezi_player.js"></script>
+<script src="lib/PreziPlayer/prezi_player.js"></script>
+    <h2>Information</h2>
+    <div>
+        <div style="text-align: center; margin-top: 5px">
+            <button id="basicButton" type="button" onclick="return showBasic()">Elder Abuse Basic information</button>
+            <button id="preventButton" type="button" onclick="return showPrevent()">How To Prevent Elder Abuse</button>
+            <button id="afterButton" type="button" onclick="return showAfter()">What to do after being abused</button>
+        </div>
 
-<h2>Index</h2>
-<div>
-    <button id="basicButton" type="button" onclick="return showBasic()">Elder Abuse Basic information</button>
-    <button id="preventButton" type="button" onclick="return showPrevent()">How To Prevent Elder Abuse</button>
-    <button id ="afterButton"type="button" onclick="return showAfter()">What to do after being abused</button>
-    <div id="prezi-player">
-        <script src="lib/PreziPlayer/prezi_player.js">
-              
+        <br />
 
-            function showbBasic() {
-                document.getElementById("prezi-player").innerHTML = ""
-                var player1 = new PreziPlayer('prezi-player', {
-                    preziId: "hp08thgs3ifs",
-                    width: 500,
-                    height: 400,
-                    debug: true
-                });
+        <div class="prezi">
+            <div id="prezi-player1"></div>
+            <div id="prezi-player2" style="display:none"></div>
+            <div id="prezi-player3" style="display:none"></div>
+        </div>
+       
+        <div style="text-align: center">
+            <button type="button" id="b-previous">Previous</button>
+            <span id="t-current-step">1</span> / <span id="t-step-count">?</span>
+            <button type="button" id="b-next">Next</button>
+        </div>
+        
+        <script>
+
+            var player1 = new PreziPlayer('prezi-player1', {
+                preziId: "qrqbrpudwgxr",
+                width: 1200,
+                height: 500,
+                debug: true
+            });
+
+            var player2 = new PreziPlayer('prezi-player2', {
+                preziId: "a1uuyxwjsait",
+                width: 1200,
+                height: 500,
+                debug: true
+            });
+
+            var player3 = new PreziPlayer('prezi-player3', {
+                preziId: "tyr23anlbt7h",
+                width: 1200,
+                height: 500,
+                debug: true
+            });
+            var preziViewer1 = document.getElementById("prezi-player1")
+            var preziViewer2 = document.getElementById("prezi-player2")
+            var preziViewer3 = document.getElementById("prezi-player3")
+
+            showPreziInfo(player1)
+            function showBasic() {
+                preziViewer1.style.display = 'block'
+                preziViewer2.style.display = 'none'
+                preziViewer3.style.display = 'none'
+                showPreziInfo(player1)
             }
-
             function showPrevent() {
-                document.getElementById("prezi-player").innerHTML = ""
-                var player2 = new PreziPlayer('prezi-player', {
-                    preziId: "ubhhrado3yeg",
-                    width: 500,
-                    height: 400,
-                    debug: true
+                preziViewer1.style.display = 'none'
+                preziViewer2.style.display = 'block'
+                preziViewer3.style.display = 'none'
+                showPreziInfo(player2)
+            }
+            function showAfter() {
+                preziViewer1.style.display = 'none'
+                preziViewer2.style.display = 'none'
+                preziViewer3.style.display = 'block'
+                showPreziInfo(player3)
+            }
+            function showPreziInfo(player) {
+                // if content is ready, get and display the title of the prezi and number of steps
+                player.on(PreziPlayer.EVENT_STATUS, function (event) {
+                    if (event.value == PreziPlayer.STATUS_CONTENT_READY) {
+                        setTimeout(function () {
+                            document.getElementById('t-step-count').innerHTML = player.getStepCount();
+                        }, 2000);
+                    }
+                });
+
+                // display the current step
+                player.on(PreziPlayer.EVENT_CURRENT_STEP, function (event) {
+                    document.getElementById('t-current-step').innerHTML = event.value + 1;
+                });
+
+                // event handlers for the buttons
+                document.getElementById("b-previous").addEventListener('click', function () {
+                    player.previousStep();
+                });
+                document.getElementById("b-next").addEventListener('click', function () {
+                    player.nextStep();
+                });
+                document.getElementById("b-move-to-step").addEventListener('click', function () {
+                    player.toStep(document.getElementById("i-step-number").value - 1);
                 });
             }
 
-            function showbasic() {
-                document.getElementById("prezi-player").innerHTML = ""
-                var player3 = new PreziPlayer('prezi-player', {
-                    preziId: "gzzv4zugpcar",
-                    width: 500,
-                    height: 400,
-                    debug: true
-                });
-            }
+           
         </script>
 
     </div>
