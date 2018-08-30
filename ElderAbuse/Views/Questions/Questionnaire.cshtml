@@ -1,4 +1,5 @@
 ﻿@model NewModel
+@Styles.Render("~/Content/quizStyle.css")
 
 @{
     ViewBag.Title = "Questionnaire";
@@ -8,61 +9,61 @@
 
 
 @*<div class="questionArea">
-    <hr />
-    <div class="questionNumber">
-    </div>
-    <div class="question">
-        <span>  @Html.DisplayFor(model => model.question.QuestionId). &nbsp; @Html.DisplayFor(model => model.question.Question1)</span>
-    </div>
-</div>*@
+        <hr />
+        <div class="questionNumber">
+        </div>
+        <div class="question">
+            <span>  @Html.DisplayFor(model => model.question.QuestionId). &nbsp; @Html.DisplayFor(model => model.question.Question1)</span>
+        </div>
+    </div>*@
 @*<p>
-    <div class="nextQuestion"> <span> @Html.ActionLink("Submit", "Questionnaire", new { id = Model.question.QuestionId + 1 }, new { @class = "btn btn-primary btn-lg" })</span></div><br /><br />
-    <div class="previousQuestion">@Html.ActionLink("Previous", "Questionnaire", new { id = Model.question.QuestionId - 1 })</div>
+        <div class="nextQuestion"> <span> @Html.ActionLink("Submit", "Questionnaire", new { id = Model.question.QuestionId + 1 }, new { @class = "btn btn-primary btn-lg" })</span></div><br /><br />
+        <div class="previousQuestion">@Html.ActionLink("Previous", "Questionnaire", new { id = Model.question.QuestionId - 1 })</div>
 
-</p>*@
+    </p>*@
 
 
 @using (Html.BeginForm("Questionnaire", "Questions", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4></h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-    <div class="form-group">
-        <div class="questionArea">
-            <hr />
-            <div >
+        <div class="form-group">
+            <div class="questionArea">
+                <hr />
+                <div>
+                </div>
+                <div class="question">
+                    <span>  @Html.DisplayFor(newModel => newModel.questions.QuestionId). &nbsp; @Html.DisplayFor(newModel => newModel.questions.Question1)</span>
+                </div>
             </div>
-            <div class="question">
-                <span>  @Html.DisplayFor(newModel => newModel.questions.QuestionId). &nbsp; @Html.DisplayFor(newModel => newModel.questions.Question1)</span>
-            </div>
+
         </div>
 
-    </div>
-    
-    @Html.HiddenFor(newModel => newModel.responses.QuestionId, new { Value = @Model.questions.QuestionId})
-    <div class="form-group question questionArea">
-      
+        @Html.HiddenFor(newModel => newModel.responses.QuestionId, new { Value = @Model.questions.QuestionId })
+        <div class="form-group question questionArea">
+
             @*@Html.EditorFor(newModel => newModel.responses.Answer, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(newModel => newModel.responses.Answer, "", new { @class = "text-danger" })*@
+                @Html.ValidationMessageFor(newModel => newModel.responses.Answer, "", new { @class = "text-danger" })*@
             <span>
                 <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "1", new { @class = "class_radio" }) Yes</label>   &nbsp &nbsp &nbsp
                 <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "0", new { @class = "class_radio" }) No</label>
             </span>
-        
-    </div>
-
-    <div class="form-group ">
-        <div class="btn_area">
-            <input type="submit" value="@ViewBag.ButtonValue" class="btn btn-success" /><br />
 
         </div>
+
+        <div class="form-group ">
+            <div class="btn_area">
+                <input type="submit" value="@ViewBag.ButtonValue" class="btn btn-success" /><br />
+
+            </div>
+        </div>
     </div>
-</div>  
 }
 
 @section Scripts {
