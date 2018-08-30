@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ElderAbuse.Models.Question>
+@Styles.Render("~/Content/quizStyle.css")
 
 @{
     ViewBag.Title = "Result";
@@ -12,8 +13,18 @@
 
 
 
-<p>
-    <span>
-        Based on the answers that you gave, there is a very high likelihood that you are @ViewBag.AbuseType
-    </span>
-</p>
+<div style="font-size:30px">
+    Based on the answers that you gave, there is a @ViewBag.Priority likelihood that you are
+    <p class="answerArea span" style="font:bold;font-size:40px;color:red; justify-content: center;">@ViewBag.AbuseType</p>
+
+
+</div>
+
+<div style="font-size:30px">
+    Would you like to further assess with more questions ?
+    <input type="button" value="Yes" class="btn btn-success" onclick="location.href='@Url.Action("FurtherQuestions", "Questions")'" />
+    &nbsp;&nbsp;&nbsp;<input type="button" value="No" class="btn btn-warning" onclick="location.href='@Url.Action("Pincode", "Questions")'" />
+
+
+
+</div>

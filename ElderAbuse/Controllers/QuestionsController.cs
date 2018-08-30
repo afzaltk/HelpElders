@@ -18,6 +18,7 @@ namespace ElderAbuse.Controllers
         public ActionResult Index()
         {
             ViewBag.AbuseType = TempData["AbuseType"].ToString();
+            ViewBag.Priority = TempData["Priority"].ToString();
             return View();
         }
 
@@ -70,7 +71,7 @@ namespace ElderAbuse.Controllers
             {
                 db.Questions.Add(question);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(question);
@@ -93,7 +94,6 @@ namespace ElderAbuse.Controllers
             }
             if (ModelState.IsValid)
             {
-
                 db.Responses.Add(newModel.responses);
                 db.SaveChanges();
                 //Check if the question number is less than 12 to load the next question                
@@ -119,6 +119,17 @@ namespace ElderAbuse.Controllers
                     }
                     return View(newModel1);
                 }
+                else if (QstnId == 13 || QstnId==14 || QstnId == 16 || QstnId == 17 || QstnId == 19 || QstnId == 20 || QstnId == 22 || QstnId == 24 || QstnId == 25)
+                {
+                    ViewBag.ButtonValue = "Next Question";
+                    NewModel newModel1 = new NewModel();
+                    newModel1.questions = db.Questions.Find(newModel.responses.QuestionId + 1);
+                    if (newModel1.questions == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(newModel1);
+                }
                 //check if it is on the last question
                 else if (QstnId == 12)
                 {
@@ -132,54 +143,7 @@ namespace ElderAbuse.Controllers
                                      where c.QuestionId == i + 1
                                      select c.Answer).Single();
                     }
-                    //var points1 = from c in db.Responses
-                    //              where c.ResponseNumber == max
-                    //              where c.QuestionId == 1
-                    //              select c.Answer;
-                    //var points2 = from c in db.Responses
-                    //              where c.ResponseNumber == max
-                    //              where c.QuestionId == 2
-                    //              select c.Answer;
-                    //var points3 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 3
-                    //               select c.Answer).Single();
-                    //var points4 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 4
-                    //               select c.Answer).Single();
-                    //var points5 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 5
-                    //               select c.Answer).Single();
-                    //var points6 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 6
-                    //               select c.Answer).Single();
-                    //var points7 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 7
-                    //               select c.Answer).Single();
-                    //var points8 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 8
-                    //               select c.Answer).Single();
-                    //var points9 = (from c in db.Responses
-                    //               where c.ResponseNumber == max
-                    //               where c.QuestionId == 9
-                    //               select c.Answer).Single();
-                    //var points10 = (from c in db.Responses
-                    //                where c.ResponseNumber == max
-                    //                where c.QuestionId == 10
-                    //                select c.Answer).Single();
-                    //var points11 = (from c in db.Responses
-                    //                where c.ResponseNumber == max
-                    //                where c.QuestionId == 11
-                    //                select c.Answer).Single();
-                    //var points12 = (from c in db.Responses
-                    //                where c.ResponseNumber == max
-                    //                where c.QuestionId == 12
-                    //                select c.Answer).Single();
+                   
 
                     //Get the total sum of the answers to compare
                     List<int> answrlst = new List<int>();
@@ -192,30 +156,41 @@ namespace ElderAbuse.Controllers
                             Total += answrlst[i];
                         }
                     }
-
+                    int physical = points[2] + points[3];
+                    int financial = points[4] + points[5];
+                    int emotional = points[6] + points[7];
+                    int sexual = points[8] + points[9];
+                    int neglect = points[10] + points[11];
                     //Get the result of physically abused
-                    if (points[3] == 1 && points[2] == 1 && Total == 2)
+                    if (physical==2 && Total == 2)
                     {
+                        TempData["Priority"] = "High";
                         TempData["AbuseType"] = "being Physically Abused";
                     }
-                    //Get the result of ginancially abused
-                    else if (points[4] == 1 && points[5] == 1 && Total == 2)
+                    //Get the result of financially abused
+                    else if (financial == 2 && Total == 2)
                     {
+                        TempData["Priority"] = "High";
                         TempData["AbuseType"] = "being Financially Abused";
                     }
+                   
                     //Get the result of Emotionally abused
-                    else if (points[6] == 1 && points[7] == 1 && Total == 2)
+                    else if (emotional == 2 && Total == 2)
                     {
+                        TempData["Priority"] = "High";
                         TempData["AbuseType"] = "being Emotionally Abused";
                     }
+
                     //Get the result of Sexually abused
-                    else if (points[8] == 1 && points[9] == 1 && Total == 2)
+                    else if (sexual == 2 && Total == 2)
                     {
+                        TempData["Priority"] = "High";
                         TempData["AbuseType"] = "being Sexually Abused";
                     }
                     //Get the result of neglect
-                    else if (points[11] == 1 && points[10] == 1 && Total == 2)
+                    else if (neglect == 2 && Total == 2)
                     {
+                        TempData["Priority"] = "High";
                         TempData["AbuseType"] = "being Neglected";
                     }
 
@@ -224,32 +199,73 @@ namespace ElderAbuse.Controllers
                     {
                         TempData["AbuseType"] = "not being Abused";
                     }
-                    else if (Total >= 10)
+                    else if (Total > 5)
                     {
                         TempData["AbuseType"] = "being badly Abused";
                     }
+                    else
+                    {
+                        TempData["Priority"] = "low";
+                        TempData["AbuseType"] = "being Abused";
+                    }
+
 
 
                     return RedirectToAction("Index");
                 }
+
             }
 
             return RedirectToAction("Index");
         }
 
+        
+
         // GET: Questions/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult FurtherQuestions()
         {
-            if (id == null)
+            int max = db.Responses.Max(p => p.ResponseNumber);
+            int[] points = new int[12];
+            //Get points of each question from database
+            for (int i = 0; i < 12; i++)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                points[i] = (from c in db.Responses
+                             where c.ResponseNumber == max
+                             where c.QuestionId == i + 1
+                             select c.Answer).Single();
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            //Get the total sum of the answers to compare
+            List<int> answrlst = new List<int>();
+            answrlst = (from c in db.Responses where c.ResponseNumber == max where c.QuestionId > 2 select c.Answer).ToList();
+            int Total = 0;
+            if (answrlst != null)
             {
-                return HttpNotFound();
+                for (int i = 0; i < answrlst.Count; i++)
+                {
+                    Total += answrlst[i];
+                }
             }
-            return View(question);
+            int physical = points[2] + points[3];
+            int financial = points[4] + points[5];
+            int emotional = points[6] + points[7];
+            int sexual = points[8] + points[9];
+            int neglect = points[10] + points[11];
+            NewModel newModel1 = new NewModel();
+            
+            if (physical==1)
+            {
+                ViewBag.ButtonValue = "Next Question";
+                newModel1.questions = db.Questions.Find(13);
+                if (newModel1.questions == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(newModel1);
+            }
+
+
+
+            return View();
         }
 
         //POST: Questions/Edit/5

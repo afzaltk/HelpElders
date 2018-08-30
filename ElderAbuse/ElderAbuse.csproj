@@ -280,7 +280,7 @@
     <Content Include="Views\Questions\Create.cshtml" />
     <Content Include="Views\Questions\Delete.cshtml" />
     <Content Include="Views\Questions\Questionnaire.cshtml" />
-    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\FurtherQuestions.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
     <Content Include="Views\Responses\Create.cshtml" />
     <Content Include="Views\Responses\Delete.cshtml" />
