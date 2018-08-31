@@ -11,12 +11,15 @@ namespace ElderAbuse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Response
     {
         public int ResponseId { get; set; }
         public int ResponseNumber { get; set; }
         public int QuestionId { get; set; }
+
+        [Required(ErrorMessage = "Please select Yes or No from above")]
         public int Answer { get; set; }
     
         public virtual Question Question { get; set; }

@@ -28,5 +28,10 @@ namespace ElderAbuse.Models
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Response> Responses { get; set; }
         public virtual DbSet<ResponseType> ResponseTypes { get; set; }
+        public virtual DbSet<FINANCIAL_ABUSE> FINANCIAL_ABUSE { get; set; }
+        public virtual DbSet<NEGLECT> NEGLECTs { get; set; }
+        public virtual DbSet<PHYSICAL_ABUSE> PHYSICAL_ABUSE { get; set; }
+        public virtual DbSet<PSYCHOLOGICAL_ABUSE> PSYCHOLOGICAL_ABUSE { get; set; }
+        public virtual DbSet<SEXUAL_ABUSE> SEXUAL_ABUSE { get; set; }
     }
 }

@@ -9,6 +9,11 @@
         <EntityTypeShape EntityType="HelpEldersDBModel.Response" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="HelpEldersDBModel.ResponseType" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="HelpEldersDBModel.FK_Response_Questions" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HelpEldersDBModel.FINANCIAL_ABUSE" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HelpEldersDBModel.NEGLECT" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HelpEldersDBModel.PHYSICAL_ABUSE" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HelpEldersDBModel.PSYCHOLOGICAL_ABUSE" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HelpEldersDBModel.SEXUAL_ABUSE" Width="1.5" PointX="2.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

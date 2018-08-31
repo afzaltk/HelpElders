@@ -5,6 +5,42 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HelpEldersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FINANCIAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idfinancial" />
+          </Key>
+          <Property Name="idfinancial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="no_of_people" Type="int" />
+        </EntityType>
+        <EntityType Name="NEGLECT">
+          <Key>
+            <PropertyRef Name="idneglect" />
+          </Key>
+          <Property Name="idneglect" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="no_of_people" Type="int" />
+        </EntityType>
+        <EntityType Name="PHYSICAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idphysical" />
+          </Key>
+          <Property Name="idphysical" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="no_of_people" Type="int" />
+        </EntityType>
+        <EntityType Name="PSYCHOLOGICAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idpsychological" />
+          </Key>
+          <Property Name="idpsychological" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="no_of_people" Type="int" />
+        </EntityType>
         <EntityType Name="Questions">
           <Key>
             <PropertyRef Name="QuestionId" />
@@ -26,7 +62,18 @@
             <PropertyRef Name="ResponseNumber" />
           </Key>
           <Property Name="ResponseNumber" Type="int" Nullable="false" />
-          <Property Name="AbuseType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AbuseType" Type="varchar" MaxLength="50" />
+          <Property Name="Postcode" Type="int" />
+          <Property Name="Likelihood" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SEXUAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idsexual" />
+          </Key>
+          <Property Name="idsexual" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="no_of_people" Type="int" />
         </EntityType>
         <Association Name="FK_Response_Questions">
           <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
@@ -41,9 +88,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="HelpEldersDBModelStoreContainer">
+          <EntitySet Name="FINANCIAL_ABUSE" EntityType="Self.FINANCIAL_ABUSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NEGLECT" EntityType="Self.NEGLECT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHYSICAL_ABUSE" EntityType="Self.PHYSICAL_ABUSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PSYCHOLOGICAL_ABUSE" EntityType="Self.PSYCHOLOGICAL_ABUSE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Response" EntityType="Self.Response" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ResponseType" EntityType="Self.ResponseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEXUAL_ABUSE" EntityType="Self.SEXUAL_ABUSE" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Response_Questions" Association="Self.FK_Response_Questions">
             <End Role="Questions" EntitySet="Questions" />
             <End Role="Response" EntitySet="Response" />
@@ -76,7 +128,9 @@
             <PropertyRef Name="ResponseNumber" />
           </Key>
           <Property Name="ResponseNumber" Type="Int32" Nullable="false" />
-          <Property Name="AbuseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AbuseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Postcode" Type="Int32" />
+          <Property Name="Likelihood" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Response_Questions">
           <End Role="Questions" Type="Self.Question" Multiplicity="1" />
@@ -98,7 +152,57 @@
             <End Role="Questions" EntitySet="Questions" />
             <End Role="Response" EntitySet="Responses" />
           </AssociationSet>
+          <EntitySet Name="FINANCIAL_ABUSE" EntityType="HelpEldersDBModel.FINANCIAL_ABUSE" />
+          <EntitySet Name="NEGLECTs" EntityType="HelpEldersDBModel.NEGLECT" />
+          <EntitySet Name="PHYSICAL_ABUSE" EntityType="HelpEldersDBModel.PHYSICAL_ABUSE" />
+          <EntitySet Name="PSYCHOLOGICAL_ABUSE" EntityType="HelpEldersDBModel.PSYCHOLOGICAL_ABUSE" />
+          <EntitySet Name="SEXUAL_ABUSE" EntityType="HelpEldersDBModel.SEXUAL_ABUSE" />
         </EntityContainer>
+        <EntityType Name="FINANCIAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idfinancial" />
+          </Key>
+          <Property Name="idfinancial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_of_people" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NEGLECT">
+          <Key>
+            <PropertyRef Name="idneglect" />
+          </Key>
+          <Property Name="idneglect" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_of_people" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PHYSICAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idphysical" />
+          </Key>
+          <Property Name="idphysical" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_of_people" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PSYCHOLOGICAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idpsychological" />
+          </Key>
+          <Property Name="idpsychological" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_of_people" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SEXUAL_ABUSE">
+          <Key>
+            <PropertyRef Name="idsexual" />
+          </Key>
+          <Property Name="idsexual" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_of_people" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -126,8 +230,60 @@
           <EntitySetMapping Name="ResponseTypes">
             <EntityTypeMapping TypeName="HelpEldersDBModel.ResponseType">
               <MappingFragment StoreEntitySet="ResponseType">
+                <ScalarProperty Name="Likelihood" ColumnName="Likelihood" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
                 <ScalarProperty Name="ResponseNumber" ColumnName="ResponseNumber" />
                 <ScalarProperty Name="AbuseType" ColumnName="AbuseType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FINANCIAL_ABUSE">
+            <EntityTypeMapping TypeName="HelpEldersDBModel.FINANCIAL_ABUSE">
+              <MappingFragment StoreEntitySet="FINANCIAL_ABUSE">
+                <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="idfinancial" ColumnName="idfinancial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEGLECTs">
+            <EntityTypeMapping TypeName="HelpEldersDBModel.NEGLECT">
+              <MappingFragment StoreEntitySet="NEGLECT">
+                <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="idneglect" ColumnName="idneglect" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHYSICAL_ABUSE">
+            <EntityTypeMapping TypeName="HelpEldersDBModel.PHYSICAL_ABUSE">
+              <MappingFragment StoreEntitySet="PHYSICAL_ABUSE">
+                <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="idphysical" ColumnName="idphysical" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PSYCHOLOGICAL_ABUSE">
+            <EntityTypeMapping TypeName="HelpEldersDBModel.PSYCHOLOGICAL_ABUSE">
+              <MappingFragment StoreEntitySet="PSYCHOLOGICAL_ABUSE">
+                <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="idpsychological" ColumnName="idpsychological" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEXUAL_ABUSE">
+            <EntityTypeMapping TypeName="HelpEldersDBModel.SEXUAL_ABUSE">
+              <MappingFragment StoreEntitySet="SEXUAL_ABUSE">
+                <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="idsexual" ColumnName="idsexual" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

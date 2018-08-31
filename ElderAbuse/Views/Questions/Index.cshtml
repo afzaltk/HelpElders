@@ -20,10 +20,10 @@
 
 </div>
 
-<div style="font-size:30px">
-    Would you like to further assess with more questions ?
+<div style="font-size:30px;text-align:center">
+    Would you like to further assess with more questions ? <br/>
     <input type="button" value="Yes" class="btn btn-success" onclick="location.href='@Url.Action("FurtherQuestions", "Questions")'" />
-    &nbsp;&nbsp;&nbsp;<input type="button" value="No" class="btn btn-warning" onclick="location.href='@Url.Action("Pincode", "Questions")'" />
+    &nbsp;&nbsp;&nbsp;<input type="button" value="No" class="btn btn-warning" onclick="location.href='@Url.Action("Postcode", "Questions", new { Likelihood = ViewBag.Priority, AbuseType = ViewBag.AbuseType })'" />
 
 
 

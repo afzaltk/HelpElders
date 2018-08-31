@@ -176,6 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FINANCIAL_ABUSE.cs">
+      <DependentUpon>HelpEldersModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HelpEldersModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,7 +194,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HelpEldersModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NEGLECT.cs">
+      <DependentUpon>HelpEldersModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NewModel.cs" />
+    <Compile Include="Models\PHYSICAL_ABUSE.cs">
+      <DependentUpon>HelpEldersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PSYCHOLOGICAL_ABUSE.cs">
+      <DependentUpon>HelpEldersModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Question.cs">
       <DependentUpon>HelpEldersModel.tt</DependentUpon>
     </Compile>
@@ -199,6 +211,9 @@
       <DependentUpon>HelpEldersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResponseType.cs">
+      <DependentUpon>HelpEldersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SEXUAL_ABUSE.cs">
       <DependentUpon>HelpEldersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -292,6 +307,7 @@
     <Content Include="Views\Information\Details.cshtml" />
     <Content Include="Views\Information\Edit.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Questions\Postcode.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -12,11 +12,11 @@ namespace ElderAbuse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ResponseType
+    public partial class FINANCIAL_ABUSE
     {
-        public int ResponseNumber { get; set; }
-        public string AbuseType { get; set; }
-        public Nullable<int> Postcode { get; set; }
-        public string Likelihood { get; set; }
+        public int idfinancial { get; set; }
+        public string state { get; set; }
+        public string gender { get; set; }
+        public Nullable<int> no_of_people { get; set; }
     }
 }
