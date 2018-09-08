@@ -520,10 +520,12 @@ survey
         var abuseList = [];
 
         //Self Case
-        if (result.data.whom == 1) {
+        if (result.data.whom == 1)
+        {
 
            //not abused
-            if (result.data.selfPhysical1 == 0 && result.data.selfPhysical2 == 0 && result.data.selffinancial1 == 0 && result.data.selffinancial2 == 0 && result.data.selfEmotional1 == 0 && result.data.selfEmotional2 == 0 && result.data.selfSexual1 == 0 && result.data.selfSexual2 == 0 && result.data.selfNeglect1 == 0 && result.data.selfNeglect2 == 0) {
+            if (result.data.selfPhysical1 == 0 && result.data.selfPhysical2 == 0 && result.data.selffinancial1 == 0 && result.data.selffinancial2 == 0 && result.data.selfEmotional1 == 0 && result.data.selfEmotional2 == 0 && result.data.selfSexual1 == 0 && result.data.selfSexual2 == 0 && result.data.selfNeglect1 == 0 && result.data.selfNeglect2 == 0)
+            {
                 document
                     .querySelector('#surveyResult')
                     .innerHTML = "There is a high likelihood that you have not been abused";
@@ -531,19 +533,19 @@ survey
 
             //Set List of abuses involved
             var d = "/Information/Index";
-            if (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 1) {
+            if (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
             }
-            if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
+            if (result.data.selffinancial1 == 1 && result.data.selffinancial2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
             }
-            if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
+            if (result.data.selfEmotional1 == 1 && result.data.selfEmotional2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
             }
-            if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
+            if (result.data.selfSexual1 == 1 && result.data.selfSexual2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
             }
-            if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
+            if (result.data.selfNeglect1 == 1 && result.data.selfNeglect2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
             }
 
@@ -556,18 +558,24 @@ survey
                 for (var i in abuseList) {
                     abusehtml += '<li>' + abuseList[i] + '</li>';
                 }
-                abusehtml += '</ul>'
+                abusehtml += '</ul> </br </br>'
 
                 document
                     .querySelector('#surveyResultAbuse')
                     .innerHTML += abusehtml;
-                var urlaction = '@Url.Action("Index", "Information")';
-                var locationhref = "location.href = " + "'" + urlaction + "'";
-                var infobuttin = '</br><button type="button"  onclick="' + locationhref + '" >View More Information</button>';
+
+
+                var infobuttin = 'Click on any of the above abuses for further information on each of them';
 
                 document
                     .querySelector('#infobutton')
                     .innerHTML += infobuttin;
+
+                var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess yourself';
+
+                document
+                    .querySelector('#NextSurvey')
+                    .innerHTML += nextSurvey;
             }
             
 
@@ -611,7 +619,7 @@ survey
                 for (var i in abuseList) {
                     abusehtml += '<li>' + abuseList[i] + '</li>';
                 }
-                abusehtml += '</ul> </br> </br>'
+                abusehtml += '</ul> </br </br>'
 
                 document
                     .querySelector('#surveyResultAbuse')
