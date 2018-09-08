@@ -12,8 +12,12 @@
 <div id="surveyContainer"><survey :survey="survey"></survey></div>
     
 <script type="text/javascript" src="~/Scripts/quiz.js"></script>
-<div id="surveyResult"></div>
-<div id="surveyResultAbuse"></div>
+<div  class="abuseResult">
+    <div style="text-align:center" id="surveyResult"></div>
+    <div id="surveyResultAbuse"></div>
+    <div style="text-align:center;margin-bottom:20px;" id="infobutton"></div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -81,7 +81,16 @@
     height: 0.5em;
 }
 
-/*!
+.abuseResult {
+    background-color: white;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom:20px;
+    border-bottom: 2px solid #1ab394;
+}
+
+
+
  * surveyjs - Survey JavaScript library v1.0.41
  * Copyright (c) 2015-2018 Devsoft Baltic OÜ  - http://surveyjs.io/
  * License: MIT (http://www.opensource.org/licenses/mit-license.php)

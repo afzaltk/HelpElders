@@ -530,20 +530,21 @@ survey
             }
 
             //Set List of abuses involved
-            if (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 1) {
-                abuseList.push("Physical Abuse")
+            var d = "/Information/Index";
+            if (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 1) {
+                abuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
             }
-            if (result.data.selffinancial1 == 1 && result.data.selffinancial2 == 1) {
-                abuseList.push("Financial Abuse")
+            if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
+                abuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
             }
-            if (result.data.selfEmotional1 == 1 && result.data.selfEmotional2 == 1) {
-                abuseList.push("Emotional Abuse")
+            if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
+                abuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
             }
-            if (result.data.selfSexual1 == 1 && result.data.selfSexual2 == 1) {
-                abuseList.push("Sexual Abuse")
+            if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
+                abuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
             }
-            if (result.data.selfNeglect1 == 1 && result.data.selfNeglect2 == 1) {
-                abuseList.push("Neglect")
+            if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
+                abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
             }
 
             //Print the corresponding abuses
@@ -560,7 +561,13 @@ survey
                 document
                     .querySelector('#surveyResultAbuse')
                     .innerHTML += abusehtml;
+                var urlaction = '@Url.Action("Index", "Information")';
+                var locationhref = "location.href = " + "'" + urlaction + "'";
+                var infobuttin = '</br><button type="button"  onclick="' + locationhref + '" >View More Information</button>';
 
+                document
+                    .querySelector('#infobutton')
+                    .innerHTML += infobuttin;
             }
             
 
@@ -577,20 +584,22 @@ survey
             }
 
             //Set List of abuses involved
+            
+            var d = "/Information/Index";
             if (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 1) {
-                abuseList.push("Physical Abuse")
-            }
+                abuseList.push('<a href="' + d +'" target="_blank">Physical Abuse</a>');
+            }   
             if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
-                abuseList.push("Financial Abuse")
+                abuseList.push('<a href="' + d +'" target="_blank">Financial Abuse</a>')
             }
             if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
-                abuseList.push("Emotional Abuse")
+                abuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
             }
             if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
-                abuseList.push("Sexual Abuse")
+                abuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
             }
             if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
-                abuseList.push("Neglect")
+                abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
             }
 
             //Print the corresponding abuses
@@ -602,11 +611,18 @@ survey
                 for (var i in abuseList) {
                     abusehtml += '<li>' + abuseList[i] + '</li>';
                 }
-                abusehtml += '</ul>'
+                abusehtml += '</ul> </br> </br>'
 
                 document
                     .querySelector('#surveyResultAbuse')
                     .innerHTML += abusehtml;
+
+                
+                var infobuttin = 'Click on any of the above abuses for further information on each of them';
+
+                document
+                    .querySelector('#infobutton')
+                    .innerHTML += infobuttin;
             }
 
 
