@@ -517,6 +517,7 @@ new Vue({ el: '#surveyContainer', data: { survey: survey } });
 survey
     .onComplete
     .add(function (result) {
+        var abuseList = [];
 
         //Self Case
         if (result.data.whom == 1) {
@@ -527,6 +528,42 @@ survey
                     .querySelector('#surveyResult')
                     .innerHTML = "There is a high likelihood that you have not been abused";
             }
+
+            //Set List of abuses involved
+            if (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 1) {
+                abuseList.push("Physical Abuse")
+            }
+            if (result.data.selffinancial1 == 1 && result.data.selffinancial2 == 1) {
+                abuseList.push("Financial Abuse")
+            }
+            if (result.data.selfEmotional1 == 1 && result.data.selfEmotional2 == 1) {
+                abuseList.push("Emotional Abuse")
+            }
+            if (result.data.selfSexual1 == 1 && result.data.selfSexual2 == 1) {
+                abuseList.push("Sexual Abuse")
+            }
+            if (result.data.selfNeglect1 == 1 && result.data.selfNeglect2 == 1) {
+                abuseList.push("Neglect")
+            }
+
+            //Print the corresponding abuses
+            if (abuseList.length > 0) {
+                document
+                    .querySelector('#surveyResult')
+                    .innerHTML = "There is a high likelihood that you have been exposed to the following types of Abuses - ";
+                var abusehtml = '<ul>';
+                for (var i in abuseList) {
+                    abusehtml += '<li>' + abuseList[i] + '</li>';
+                }
+                abusehtml += '</ul>'
+
+                document
+                    .querySelector('#surveyResultAbuse')
+                    .innerHTML += abusehtml;
+
+            }
+            
+
         }
 
         //Other case
@@ -538,6 +575,41 @@ survey
                     .querySelector('#surveyResult')
                     .innerHTML = "There is a high likelihood that the person concerned has not been abused";
             }
+
+            //Set List of abuses involved
+            if (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 1) {
+                abuseList.push("Physical Abuse")
+            }
+            if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
+                abuseList.push("Financial Abuse")
+            }
+            if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
+                abuseList.push("Emotional Abuse")
+            }
+            if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
+                abuseList.push("Sexual Abuse")
+            }
+            if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
+                abuseList.push("Neglect")
+            }
+
+            //Print the corresponding abuses
+            if (abuseList.length > 0) {
+                document
+                    .querySelector('#surveyResult')
+                    .innerHTML = "There is a high likelihood that the person concerned has been exposed to the following types of Abuses - ";
+                var abusehtml = '<ul>';
+                for (var i in abuseList) {
+                    abusehtml += '<li>' + abuseList[i] + '</li>';
+                }
+                abusehtml += '</ul>'
+
+                document
+                    .querySelector('#surveyResultAbuse')
+                    .innerHTML += abusehtml;
+            }
+
+
         }
     });
 
