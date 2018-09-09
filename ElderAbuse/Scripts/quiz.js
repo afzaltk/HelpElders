@@ -728,6 +728,24 @@ survey
             if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
             }
+            if ((result.data.otherPhysical1 == 0 && result.data.otherPhysical2 == 1) || (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 0)) {
+                abuseListNext.push('otherPhysical');
+            }
+            if ((result.data.otherfinancial1 == 0 && result.data.otherfinancial2 == 1) || (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 0)) {
+                abuseListNext.push('otherFinancial');
+            }
+            if ((result.data.otherEmotional1 == 0 && result.data.otherEmotional2 == 1) || (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 0)) {
+                abuseListNext.push('otherEmotional');
+            }
+            if ((result.data.otherSexual1 == 0 && result.data.otherSexual2 == 1) || (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 0)) {
+                abuseListNext.push('otherSexual');
+            }
+            if ((result.data.otherNeglect1 == 0 && result.data.otherNeglect2 == 1) || (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 0)) {
+                abuseListNext.push('otherNeglect');
+            }
+
+            localStorage.setItem('abuseListNext', JSON.stringify(abuseListNext));
+            localStorage.setItem('abuseList', abuseList);
 
             //Print the corresponding abuses
             if (abuseList.length > 0) {

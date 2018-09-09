@@ -605,17 +605,32 @@ for (var i = 0; i < abuseListNext.length; i++) {
     if (name = 'selfPhysical') {
         nextJSON.pages.push(selfPhysicalNext);
     }
-    if (name ='selfFinancial') {
+    else if (name ='selfFinancial') {
         nextJSON.pages.push(selfFinancialNext);
     }
-    if (name ='selfEmotional') {
+    else if (name ='selfEmotional') {
         nextJSON.pages.push(selfEmotionalNext);
     }
-    if (name ='selfSexual') {
+    else if (name ='selfSexual') {
         nextJSON.pages.push(selfSexualNext);
     }
-    if (name ='selfNeglect') {
+    else if (name ='selfNeglect') {
         nextJSON.pages.push(selfNeglectNext);
+    }
+    else if (name = 'otherPhysical') {
+        nextJSON.pages.push(otherPhysicalNext);
+    }
+    else if (name = 'otherFinancial') {
+        nextJSON.pages.push(otherFinancialNext);
+    }
+    else if (name = 'otherEmotional') {
+        nextJSON.pages.push(otherEmotionalNext);
+    }
+    else if (name = 'otherSexual') {
+        nextJSON.pages.push(otherSexualNext);
+    }
+    else if (name = 'otherNeglect') {
+        nextJSON.pages.push(otherNeglectNext);
     }
 }
 
