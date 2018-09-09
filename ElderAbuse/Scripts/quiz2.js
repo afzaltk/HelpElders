@@ -598,7 +598,7 @@ function sendDataToServer(survey) {
     //send Ajax request to your web server.
     alert("The results are:" + JSON.stringify(survey.data));
 }
-
+var abuseList = JSON.parse(localStorage.getItem('abuseList'));
 var abuseListNext=JSON.parse(localStorage.getItem('abuseListNext'));
 for (var i = 0; i < abuseListNext.length; i++) {
     var name = abuseListNext[i];
@@ -634,16 +634,23 @@ for (var i = 0; i < abuseListNext.length; i++) {
     }
 }
 
-
-
-
 var survey = new Survey.Model(nextJSON);
 new Vue({ el: '#surveyContainer', data: { survey: survey } });
 
 survey
     .onComplete
     .add(function (result) {
-        document
-            .querySelector('#surveyResultNext')
-            .innerHTML = "result: " + JSON.stringify(nextJSON);
+
+        if (result.data.selfPhysicalNext1 == 0 && result.data.selfPhysicalNext2 == 0 && result.data.selfPhysicalNext3 == 0 && result.data.selfFinancialNext1 == 0 && result.data.selfFinancialNext2 == 0 && result.data.selfFinancialNext3 == 0 && result.data.selfEmotionalNext1 == 0 && result.data.selfEmotionalNext2 == 0 && result.data.selfEmotionalNext3 == 0 && result.data.selfSexualNext1 == 0 && result.data.selfSexualNext2 == 0 && result.data.selfNeglectNext1 == 0 && result.data.selfNeglectNext2 == 0 && result.data.selfNeglectNext3 == 0) {
+            document
+                .querySelector('#surveyResultNext')
+                .innerHTML = "There is a high likelihood that you have not been abused";
+        }
+
+        if (result.data.otherPhysicalNext1 == 0 && result.data.otherPhysicalNext2 == 0 && result.data.otherPhysicalNext3 == 0 && result.data.otherFinancialNext1 == 0 && result.data.otherFinancialNext2 == 0 && result.data.otherFinancialNext3 == 0 && result.data.otherEmotionalNext1 == 0 && result.data.otherEmotionalNext2 == 0 && result.data.otherEmotionalNext3 == 0 && result.data.otherSexualNext1 == 0 && result.data.otherSexualNext2 == 0 && result.data.otherNeglectNext1 == 0 && result.data.otherNeglectNext2 == 0 && result.data.otherNeglectNext3 == 0) {
+            document
+                .querySelector('#surveyResultNext')
+                .innerHTML = "There is a high likelihood that the person has not been abused";
+        }
+       
     });
