@@ -768,6 +768,12 @@ survey
                 document
                     .querySelector('#infobutton')
                     .innerHTML += infobuttin;
+
+                var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess the person more';
+
+                document
+                    .querySelector('#NextSurvey')
+                    .innerHTML += nextSurvey;
             }
 
 

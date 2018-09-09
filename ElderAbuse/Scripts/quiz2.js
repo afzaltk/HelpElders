@@ -598,40 +598,39 @@ function sendDataToServer(survey) {
     //send Ajax request to your web server.
     alert("The results are:" + JSON.stringify(survey.data));
 }
-var abuseList = JSON.parse(localStorage.getItem('abuseList'));
+
 var abuseListNext=JSON.parse(localStorage.getItem('abuseListNext'));
 for (var i = 0; i < abuseListNext.length; i++) {
-    var name = abuseListNext[i];
-    if (name = 'selfPhysical') {
+    if (abuseListNext[i] == 'selfPhysical') 
         nextJSON.pages.push(selfPhysicalNext);
-    }
-    else if (name ='selfFinancial') {
+    
+    else if (abuseListNext[i] =='selfFinancial')
         nextJSON.pages.push(selfFinancialNext);
-    }
-    else if (name ='selfEmotional') {
+    
+    else if (abuseListNext[i] =='selfEmotional') 
         nextJSON.pages.push(selfEmotionalNext);
-    }
-    else if (name ='selfSexual') {
+    
+    else if (abuseListNext[i] =='selfSexual') 
         nextJSON.pages.push(selfSexualNext);
-    }
-    else if (name ='selfNeglect') {
+    
+    else if (abuseListNext[i] =='selfNeglect') 
         nextJSON.pages.push(selfNeglectNext);
-    }
-    else if (name = 'otherPhysical') {
+    
+    else if (abuseListNext[i] == 'otherPhysical') 
         nextJSON.pages.push(otherPhysicalNext);
-    }
-    else if (name = 'otherFinancial') {
+    
+    else if (abuseListNext[i] == 'otherFinancial') 
         nextJSON.pages.push(otherFinancialNext);
-    }
-    else if (name = 'otherEmotional') {
+    
+    else if (abuseListNext[i] == 'otherEmotional') 
         nextJSON.pages.push(otherEmotionalNext);
-    }
-    else if (name = 'otherSexual') {
+    
+    else if (abuseListNext[i] == 'otherSexual') 
         nextJSON.pages.push(otherSexualNext);
-    }
-    else if (name = 'otherNeglect') {
+    
+    else if (abuseListNext[i] == 'otherNeglect') 
         nextJSON.pages.push(otherNeglectNext);
-    }
+    
 }
 
 var survey = new Survey.Model(nextJSON);
@@ -640,6 +639,8 @@ new Vue({ el: '#surveyContainer', data: { survey: survey } });
 survey
     .onComplete
     .add(function (result) {
+        var nextAbuseList = [];
+        var nextAbuseListLow = [];
 
         if (result.data.selfPhysicalNext1 == 0 && result.data.selfPhysicalNext2 == 0 && result.data.selfPhysicalNext3 == 0 && result.data.selfFinancialNext1 == 0 && result.data.selfFinancialNext2 == 0 && result.data.selfFinancialNext3 == 0 && result.data.selfEmotionalNext1 == 0 && result.data.selfEmotionalNext2 == 0 && result.data.selfEmotionalNext3 == 0 && result.data.selfSexualNext1 == 0 && result.data.selfSexualNext2 == 0 && result.data.selfNeglectNext1 == 0 && result.data.selfNeglectNext2 == 0 && result.data.selfNeglectNext3 == 0) {
             document
@@ -652,5 +653,103 @@ survey
                 .querySelector('#surveyResultNext')
                 .innerHTML = "There is a high likelihood that the person has not been abused";
         }
+
+        //Set List of abuses involved
+        var d = "/Information/Index";        
+        if ((parseInt(result.data.selfPhysicalNext1, 10) + parseInt(result.data.selfPhysicalNext2, 10) + parseInt(result.data.selfPhysicalNext3, 10)) >=2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+        }
+        else if ((parseInt(result.data.selfPhysicalNext1, 10) + parseInt(result.data.selfPhysicalNext2, 10) + parseInt(result.data.selfPhysicalNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+        }
+        if ((parseInt(result.data.selfFinancialNext1, 10) + parseInt(result.data.selfFinancialNext2, 10) + parseInt(result.data.selfFinancialNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+        }
+        else if ((parseInt(result.data.selfFinancialNext1, 10) + parseInt(result.data.selfFinancialNext2, 10) + parseInt(result.data.selfFinancialNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+        }
+        if ((parseInt(result.data.selfEmotionalNext1, 10) + parseInt(result.data.selfEmotionalNext2, 10) + parseInt(result.data.selfEmotionalNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+        }
+        else if ((parseInt(result.data.selfEmotionalNext1, 10) + parseInt(result.data.selfEmotionalNext2, 10) + parseInt(result.data.selfEmotionalNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+        }
+        if ((parseInt(result.data.selfSexualNext1, 10) + parseInt(result.data.selfSexualNext2, 10)) >= 1) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+        }        
+        if ((parseInt(result.data.selfNeglectNext1, 10) + parseInt(result.data.selfNeglectNext2, 10) + parseInt(result.data.selfNeglectNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+        }
+        else if ((parseInt(result.data.selfNeglectNext1, 10) + parseInt(result.data.selfNeglectNext2, 10) + parseInt(result.data.selfNeglectNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Neglect</a>')
+        }
+
+
+        if ((parseInt(result.data.otherPhysicalNext1, 10) + parseInt(result.data.otherPhysicalNext2, 10) + parseInt(result.data.otherPhysicalNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+        }
+        else if ((parseInt(result.data.otherPhysicalNext1, 10) + parseInt(result.data.otherPhysicalNext2, 10) + parseInt(result.data.otherPhysicalNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+        }
+        if ((parseInt(result.data.otherFinancialNext1, 10) + parseInt(result.data.otherFinancialNext2, 10) + parseInt(result.data.otherFinancialNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+        }
+        else if ((parseInt(result.data.otherFinancialNext1, 10) + parseInt(result.data.otherFinancialNext2, 10) + parseInt(result.data.otherFinancialNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+        }
+        if ((parseInt(result.data.otherEmotionalNext1, 10) + parseInt(result.data.otherEmotionalNext2, 10) + parseInt(result.data.otherEmotionalNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+        }
+        else if ((parseInt(result.data.otherEmotionalNext1, 10) + parseInt(result.data.otherEmotionalNext2, 10) + parseInt(result.data.otherEmotionalNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+        }
+        if ((parseInt(result.data.otherSexualNext1, 10) + parseInt(result.data.otherSexualNext2, 10)) >= 1) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+        }
+        if ((parseInt(result.data.otherNeglectNext1, 10) + parseInt(result.data.otherNeglectNext2, 10) + parseInt(result.data.otherNeglectNext3, 10)) >= 2) {
+            nextAbuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+        }
+        else if ((parseInt(result.data.otherNeglectNext1, 10) + parseInt(result.data.otherNeglectNext2, 10) + parseInt(result.data.otherNeglectNext3, 10)) == 1) {
+            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Neglect</a>')
+        }
+
+        if (nextAbuseList.length > 0) {
+            document
+                .querySelector('#surveyResultNext')
+                .innerHTML = "There is a high likelihood for the below abuses to have happened - ";
+            var abusehtml = '';
+            for (var i in nextAbuseList) {
+                abusehtml += nextAbuseList[i] + '<br />';
+            }
+            abusehtml += '<br />'
+
+            document
+                .querySelector('#surveyResultAbuseNext')
+                .innerHTML += abusehtml;
+
+            if (nextAbuseListLow.length > 0) {
+                document
+                    .querySelector('#surveyResultNextLow')
+                    .innerHTML = "There is also a low likelihood for the below abuses to have happened - ";
+                var abusehtmllow = '';
+                for (var i in nextAbuseListLow) {
+                    abusehtmllow += nextAbuseListLow[i] + '<br />';
+                }
+                abusehtmllow += '<br />'
+
+                document
+                    .querySelector('#surveyResultAbuseNextLow')
+                    .innerHTML += abusehtmllow;
+
+            }
+
+
+            var infobuttin = 'Click on any of the above abuses for further information on each of them';
+
+            document
+                .querySelector('#infobuttonNext')
+                .innerHTML += infobuttin;
+
+                }
        
     });
