@@ -674,11 +674,11 @@ survey
                 document
                     .querySelector('#surveyResult')
                     .innerHTML = "There is a high likelihood that you have been exposed to the following types of Abuses - ";
-                var abusehtml = '<ul>';
+                var abusehtml = '';
                 for (var i in abuseList) {
-                    abusehtml += '<li>' + abuseList[i] + '</li>';
+                    abusehtml += abuseList[i] + '<br />';
                 }
-                abusehtml += '</ul> </br </br>'
+                abusehtml += '<br />'
 
                 document
                     .querySelector('#surveyResultAbuse')
@@ -752,11 +752,11 @@ survey
                 document
                     .querySelector('#surveyResult')
                     .innerHTML = "There is a high likelihood that the person concerned has been exposed to the following types of Abuses - ";
-                var abusehtml = '<ul>';
+                var abusehtml = '';
                 for (var i in abuseList) {
-                    abusehtml += '<li>' + abuseList[i] + '</li>';
+                    abusehtml +=  abuseList[i] + '<br />';
                 }
-                abusehtml += '</ul> </br </br>'
+                abusehtml += '<br />'
 
                 document
                     .querySelector('#surveyResultAbuse')
