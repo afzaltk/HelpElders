@@ -633,6 +633,10 @@ for (var i = 0; i < abuseListNext.length; i++) {
     
 }
 
+
+var abuseList = JSON.parse(localStorage.getItem('abuseList'));
+
+
 var survey = new Survey.Model(nextJSON);
 new Vue({ el: '#surveyContainer', data: { survey: survey } });
 
@@ -654,7 +658,7 @@ survey
                 .innerHTML = "There is a high likelihood that the person has not been abused";
         }
 
-        //Set List of abuses involved
+        //Set List of abuses involved with links
         var d = "/Information/Index";        
         if ((parseInt(result.data.selfPhysicalNext1, 10) + parseInt(result.data.selfPhysicalNext2, 10) + parseInt(result.data.selfPhysicalNext3, 10)) >=2) {
             nextAbuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
@@ -713,6 +717,8 @@ survey
             nextAbuseListLow.push('<a href="' + d + '" target="_blank">Neglect</a>')
         }
 
+
+        //if there are abuses wih points greater than 2
         if (nextAbuseList.length > 0) {
             document
                 .querySelector('#surveyResultNext')
@@ -726,6 +732,32 @@ survey
             document
                 .querySelector('#surveyResultAbuseNext')
                 .innerHTML += abusehtml;
+
+        }
+        //IF THERE  are no other abuses. will print the previous list
+        else if (nextAbuseList.length == 0) {
+            if (abuseList.length > 0) {
+                document
+                    .querySelector('#surveyResultNext')
+                    .innerHTML = "There are no high likelihood of anymore abuses other than the ones previously stated which are - ";
+                var abusehtml = '';
+                for (var i in abuseList) {
+                    abusehtml += abuseList[i] + '<br />';
+                }
+                abusehtml += '<br />'
+
+                document
+                    .querySelector('#surveyResultAbuseNext')
+                    .innerHTML += abusehtml;
+            }
+            else {
+                document
+                    .querySelector('#surveyResultNext')
+                    .innerHTML = "There is no likelihood of any other abuses happening. ";                              
+            }
+        }
+
+            //if there are abuses with points less than 2 are less likelihood
 
             if (nextAbuseListLow.length > 0) {
                 document
@@ -750,6 +782,6 @@ survey
                 .querySelector('#infobuttonNext')
                 .innerHTML += infobuttin;
 
-                }
+                
        
     });

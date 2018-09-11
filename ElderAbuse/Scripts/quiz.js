@@ -468,137 +468,33 @@ var surveyJSON = {
                     colCount: 2
                 }
             ]
+        },
+        {
+            name: "page1",
+            elements: [
+                {
+                    type: "text",
+                    name: "Postcode",
+                    title: "Kindly type your Post code below",
+                    commentText: "Eg:-3100",
+                    valueName: "Eg - 3001",
+                    isRequired: true,
+                    requiredErrorText: "Invalid Post Code",
+                    validators: [
+                        {
+                            type: "numeric",
+                            text: "Invalid Post code",
+                            minValue: 3000,
+                            maxValue: 4000
+                        }
+                    ],
+                    inputType: "number",
+                    size: 4,
+                    maxLength: 4
+                }
+            ]
         }
     ],
-    showQuestionNumbers: "off",
-    showProgressBar: "top"
-};
-
-var selfPhysicalNext = {
-    name: "Physical Abuse",
-    elements: [
-        {
-            type: "html",
-            name: "Physical",
-            html: "<h1> Physical Abuse <h1>"
-        },
-        {
-            type: "radiogroup",
-            name: "selfPhysicalNext1",
-
-            title: "Has anyone locked you up in a room or home, or made you stay forcefully in bed or tell you that you are sick when you were healthy ?",
-            isRequired: true,
-            choices: [
-                {
-                    value: "1",
-                    text: "Yes"
-                },
-                {
-                    value: "0",
-                    text: "No"
-                }
-            ],
-            colCount: 2
-        },
-        {
-            type: "radiogroup",
-            name: "selfPhysicalNext2",
-            title: "Have you found yourself with unexpected bruises, lacerations or other evidence of hits or punches?",
-            isRequired: true,
-            choices: [
-                {
-                    value: "1",
-                    text: "Yes"
-                },
-                {
-                    value: "0",
-                    text: "No"
-                }
-            ],
-            colCount: 2
-        }, {
-            type: "radiogroup",
-            name: "selfPhysicalNext3",
-            title: "Have you ever been forced to overuse or misuse any medications?",
-            isRequired: true,
-            choices: [
-                {
-                    value: "1",
-                    text: "Yes"
-                },
-                {
-                    value: "0",
-                    text: "No"
-                }
-            ],
-            colCount: 2
-        }
-    ]
-};
-
-var nextJSON = {
-    completedHtml: "<h1> Abused or not ? </h1>\n\n",
-    pages: [{
-        name: "Physical Abuse",
-        elements: [
-            {
-                type: "html",
-                name: "Physical",
-                html: "<h1> Physical Abuse <h1>"
-            },
-            {
-                type: "radiogroup",
-                name: "selfPhysicalNext1",
-
-                title: "Has anyone locked you up in a room or home, or made you stay forcefully in bed or tell you that you are sick when you were healthy ?",
-                isRequired: true,
-                choices: [
-                    {
-                        value: "1",
-                        text: "Yes"
-                    },
-                    {
-                        value: "0",
-                        text: "No"
-                    }
-                ],
-                colCount: 2
-            },
-            {
-                type: "radiogroup",
-                name: "selfPhysicalNext2",
-                title: "Have you found yourself with unexpected bruises, lacerations or other evidence of hits or punches?",
-                isRequired: true,
-                choices: [
-                    {
-                        value: "1",
-                        text: "Yes"
-                    },
-                    {
-                        value: "0",
-                        text: "No"
-                    }
-                ],
-                colCount: 2
-            }, {
-                type: "radiogroup",
-                name: "selfPhysicalNext3",
-                title: "Have you ever been forced to overuse or misuse any medications?",
-                isRequired: true,
-                choices: [
-                    {
-                        value: "1",
-                        text: "Yes"
-                    },
-                    {
-                        value: "0",
-                        text: "No"
-                    }
-                ],
-                colCount: 2
-            }
-        ]
-    }],
     showQuestionNumbers: "off",
     showProgressBar: "top"
 };
@@ -666,7 +562,7 @@ survey
             }
 
             localStorage.setItem('abuseListNext', JSON.stringify(abuseListNext));
-            localStorage.setItem('abuseList', abuseList);
+            localStorage.setItem('abuseList', JSON.stringify(abuseList));
 
 
             //Print the corresponding abuses
@@ -691,11 +587,14 @@ survey
                     .querySelector('#infobutton')
                     .innerHTML += infobuttin;
 
+                if (abuseListNext.length > 0) {
+
                 var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess yourself';
 
                 document
                     .querySelector('#NextSurvey')
-                    .innerHTML += nextSurvey;
+                        .innerHTML += nextSurvey;
+                }
             }
 
         }
@@ -769,11 +668,14 @@ survey
                     .querySelector('#infobutton')
                     .innerHTML += infobuttin;
 
+                if (abuseListNext.length > 0) {
+
                 var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess the person more';
 
                 document
                     .querySelector('#NextSurvey')
-                    .innerHTML += nextSurvey;
+                        .innerHTML += nextSurvey;
+                }
             }
 
 
