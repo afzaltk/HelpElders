@@ -86,7 +86,7 @@
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 20px;
-    border-bottom: 2px solid #1ab394;
+    border-bottom: 2px solid #0085b2;
     text-align:center;
 }
 
@@ -173,12 +173,12 @@
     .sv_main input[type="button"],
     .sv_main button {
         color: white;
-        background-color: #1ab394;
+        background-color: #0085b2;
     }
 
         .sv_main input[type="button"]:hover,
         .sv_main button:hover {
-            background-color: #179d82;
+            background-color: #126889;
         }
 
     .sv_main .sv_q_other input,
@@ -198,7 +198,7 @@
         .sv_main input[type="text"]:focus,
         .sv_main select:focus,
         .sv_main textarea:focus {
-            border: 1px solid #1ab394;
+            border: 1px solid #0085b2;
         }
 
     .sv_main .sv_select_wrapper {
@@ -206,7 +206,7 @@
     }
 
         .sv_main .sv_select_wrapper:before {
-            background-color: #1ab394;
+            background-color: #0085b2;
         }
 
     .sv_main .sv_header {
@@ -223,7 +223,7 @@
 
     .sv_main .sv_body {
         background-color: white;
-        border-top: 2px solid #1ab394;
+        border-top: 2px solid #0085b2;
     }
 
     .sv_main .sv_progress {
@@ -231,9 +231,8 @@
     }
 
     .sv_main .sv_progress_bar {
-        background-color: #1ab394;
-        font-size:20px;
-        
+        background-color: #0085b2;
+        font-size: 20px;
     }
 
     .sv_main .sv_p_root > .sv_row {
@@ -292,11 +291,11 @@
         }
 
     .sv_main .sv_q_imgsel.checked label > div {
-        background-color: #1ab394;
+        background-color: #0085b2;
     }
 
     .sv_main .sv_q_file_remove:hover {
-        color: #1ab394;
+        color: #0085b2;
     }
 
 .sv_main {
@@ -360,7 +359,7 @@
                 }
 
             .sv_main .sv_container .sv_body .sv_progress {
-                height: 0.3em;
+                height: 1em;
             }
 
                 .sv_main .sv_container .sv_body .sv_progress .sv_progress_bar {
@@ -467,6 +466,7 @@
                         -webkit-appearance: none;
                         -moz-appearance: none;
                         padding-right: 2.5em;
+                        margin-bottom: 10px
                     }
 
                         .sv_main .sv_container .sv_body .sv_p_root .sv_q .sv_select_wrapper select::-ms-expand {
