@@ -1,54 +1,34 @@
-﻿@model NewModel
+﻿@Scripts.Render("~/Scripts/quiz2.js")
+
 @Styles.Render("~/Content/quizStyle.css")
 
+
 @{
-    ViewBag.Title = "Questionnaire";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*<div id="surveyElement">
+        <survey :survey='survey' />
+    </div>*@
 
 
-@using (Html.BeginForm("Questionnaire", "Questions", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4></h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-        <div class="form-group">
-            <div class="questionArea">
-                <hr />
-                <div>
-                </div>
-                <div class="question">
-                    <span>  @Html.DisplayFor(newModel => newModel.questions.QuestionId). &nbsp; @Html.DisplayFor(newModel => newModel.questions.Question1)</span>
-                </div>
-            </div>
+<div id="surveyContainer"><survey :survey="survey"></survey></div>
 
-        </div>
+<script type="text/javascript" src="~/Scripts/quiz2.js"></script>
 
-        @Html.HiddenFor(newModel => newModel.responses.QuestionId, new { Value = @Model.questions.QuestionId })
-        <div class="form-group question questionArea">
 
-            @*@Html.EditorFor(newModel => newModel.responses.Answer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(newModel => newModel.responses.Answer, "", new { @class = "text-danger" })*@
-            <span>
-                <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "1", new { @class = "class_radio" }) Yes</label>   &nbsp &nbsp &nbsp
-                <label> @Html.RadioButtonFor(newModel => newModel.responses.Answer, "0", new { @class = "class_radio" }) No</label>
-            </span>
 
-        </div>
+<div class="abuseResult">
+    <div style="text-align:center" id="surveyResultNext"></div>
+    <div id="surveyResultAbuseNext"></div>
+    <div style="text-align:center" id="surveyResultNextLow"></div>
+    <div id="surveyResultAbuseNextLow"></div>
+    <div style="text-align:center;margin-bottom:20px;" id="infobuttonNext"></div>
+    <div style="margin-bottom:20px" id="furthersurvey"></div>
+</div>
 
-        <div class="form-group ">
-            <div class="btn_area">
-                <input type="submit" value="@ViewBag.ButtonValue" class="btn btn-success" /><br />
-
-            </div>
-        </div>
-    </div>
-}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

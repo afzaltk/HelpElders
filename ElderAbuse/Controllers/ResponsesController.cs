@@ -39,7 +39,7 @@ namespace ElderAbuse.Controllers
         // GET: Responses/Create
         public ActionResult Create()
         {
-            ViewBag.QuestionId = new SelectList(db.Questions, "QuestionId", "Question1");
+            //ViewBag.QuestionId = new SelectList(db.Questions, "QuestionId", "Question1");
             return View();
         }
 

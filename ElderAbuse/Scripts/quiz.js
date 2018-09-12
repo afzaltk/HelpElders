@@ -589,7 +589,7 @@ survey
 
                 if (abuseListNext.length > 0) {
 
-                var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess yourself';
+                var nextSurvey = 'Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess yourself';
 
                 document
                     .querySelector('#NextSurvey')
@@ -644,7 +644,7 @@ survey
             }
 
             localStorage.setItem('abuseListNext', JSON.stringify(abuseListNext));
-            localStorage.setItem('abuseList', abuseList);
+            localStorage.setItem('abuseList', JSON.stringify(abuseList));
 
             //Print the corresponding abuses
             if (abuseList.length > 0) {
@@ -670,7 +670,7 @@ survey
 
                 if (abuseListNext.length > 0) {
 
-                var nextSurvey = 'Kindly <a href="/Responses/Index">Click here</a> to go further assess the person more';
+                var nextSurvey = 'Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess the person more';
 
                 document
                     .querySelector('#NextSurvey')

@@ -1,4 +1,4 @@
-﻿@Scripts.Render("~/Scripts/app.js")
+﻿@*@Scripts.Render("~/Scripts/app.js")*@
 @Styles.Render("~/Content/style.css")
 
 @{
@@ -26,16 +26,17 @@
                 <div class="lp-blocks-inside">
                     <div class="lp-block block1">
                         <i class="glyphicon glyphicon-question-sign"></i>
-                        <a href="@Url.Action("Questionnaire","Questions", new { id=1 }) ">
+                        <a href="@Url.Action("Questionnaire","Questions", new { id = 1 }) ">
                             <div class="lp-block-content">
 
                                 <h5 class="lp-block-title" style="font-size:25px;font:bold">Questionnaire</h5>
                                 <div class="lp-block-text" style="text-align:justify;font-size:22px">Take a simple quiz to assess yourself regarding elder abuse. You can even use this quiz to assess someone that you are concerned about as well .</div>			
-                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Questionnaire","Questions", new { id=1 })"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
+                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Questionnaire","Questions", new { id = 1 })"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
                             </div>
                             </a>
                     </div><!-- lp-block -->
                     <div class="lp-block block2">
+                        @*<i class="flaticon-survey-1" style="display:inline;"></i>*@
                         <i class="glyphicon glyphicon-info-sign"></i>
                         <a href="@Url.Action("Index","Information")">
                             <div class="lp-block-content">
@@ -43,7 +44,7 @@
                                 <div class="lp-block-text" style="text-align:justify;font-size:22px">You can gain more support information like identifying Elder Abuse Types, &amp; the Signs of abuse and Risk factors. </div>
                                 <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Information")"> Read More <em class="screen-reader-text">"Information"</em> </a>
                             </div>
-                            </a>
+                        </a>
                     </div><!-- lp-block -->
                 </div>
             </section>
