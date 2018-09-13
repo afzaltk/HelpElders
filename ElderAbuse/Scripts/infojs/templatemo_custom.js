@@ -60,10 +60,17 @@ jQuery(document).ready(function($){
         $('#menu-container .homepage').fadeIn(1000);
 	    });
 		return false;
-	});
+    });
 
-	$(".main_menu a.templatemo_page5").click(function(){    
-    $('#menu-container .homepage').fadeOut(1000, function(){
+    $(".main_menu a.templatemo_homeprevent").click(function () {
+        $('#menu-container .portfolio').fadeOut(1000, function () {
+            $('#menu-container .homepage').fadeIn(1000);
+        });
+        return false;
+    });
+
+    $(".main_menu a.templatemo_page5").click(function () {
+        $('#menu-container .services').fadeOut(1000, function(){
         $('#menu-container .about').fadeIn(1000);
 	    });
 		return false;
