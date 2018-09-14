@@ -481,7 +481,7 @@ h2.resp-accordion {
     }
 
     .templatemo_graybg {
-        height: 397px;
+        height: 367px;
     }
 
     .templatemo_col37 {
@@ -543,8 +543,8 @@ h2.resp-accordion {
     .resp-vtabs ul.templatemo_tab li.resp-tab-active,
     .resp-vtabs ul.templatemo_testitab li,
     .resp-vtabs ul.templatemo_testitab li.resp-tab-active {
-        line-height: 79px;
-        height: 79px;
+        line-height: 49px;
+        height: 49px;
     }
 
     .templatemo_frame {
@@ -558,8 +558,8 @@ h2.resp-accordion {
     }
     /*.container { left: 50%; margin-left: -485px; }*/
     .templatemo_link, .templatemo_linkservice, .templatemo_linkcontact {
-        height: 124px;
-        line-height: 124px;
+        height: 92px;
+        line-height: 92px;
         padding: 0px;
     }
 
@@ -645,8 +645,8 @@ h2.resp-accordion {
     .resp-vtabs ul.templatemo_tab li.resp-tab-active,
     .resp-vtabs ul.templatemo_testitab li,
     .resp-vtabs ul.templatemo_testitab li.resp-tab-active {
-        line-height: 93px;
-        height: 93px;
+        line-height: 50px;
+        height: 50px;
     }
 
     .resp-vtabs .templatemo_tab li,
