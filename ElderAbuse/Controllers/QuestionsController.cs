@@ -17,9 +17,6 @@ namespace ElderAbuse.Controllers
         // GET: Questions
         public ActionResult Index()
         {
-
-            ViewBag.AbuseType = TempData["AbuseType"].ToString();
-            ViewBag.Priority = TempData["Priority"].ToString();
             return View();
         }
 

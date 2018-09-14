@@ -274,7 +274,21 @@
     <Content Include="fonts\infofont\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HTML\map.html" />
+    <Content Include="HTML\pic.html" />
+    <Content Include="HTML\simpleD.html" />
+    <Content Include="HTML\simpleD2.html" />
+    <Content Include="HTML\sortB.html" />
+    <Content Include="HTML\stackGroup.html" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\a.jpg" />
     <Content Include="img\bg.jpg" />
+    <Content Include="img\c.jpg" />
+    <Content Include="img\e.jpg" />
     <Content Include="img\helpblue.png" />
     <Content Include="img\helpred.png" />
     <Content Include="img\infoimg\bx_loader.gif" />
@@ -390,6 +404,8 @@
     <Content Include="Content\assets\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Content\assets\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="HTML\VIC_Medicare.csv" />
+    <Content Include="HTML\charges.csv" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\infojs\easyResponsiveTabs.js" />
@@ -410,6 +426,13 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\quiz2.js" />
+    <Content Include="Views\Questions\doughnut.html" />
+    <Content Include="Views\Questions\map.html" />
+    <Content Include="Views\Questions\pic.html" />
+    <Content Include="Views\Questions\simpleD.html" />
+    <Content Include="Views\Questions\simpleD2.html" />
+    <Content Include="Views\Questions\sortB.html" />
+    <Content Include="Views\Questions\stackGroup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -442,6 +465,8 @@
     <Content Include="Views\Information\Edit.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Questions\Postcode.cshtml" />
+    <Content Include="Views\Questions\charges.csv" />
+    <Content Include="Views\Questions\VIC_Medicare.csv" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
