@@ -1,18 +1,18 @@
-﻿
+﻿@Scripts.Render("~/Scripts/d3.v3.min.js")
 @{
     ViewBag.Title = "Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type='text/javascript' src="~/Scripts/d3.v3.min.js"></script>
 <style>
     .graph-container {
         position: relative;
         overflow: hidden;
         padding-top: 56.25%;
-        
-        
     }
+
     .graph-iframe {
         position: absolute;
         top: 0;
@@ -20,76 +20,75 @@
         width: 100%;
         height: 100%;
         border: 0
-        
     }
-	body {
-		    font-family: "Lato", sans-serif;
 
-		}
+    body {
+        font-family: "Lato", sans-serif;
+    }
 
-		.sidenav {
-		    height: 100%;
-		    width: 0;
-		    position: fixed;
-		    z-index: 1;
-		    top: 0;
-		    left: 0;
-		    background-color: #111;
-		    overflow-x: hidden;
-		    transition: 0.5s;
-		    padding-top: 60px;
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
 
-		}
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-		.sidenav a {
-		    padding: 8px 8px 8px 32px;
-		    text-decoration: none;
-		    font-size: 25px;
-		    color: #818181;
-		    display: block;
-		    transition: 0.3s;
-		}
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
 
-		.sidenav a:hover {
-		    color: #f1f1f1;
-		}
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
 
-		.sidenav .closebtn {
-		    position: absolute;
-		    top: 0;
-		    right: 25px;
-		    font-size: 36px;
-		    margin-left: 50px;
-		}
-                    #main {
-		    transition: margin-left .5s;
-		    padding: 16px;
-		}
-		
-	        body { margin:0;
-		font-family: sans-serif;}
-		.hero-image{
-		background-image: url("~/img/a.jpg");
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+    }
 
-	          background-color: #cccccc;
-		height: 600px;
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-		  -webkit-background-size: cover;
-		 overflow: hidden;
-		  position: relative;
-		    }
-		  .hero-text {
-		  text-align: center;
-		  position: absolute;
-		  top: 50%;
-		  left: 50%;
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
 
-		  transform: translate(-50%, -50%);
+    .hero-image {
+        background-image: url("~/img/a.jpg");
+        background-color: #cccccc;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        overflow: hidden;
+        position: relative;
+    }
 
-}
-
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 </style>
 
 <style>
@@ -147,9 +146,7 @@
         </p>
     </div>
     <div class="graph-container">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD2.html")" frameborder="0" scrolling="no">
-                
-                </iframe>
+        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD2.html")" frameborder="0" scrolling="no"></iframe>
     </div>
 
 
@@ -173,7 +170,6 @@
 <div class="row">
     <div class="graph-container col-lg-12">
         <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD.html")" frameborder="0" scrolling="no"
-               
                 align="top"></iframe>
     </div>
 </div>
@@ -183,14 +179,14 @@
 <div class="row">
 
     @*<div class="col-lg-2" style="background-color:lightgrey;">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <p align="center" style="font-size:28px;color:steelblue;"><strong><i class="fa fa-file-text-o"></i> Victoria 2016 Abuse situation</strong></p>
-        <br>
-        <p style="font-size:22px;">
-            According to the bar chart and pie chart shown above, it illustrates that..............
-            Elder abuse, as described by the WHO
-        </p>
-    </div>*@
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <p align="center" style="font-size:28px;color:steelblue;"><strong><i class="fa fa-file-text-o"></i> Victoria 2016 Abuse situation</strong></p>
+            <br>
+            <p style="font-size:22px;">
+                According to the bar chart and pie chart shown above, it illustrates that..............
+                Elder abuse, as described by the WHO
+            </p>
+        </div>*@
     <div class="col-lg-5" style="background-color:#e9ecef;">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <p align="center" style="font-size:25px;color:steelblue;"><strong> Abuse situation</strong></p>
@@ -205,8 +201,7 @@
     </div>
     <div class="graph-container col-lg-5">
         <iframe class="graph-iframe" src="@Url.Content("~/HTML/doughnut.html")" frameborder="0" scrolling="no"
-       
-        align="bottom"></iframe>
+                align="bottom"></iframe>
     </div>
 </div>
 
@@ -221,7 +216,6 @@
 
     <div class="graph-container col-lg-6">
         <iframe class="graph-iframe" src="@Url.Content("~/HTML/sortB.html")" frameborder="0" scrolling="no"
-               
                 align="right"></iframe>
     </div>
 </div>
@@ -229,15 +223,15 @@
 <br>
 
 @*<div class="row">
-    <div class="col-lg-12">
-        <iframe src="@Url.Content("~/HTML/map.html")" frameborder="0" scrolling="no"
-                style="height: 600px;
-                                            width: 100%; float: right; " height="600" width="100%"
-                align="top"></iframe>
+        <div class="col-lg-12">
+            <iframe src="@Url.Content("~/HTML/map.html")" frameborder="0" scrolling="no"
+                    style="height: 600px;
+                                                width: 100%; float: right; " height="600" width="100%"
+                    align="top"></iframe>
 
 
-    </div>
-</div>*@
+        </div>
+    </div>*@
 <br>
 <br>
 
