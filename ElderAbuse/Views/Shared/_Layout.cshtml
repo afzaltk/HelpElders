@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel='stylesheet' id='fluida-themefonts-css' href='~/content/fontfaces.css' type='text/css' media='all' />
-    @*<link rel='stylesheet' id='fluida-googlefonts-css' href='//fonts.googleapis.com/css?family=Open+Sans%7COpen+Sans+Condensed300%7COpen+Sans%3A300%7COpen+Sans+Condensed%3A300%2C300%7COpen+Sans%3A700&#038;ver=1.5.6.1' type='text/css' media='all' />*@
     <link rel="stylesheet" id='fluida-main-css' href="~/Content/style.css" type='text/css' media='all' />
     <link rel='stylesheet' id='fluida-main-inline-css' type='text/css' href="~/Content/inline.css" />
     <script type='text/javascript' src="~/Scripts/jquery.js"></script>
@@ -40,62 +39,6 @@
 
 <body class="home page-template-default page page-id-2 fluida-landing-page fluida-image-one fluida-caption-two fluida-totop-normal fluida-stripped-table fluida-fixed-menu fluida-responsive-headerimage fluida-responsive-featured fluida-magazine-two fluida-magazine-layout fluida-comment-placeholder fluida-elementshadow fluida-normalizedtags fluida-article-animation-fade fluida-menu-animation"  itemscope itemtype="http://schema.org/WebPage">
 
-    @*<header id="masthead" class="cryout" itemscope itemtype="http://schema.org/WPHeader" role="banner">
-
-        <div id="site-header-main">
-            <div id="site-header-main-inside">
-                <div id="branding">
-                    <div id="site-text"><h1 itemprop="headline" id="site-title">
-                        <span>
-                        <a href="@Url.Action("Index","Home")" title="Help Elders Live Peacefully" rel="home">
-                            H.E.L.P
-                            </a>
-                            </span>
-                         </h1>
-                    <span id="site-description" itemprop="description">Help Elders Live Peacefully</span></div>
-                </div>
-            <!-- #branding -->
-
-
-
-                <nav  id="access" role="navigation" aria-label="Primary Menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-
-                    <div  id="navbarSupportedContent">
-                        <ul id="prime_nav" >
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-64">@Html.ActionLink("Home", "Index", "Home", null, new { hidefocus = "hidefocus" })</li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">@Html.ActionLink("Questionnaire", "Create", "Responses", new { id = 1 }, new { hidefocus = "hidefocus" })</li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65">@Html.ActionLink("Information", "Index", "Information", null, new { hidefocus = "hidefocus" })</li>
-                        </ul>
-                    </div>
-                </nav><!-- #access -->*@
-    @*<div class="container-fluid">
-        <!-- Second navbar for categories -->
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                        <span class="sr-only"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="@Url.Action("Index","Home")">H.E.L.P</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                        <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Questionnaire</a></li>
-                        <li><a href="@Url.Action("Index","Information")">Information</a></li>
-
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container -->
-        </nav><!-- /.navbar -->
-        </div>*@
-
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-no-bg" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -113,6 +56,7 @@
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Questionnaire</a></li>
                     <li><a href="@Url.Action("Index","Information")">Information</a></li>
+                    <li><a href="@Url.Action("Index","Questions")">Infographs</a></li>
                 </ul>
             </div>
         </div>

@@ -1,30 +1,251 @@
-﻿@model IEnumerable<ElderAbuse.Models.Question>
-@Styles.Render("~/Content/quizStyle.css")
-
+﻿
 @{
     ViewBag.Title = "Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .graph-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+        
+        
+    }
+    .graph-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0
+        
+    }
+	body {
+		    font-family: "Lato", sans-serif;
 
-<h2>Questionnaire Result</h2>
+		}
 
+		.sidenav {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    left: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		    padding-top: 60px;
 
+		}
 
+		.sidenav a {
+		    padding: 8px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: #818181;
+		    display: block;
+		    transition: 0.3s;
+		}
 
+		.sidenav a:hover {
+		    color: #f1f1f1;
+		}
 
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+                    #main {
+		    transition: margin-left .5s;
+		    padding: 16px;
+		}
+		
+	        body { margin:0;
+		font-family: sans-serif;}
+		.hero-image{
+		background-image: url("~/img/a.jpg");
 
-<div style="font-size:30px">
-    Based on the answers that you gave, there is a @ViewBag.Priority likelihood that you are
-    <div class="answerArea" style="font:bold;font-size:40px;color:red; justify-content: center;text-align:center">@ViewBag.AbuseType</div>
+	          background-color: #cccccc;
+		height: 600px;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  -webkit-background-size: cover;
+		 overflow: hidden;
+		  position: relative;
+		    }
+		  .hero-text {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+
+		  transform: translate(-50%, -50%);
+
+}
+
+</style>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+</style>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Go to Top</button>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<div class="row" style="margin-top:100px;margin:10px">
+    <div>
+        <p align="left" style="font-size:30px;color:steelblue;"><strong><i class="fa fa-pie-chart" style="font-size:48px;"></i> Australia violence condition</strong></p>
+        <br>
+        <p align="left" style="font-size:18px;text-align:justify">
+            Elder abuse is commonly defined to refer to abuse by people "in a position of trust". Although this will include paid carers, elder abuse is often committed by a family member of the older person—notably, by adult children, but also the older person’s spouse or partner. Elder abuse will therefore often also be family or domestic violence. While not as ‘gendered’ as family violence, elder abuse is suffered more often by women than men, and not only because women live longer than men.
+
+        </p>
+    </div>
+    <div class="graph-container">
+        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD2.html")" frameborder="0" scrolling="no">
+                
+                </iframe>
+    </div>
 
 
 </div>
 
-<div style="font-size:30px;text-align:center">
-    Would you like to further assess with more questions ? <br/>
-    <input type="button" value="Yes" class="btn btn-success" onclick="location.href='@Url.Action("FurtherQuestions", "Questions")'" />
-    &nbsp;&nbsp;&nbsp;<input type="button" value="No" class="btn btn-warning" onclick="location.href='@Url.Action("Postcode", "Questions", new { Likelihood = ViewBag.Priority, AbuseType = ViewBag.AbuseType })'" />
 
+<div class="row">
+    <div class="col-lg-5">
 
-
+        <img src="~/img/c.jpg" class="img-rounded" alt="Cinque Terre" width=100% height=auto>
+    </div>
+    <div class="col-lg-7" style="background-color:#e9ecef;">
+        <p align="center" style="font-size:30px;color:steelblue;"><strong>Abuse situation based on various States</strong></p>
+        <br>
+        <p style="font-size:22px;">
+            According to the bar chart and pie chart shown above, it illustrates that......................................
+            Elder abuse, as described by the WHO, is ‘a single, or repeated act, or lack of appropriate action, occurring within any relationship where there is an expectation of trust which causes harm or distress to an older person’.6 It can take various forms, such as physical abuse, psychological or emotional abuse, financial abuse, sexual abuse, and neglect.
+        </p>
+    </div>
 </div>
+<div class="row">
+    <div class="graph-container col-lg-12">
+        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD.html")" frameborder="0" scrolling="no"
+               
+                align="top"></iframe>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+
+    @*<div class="col-lg-2" style="background-color:lightgrey;">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <p align="center" style="font-size:28px;color:steelblue;"><strong><i class="fa fa-file-text-o"></i> Victoria 2016 Abuse situation</strong></p>
+        <br>
+        <p style="font-size:22px;">
+            According to the bar chart and pie chart shown above, it illustrates that..............
+            Elder abuse, as described by the WHO
+        </p>
+    </div>*@
+    <div class="col-lg-5" style="background-color:#e9ecef;">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <p align="center" style="font-size:25px;color:steelblue;"><strong> Abuse situation</strong></p>
+        <br>
+        <p style="font-size:22px;">
+            According to the bar chart and pie chart shown above, it illustrates that......................................
+            Elder abuse, as described by the WHO
+        </p>
+
+
+
+    </div>
+    <div class="graph-container col-lg-5">
+        <iframe class="graph-iframe" src="@Url.Content("~/HTML/doughnut.html")" frameborder="0" scrolling="no"
+       
+        align="bottom"></iframe>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-lg-6">
+        <iframe src="@Url.Content("~/HTML/pic.html")" frameborder="0" scrolling="no"
+                style="height: 600px;
+                                            width: 100%; float: right; " height="600" width="100%"
+                align="left"></iframe>
+    </div>
+
+    <div class="graph-container col-lg-6">
+        <iframe class="graph-iframe" src="@Url.Content("~/HTML/sortB.html")" frameborder="0" scrolling="no"
+               
+                align="right"></iframe>
+    </div>
+</div>
+<br>
+<br>
+
+@*<div class="row">
+    <div class="col-lg-12">
+        <iframe src="@Url.Content("~/HTML/map.html")" frameborder="0" scrolling="no"
+                style="height: 600px;
+                                            width: 100%; float: right; " height="600" width="100%"
+                align="top"></iframe>
+
+
+    </div>
+</div>*@
+<br>
+<br>
+
+<div class="row">
+    <div class="col-lg-12" style="background-color:#e9ecef;">
+        <footer class="container-fluid text-center">
+
+            <p style="font-size:14px;color:dark;">H.E.L.P is a tool for senior and general public » If you have any questions, please email us <a href="thesentials@gmail.com" title="thesentials@gmail.com">thesentials@gmail.com</a></p>
+        </footer>
+
+    </div>
+</div>
+

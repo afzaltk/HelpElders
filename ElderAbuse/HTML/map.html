@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div class="col-lg-12 mb-5">
+					
+                    <div class="row">
+                        <div class="form-group col-xl-4">
+                            <input type="text" id="localtion" name="localtion" class="form-control" placeholder="Search Location..." required/>
+                        </div>
+                       
+		 <div class="form-group col-xl-4">
+                            <label id="lblResult"></label>
+                            <button type="submit" class="btn tm-btn-send  pull-right" onclick="codeAddress()">Search Medicare by enter POSTCODE</button>
+                        </div>
+		</div>
+				</div>
+	
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBREuFDLAYSrxjj69koGsHLX_VejDMKWuE&callback=initialize" type="text/javascript"></script>
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<style type="text/css">
+	html, body, #map {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="font-size:20px;">Victoria Medicare location</h1>
+	<div id="map"></div>
+	<script type="text/javascript">
+	var map;
+	function initialize(){
+		var myLatlng = new google.maps.LatLng(-37.8136, 144.9631);
+		var mapOptions = {
+			zoom: 10,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		map = new google.maps.Map(document.getElementById("map"),mapOptions);
+		
+		var centerMarker = new google.maps.Marker(
+		{
+			position: myLatlng,
+			title: "hello,world!",
+			map:map
+		}
+		);
+
+		var bounds = new google.maps.LatLngBounds();
+		bounds.extend(myLatlng);
+		var latLng;
+		var markers = [];
+		d3.csv("VIC_Medicare.csv",function(error,data){
+			for(var i=0; i<data.length;i++){
+				var no = data[i].SITE_NAME;
+				var latitude = data[i].LATITUDE;
+				var longitude = data[i].LONGITUDE;
+				var open = data[i].Open;
+				var close = data[i].Close;
+				bounds.extend(new google.maps.LatLng(latitude, longitude));
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(latitude, longitude),
+					map:map,
+					title: no
+				});
+				addInfoWindow(marker,(open,close));
+				markers.push(marker);
+			}
+		});
+		map.fitBounds(bounds);
+	}
+
+	function addInfoWindow(marker,info){
+		var infowindow = new google.maps.InfoWindow({
+			content: 'The close time is '+info
+		});
+		google.maps.event.addListener(marker,'click', function() {
+			infowindow.open(map, marker);
+		});
+	}
+	</script>
+	
+</body>
+</html>
