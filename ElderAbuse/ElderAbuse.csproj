@@ -293,8 +293,15 @@
     <Content Include="img\helpred.png" />
     <Content Include="img\infoimg\bx_loader.gif" />
     <Content Include="img\infoimg\close.png" />
+    <Content Include="img\infoimg\elder.jpg" />
+    <Content Include="img\infoimg\hands.jpg" />
+    <Content Include="img\infoimg\iphone.jpg" />
     <Content Include="img\infoimg\loading.gif" />
+    <Content Include="img\infoimg\money.jpg" />
+    <Content Include="img\infoimg\mortar.jpg" />
     <Content Include="img\infoimg\next.png" />
+    <Content Include="img\infoimg\old.jpg" />
+    <Content Include="img\infoimg\people.jpg" />
     <Content Include="img\infoimg\portfolio\templatemo_portfolio01.jpg" />
     <Content Include="img\infoimg\portfolio\templatemo_portfolio02.jpg" />
     <Content Include="img\infoimg\portfolio\templatemo_portfolio03.jpg" />
@@ -322,6 +329,8 @@
     <Content Include="img\infoimg\templatemo_testimonial3.jpg" />
     <Content Include="img\infoimg\templatemo_testi_arrow.png" />
     <Content Include="img\infoimg\templatemo_vision.jpg" />
+    <Content Include="img\infoimg\tie.jpg" />
+    <Content Include="img\infoimg\tree.jpg" />
     <Content Include="img\static.jpg" />
     <Content Include="Models\HelpEldersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
