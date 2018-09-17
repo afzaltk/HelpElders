@@ -20,45 +20,12 @@ namespace ElderAbuse.Controllers
             return View();
         }
 
-        // GET: Questions
-        public ActionResult Postcode(String Priority, String AbuseType)
-        {
-            
-            ViewBag.AbuseType = AbuseType;
-            ViewBag.Priority = Priority;
-            return View();
-        }
-
+        
         // GET: Questions/Questionnaire/5
         public ActionResult Questionnaire(int? id)
         {
-            if (id < 12)
-            {
-
-                ViewBag.ButtonValue = "Next Question";
-            }
-            else if (id == 12)
-            {
-
-                ViewBag.ButtonValue = "Submit";
-            }
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            else if (id == 0)
-            {
-                return RedirectToAction("Index");
-            }
-            //Question question = db.Questions.Find(id);
-            NewModel newModel = new NewModel();
-            newModel.questions = db.Questions.Find(id);
-
-            if (newModel.questions == null)
-            {
-                return HttpNotFound();
-            }
-            return View(newModel);
+            
+            return View();
         }
 
         // GET: Questions/Create
@@ -68,23 +35,6 @@ namespace ElderAbuse.Controllers
         }
 
    
-
-        // POST: Questions/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "QuestionId,Question1")] Question question)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Questions.Add(question);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Create");
-        //    }
-
-        //    return View(question);
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]

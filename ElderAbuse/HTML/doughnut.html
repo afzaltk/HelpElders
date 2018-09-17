@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <script src="https://d3js.org/d3.v4.min.js"></script>
+
   <style>
 
 body {
@@ -57,16 +58,14 @@ text {
 
 <body>
 
-  <form>
-    <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option1"> 18 to 24 years</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option2">25 to 34 years</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option3">35 to 44 years</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option4">45 to 54 years</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option5">55 to 64 years</label><br>
-    <label><input type="radio" name="dataset" id="dataset" value="option6">65 years and over</label>
-</form>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+    <form>
+        <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label><br>
+        <label><input type="radio" name="dataset" id="dataset" value="option1"> Physical violence</label><br>
+        <label><input type="radio" name="dataset" id="dataset" value="option2">Emotional abuse</label><br>
+        <label><input type="radio" name="dataset" id="dataset" value="option3">other types of abuse</label>
+
+    </form>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
   <script>
     d3.select("input[value=\"total\"]").property("checked", true);
 
@@ -117,42 +116,39 @@ var color = d3.scale.ordinal()
 
 
 datasetTotal = [
-        {label:"Physical violence ", value:10.13}, 
-        {label:"Total violence", value:12.91}, 
-        {label:"Emotional abuse", value:64.94}
+    { label: "18 to 24 years", value: 69.8 },
+    { label: "25 to 34 years", value: 192.6 },
+    { label: "35 to 44 years", value: 166.7 },
+    { label: "45 to 54 years", value: 153.9 },
+    { label: "55 to 64 years", value: 87.8 },
+    { label: "65 years and over", value: 65.7 }
         ];
 
 datasetOption1 = [
-        {label:"Physical violence", value:14.9}, 
-        {label:"Total violence", value:17.9}, 
-        {label:"Emotional abuse", value:37}
+    { label: "18 to 24 years", value: 14.9 },
+    { label: "25 to 34 years", value: 36.2 },
+    { label: "35 to 44 years", value: 29.5 },
+    { label: "45 to 54 years", value: 23.9 },
+    { label: "55 to 64 years", value: 10.1 },
+    { label: "65 years and over", value: 10.3 }
         ];
 
 datasetOption2 = [
-        {label:"Physical violence", value:36.2}, 
-        {label:"Total violence", value:51.2}, 
-        {label:"Emotional abuse", value:105.2}
+    { label: "18 to 24 years", value: 37 },
+    { label: "25 to 34 years", value: 105.2 },
+    { label: "35 to 44 years", value: 104.7 },
+    { label: "45 to 54 years", value: 104 },
+    { label: "55 to 64 years", value: 63.4 },
+    { label: "65 years and over", value: 40.5 }
         ];
 
 datasetOption3 = [
-        {label:"Physical violence", value:29.5}, 
-        {label:"Total violence", value:32.5}, 
-        {label:"Emotional abuse", value:104.7}
-        ];
-datasetOption4 = [
-        {label:"Physical violence", value:23.9}, 
-        {label:"Total violence", value:26}, 
-        {label:"Emotional abuse", value:104}
-        ];
-datasetOption5 = [
-        {label:"Physical violence", value:10.1}, 
-        {label:"Total violence", value:14.3}, 
-        {label:"Emotional abuse", value:63.4}
-        ];
-datasetOption6 = [
-        {label:"Physical violence", value:10.3}, 
-        {label:"Total violence", value:14.9}, 
-        {label:"Emotional abuse", value:40.5}
+    { label: "18 to 24 years", value: 17.9 },
+    { label: "25 to 34 years", value: 51.2 },
+    { label: "35 to 44 years", value: 32.5 },
+    { label: "45 to 54 years", value: 26 },
+    { label: "55 to 64 years", value: 14.2 },
+    { label: "65 years and over", value: 14.9 }
         ];
 change(datasetTotal);
 
@@ -179,18 +175,7 @@ function selectDataset()
 	{
 		change(datasetOption3);
 	}
-	else if (value == "option4")
-	{
-		change(datasetOption4);
-	}
-	else if (value == "option5")
-	{
-		change(datasetOption5);
-	}
-	else if (value == "option6")
-	{
-		change(datasetOption6);
-	}
+	
 }
 
 function change(data) {

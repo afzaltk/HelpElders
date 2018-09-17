@@ -1,11 +1,9 @@
-﻿@Scripts.Render("~/Scripts/d3.v3.min.js")
-@{
+﻿@{
     ViewBag.Title = "Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script type='text/javascript' src="~/Scripts/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <style>
     .graph-container {
         position: relative;
@@ -140,8 +138,8 @@
     <div style="padding-top:100px">
         <p align="left" style="font-size:30px;color:steelblue;"><strong><i class="fa fa-pie-chart" style="font-size:48px;"></i> Australia violence condition</strong></p>
         <br>
-        <p align="left" style="font-size:18px;text-align:justify">
-            Elder abuse is commonly defined to refer to abuse by people "in a position of trust". Although this will include paid carers, elder abuse is often committed by a family member of the older person—notably, by adult children, but also the older person’s spouse or partner. Elder abuse will therefore often also be family or domestic violence. While not as ‘gendered’ as family violence, elder abuse is suffered more often by women than men, and not only because women live longer than men.
+        <p align="left" style="font-size:22px;text-align:justify">
+            In comparing population numbers from around the world, it is projected that there are over 20,000 unreported cases of abuse, neglect, and exploitation in Victoria per year and approximately 100,000 throughout Australia per year. Other estimates include 20,000 for NSW and 25,000 for Queensland. Almost four times as many new incidents of abuse, neglect, and exploitation are not reported as those that were reported to and substantiated by adult protective services agencies and/or ombudsman entities. These predictions are also accurate for Australia. Thus 20,000 become 80,000. 100,000 become 400,000.
 
         </p>
     </div>
@@ -152,6 +150,15 @@
 
 </div>
 
+<br>
+
+<style>
+    div.ex1 {
+        width: 100%;
+        height: 400px;
+        overflow: auto;
+    }
+</style>
 
 <div class="row">
     <div class="col-lg-5">
@@ -159,45 +166,40 @@
         <img src="~/img/c.jpg" class="img-rounded" alt="Cinque Terre" width=100% height=auto>
     </div>
     <div class="col-lg-7" style="background-color:#e9ecef;">
-        <p align="center" style="font-size:30px;color:steelblue;"><strong>Abuse situation based on various States</strong></p>
-        <br>
-        <p style="font-size:22px;">
-            According to the bar chart and pie chart shown above, it illustrates that......................................
-            Elder abuse, as described by the WHO, is ‘a single, or repeated act, or lack of appropriate action, occurring within any relationship where there is an expectation of trust which causes harm or distress to an older person’.6 It can take various forms, such as physical abuse, psychological or emotional abuse, financial abuse, sexual abuse, and neglect.
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="graph-container col-lg-12">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD.html")" frameborder="0" scrolling="no"
-                align="top"></iframe>
-    </div>
-</div>
-
-<br>
-
-<div class="row">
-
-    @*<div class="col-lg-2" style="background-color:lightgrey;">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <p align="center" style="font-size:28px;color:steelblue;"><strong><i class="fa fa-file-text-o"></i> Victoria 2016 Abuse situation</strong></p>
+        <div class="ex1">
+            <p align="center" style="font-size:30px;color:steelblue;"><strong>Abuse situation based on various States</strong></p>
             <br>
-            <p style="font-size:22px;">
-                According to the bar chart and pie chart shown above, it illustrates that..............
-                Elder abuse, as described by the WHO
+            <p style="font-size:22px;text-align:justify">
+                According to the recently survey, the age range for older women in that study was 55 plus, and the analysis was framed to assess violence against women, focusing on sexual assault by any perpetrator, and partner violence involving physical assault, physical threat, sexual assault and sexual threat by a cohabiting or intimate partner.
+                In Queensland, calls to the EAPU helpline have increased substantially over the period that it has been operating, from just over 200 in 2000-01 to nearly 1,300 in 2014-15 (Spike, 2015; see further discussion in sections 3.2-3.4). The EAPU analysis of call data from the past five years provides a profile of the elder abuse concerns notified to the helpline. The calls were mostly in relation to female victims (68% female cf. 31 male cf. 1% unknown). The most common age group of victims was 80-84 years (23%), followed by 75-79 years (16%) and 85-89 years (15%). Perpetrators were male in 50% of calls and female in 45% (unknown: 5%). Where perpetrator age was known, the most common age group was 50-54 years (17%).
             </p>
-        </div>*@
+        </div>
+    </div>
+</div>
+<style>
+
+    div.ex3 {
+        width: 100%;
+        height: 560px;
+        overflow: auto;
+    }
+</style>
+
+
+<div class="row">
+
     <div class="col-lg-5" style="background-color:#e9ecef;">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <p align="center" style="font-size:25px;color:steelblue;"><strong> Abuse situation</strong></p>
+        <p align="center" style="font-size:25px;color:steelblue;"><strong> Abuse situation in Victoria</strong></p>
         <br>
-        <p style="font-size:22px;">
-            According to the bar chart and pie chart shown above, it illustrates that......................................
-            Elder abuse, as described by the WHO
-        </p>
+        <div class="ex3">
+            <p style="font-size:22px;text-align:justify">
+                In Victoria, a recent study by the National Ageing Research Institute (Joosten et al., 2015),commissioned by Seniors Rights Victoria (SRV), was based on an analysis of data derived from records of calls to a helpline operated by SRV between July 2012 and June 2014. Of 755 calls,455 involved discussion of a matter that raised elder abuse issues (including some that raised multiple types of abuse), and 236 raised issues not relating to elder abuse. The most common concerns raised in relation to elder abuse were about financial abuse (61%) and psychological or emotional abuse (59%). Physical abuse was raised much less frequently (16%), as were social abuse (9%), neglect (1%) and sexual abuse (0.4%). Elder abuse issues were most commonly reported in relation to female victims (73% females cf. 28% males) and the most commonly reported perpetrators were male (60% males cf. 40% females). The majority of perpetrators of the abuse reported to the SRV helpline were children of the victim (67%), with sons responsible for 40% of incidents reported, and daughters for 27%. Spouses were reported to be responsible in small proportions of cases (5% husbands and 3% wives).
+
+            </p>
 
 
-
+        </div>
     </div>
     <div class="graph-container col-lg-5">
         <iframe class="graph-iframe" src="@Url.Content("~/HTML/doughnut.html")" frameborder="0" scrolling="no"
@@ -206,6 +208,17 @@
 </div>
 
 <br>
+<br>
+<div class="row">
+    <div class="col-lg-6">
+        <img src="@Url.Content("~/img/heatmap.jpg")" class="img-rounded" alt="Cinque Terre" width=auto height=400px>
+    </div>
+    <div class="col-lg-6">
+        <img src="@Url.Content("~/img/line.jpg")" class="img-rounded" alt="Cinque Terre" width=auto height=400px>
+    </div>
+
+</div>
+
 <div class="row">
     <div class="col-lg-6">
         <iframe src="@Url.Content("~/HTML/pic.html")" frameborder="0" scrolling="no"
@@ -236,7 +249,7 @@
 <br>
 
 <div class="row">
-    <div class="col-lg-12" style="background-color:#e9ecef;">
+    <div class="col-lg-12" style="background-color:#e9ecef;height:20px">
         <footer class="container-fluid text-center">
 
             <p style="font-size:14px;color:dark;">H.E.L.P is a tool for senior and general public » If you have any questions, please email us <a href="thesentials@gmail.com" title="thesentials@gmail.com">thesentials@gmail.com</a></p>

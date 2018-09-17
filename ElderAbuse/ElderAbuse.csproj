@@ -257,7 +257,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Scripts\d3.v3.min.js" />
     <Content Include="Content\fontfaces.css" />
     <Content Include="Content\infocss\animate.css" />
     <Content Include="Content\infocss\bootstrap.min.css" />
@@ -290,6 +289,7 @@
     <Content Include="img\bg.jpg" />
     <Content Include="img\c.jpg" />
     <Content Include="img\e.jpg" />
+    <Content Include="img\heatmap.jpg" />
     <Content Include="img\helpblue.png" />
     <Content Include="img\helpred.png" />
     <Content Include="img\infoimg\bx_loader.gif" />
@@ -332,6 +332,7 @@
     <Content Include="img\infoimg\templatemo_vision.jpg" />
     <Content Include="img\infoimg\tie.jpg" />
     <Content Include="img\infoimg\tree.jpg" />
+    <Content Include="img\line.jpg" />
     <Content Include="img\static.jpg" />
     <Content Include="Models\HelpEldersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -440,17 +441,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Questions\Create.cshtml" />
-    <Content Include="Views\Questions\Delete.cshtml" />
     <Content Include="Views\Questions\Questionnaire.cshtml" />
     <Content Include="Views\Questions\FurtherQuestions.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
     <Content Include="Views\Responses\Create.cshtml" />
     <Content Include="Views\Responses\Delete.cshtml" />
-    <Content Include="Views\Responses\Details.cshtml" />
     <Content Include="Views\Responses\Edit.cshtml" />
     <Content Include="Views\Responses\Index.cshtml" />
     <Content Include="Views\Information\Create.cshtml" />
