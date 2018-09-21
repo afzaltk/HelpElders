@@ -11,12 +11,12 @@
         <main id="main" role="main" class="main">
 
             <section class="lp-staticslider">
-                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/static.jpg" style="margin-top:70px;max-width:100%;height:auto"/>
+                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/static.jpg" style="margin-top:70px;max-width:100%;height:auto" />
                 <div class="staticslider-caption">
-                    <h2 class="staticslider-caption-title" style="font-size:4vw">H.E.L.P</h2>	
-                    
-                    <span class="staticslider-sep"></span>		
-                    <div class="staticslider-caption-text"  style="font-size:3vw">Help Elders Live Peacefully</div>	
+                    <h2 class="staticslider-caption-title" style="font-size:4vw">H.E.L.P</h2>
+
+                    <span class="staticslider-sep"></span>
+                    <div class="staticslider-caption-text" style="font-size:3vw">Help Elders Live Peacefully</div>
                     <div class="staticslider-caption-buttons">
                     </div>
                 </div>
@@ -25,40 +25,75 @@
                 <div class="container">
                     <h2 style="text-align:center;font-size:30px"> Elder Abuse in the Society</h2>
                     <p class="lead" style="text-align:justify;max-width:1100px">
+                        Everyone deserves to live happily, peacefully, safely and in dignity. Elders need them more, as they are unable to stand up for themselves, are frail and weak.
                         According to international statistics, it is likely that 2% to 10% of older Australians are experiencing elder abuse in any given year considering the prevalence of neglect being quite high.
-                        The statistics show that most abuses are gone unreported due to the fact that the people do not know or understand that they are being abused.The elders affected by abuse are prone to physical, mental and financial problems. 
+                        The statistics show that most abuses are gone unreported due to the fact that the people do not know or understand that they are being abused.The elders affected by abuse are prone to physical, mental and financial problems.
                         Here we provide an assessing tool that helps one to assess themselves or any elder that one knows, to understand the signs of abuse and to ensure that the abuse is reported or
                         circumvented.
-<p><a class="lp-block-readmore" style="text-align: center;display:block;font-size:20px" href="@Url.Action("Index","Information")">Read more</a></p>
+                    <p><a class="lp-block-readmore" style="text-align: center;display:block;font-size:20px" href="@Url.Action("Index","Information")">Read more</a></p>
                 </div>
             </section>
 
-            <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-2" style="background-color:#FAFBFC">
-                <div class="lp-blocks-inside">
-                    <div class="lp-block block1">
-                        <i class="glyphicon glyphicon-pencil"></i>
-                        <a href="@Url.Action("Questionnaire","Questions", new { id = 1 }) ">
-                            <div class="lp-block-content">
 
-                                <h5 class="lp-block-title" style="font-size:25px;font:bold">Assessment Quiz</h5>
-                                <div class="lp-block-text" style="text-align:justify;font-size:22px">Take a simple quiz to assess yourself regarding elder abuse. You can even use this quiz to assess someone that you are concerned about as well .</div>			
-                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Questionnaire","Questions", new { id = 1 })"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
-                            </div>
+
+
+
+
+
+            @*<section>
+                <div class="container" style="background-color:aliceblue">
+                    <h2 style="text-align:center;font-size:30px"> Elder Abuse in the Society</h2>
+                    <p class="lead" style="text-align:justify;max-width:1100px">
+                        Everyone deserves to live happily, peacefully, safely and in dignity. Elders need them more, as they are unable to stand up for themselves, are frail and weak.
+                        <br />
+                        <ul>
+                            Key Facts :
+                            <li>Around 1 in 6 people 60 years and older experienced some form of abuse in community settings during the past year</li>
+                            <li>Rates of elder abuse are high in institutions such as nursing homes and long-term care facilities, with 2 in 3 staff reporting that they have committed abuse in the past year</li>
+                            <li>Elder abuse can lead to serious physical injuries and long-term psychological consequences</li>
+                            <li>Elder abuse is predicted to increase as many countries are experiencing rapidly ageing populations</li>
+                            <li>The global population of people aged 60 years and older will more than double, from 900 million in 2015 to about 2 billion in 2050</li>
+                        </ul>
+
+                    <p><i>(Source: WHO)</i></p>
+                    <p><a class="lp-block-readmore" style="text-align: center;display:block;font-size:20px" href="@Url.Action("Index","Information")">Read more</a></p>
+                </div>
+            </section>
+           
+            <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-2" style="background-color:white">*@
+
+
+
+
+
+
+
+                <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-2" style="background-color:#FAFBFC">
+                    <div class="lp-blocks-inside">
+                        <div class="lp-block block1">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                            <a href="@Url.Action("Questionnaire","Questions", new { id = 1 }) ">
+                                <div class="lp-block-content">
+
+                                    <h5 class="lp-block-title" style="font-size:25px;font:bold">Assessment Quiz</h5>
+                                    <div class="lp-block-text" style="text-align:justify;font-size:22px">Take a simple quiz to assess yourself regarding elder abuse. You can even use this quiz to assess someone that you are concerned about as well .</div>
+                                    <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Questionnaire","Questions", new { id = 1 })"> Read More <em class="screen-reader-text">"Questionnaire"</em> </a>
+                                </div>
                             </a>
-                    </div><!-- lp-block -->
-                    <div class="lp-block block2">
-                        @*<i class="flaticon-survey-1" style="display:inline;"></i>*@
-                        <i class="glyphicon glyphicon-list"></i>
-                        <a href="@Url.Action("Index","Information")">
-                            <div class="lp-block-content">
-                                <h5 class="lp-block-title" style="font-size:25px;font:bold">Information</h5>
-                                <div class="lp-block-text" style="text-align:justify;font-size:22px">You can gain more support information like identifying Elder Abuse Types, &amp; the Signs of abuse and Risk factors. </div>
-                                <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Information")"> Read More <em class="screen-reader-text">"Information"</em> </a>
-                            </div>
-                        </a>
-                    </div><!-- lp-block -->
-                </div>
-            </section>
+                        </div><!-- lp-block -->
+                        <div class="lp-block block2">
+                            @*<i class="flaticon-survey-1" style="display:inline;"></i>*@
+                            <i class="glyphicon glyphicon-list"></i>
+                            <a href="@Url.Action("Index","Information")">
+                                <div class="lp-block-content">
+                                    <h5 class="lp-block-title" style="font-size:25px;font:bold">Information</h5>
+                                    <div class="lp-block-text" style="text-align:justify;font-size:22px">You can gain more support information like identifying Elder Abuse Types, &amp; the Signs of abuse and Risk factors. </div>
+                                    <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Information")"> Read More <em class="screen-reader-text">"Information"</em> </a>
+                                </div>
+                            </a>
+                        </div><!-- lp-block -->
+                    </div>
+                </section>
 
         </main><!-- #main -->
     </div><!-- #container -->
