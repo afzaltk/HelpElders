@@ -40,10 +40,20 @@ img { max-width: 100%; }
     text-shadow: none;
 }
 
+#brand {
+    height: 40px;
+    max-width: 70px;
+    margin: 5px;
+    float: left;
+    display: inline-block;
+}
+
 
 /***** General style, all sections *****/
-
-.section-container { margin: 0 auto; padding-bottom: 80px; }
+.section-container {
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
 .section-description { margin-top: 60px; padding-bottom: 10px; }
 .section-description p { margin-top: 20px; padding: 0 120px; }
 
