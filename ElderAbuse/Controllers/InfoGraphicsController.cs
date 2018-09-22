@@ -17,8 +17,8 @@ namespace ElderAbuse.Controllers
         // GET: InfoGraphics
         public ActionResult Index()
         {
-            var responses = db.Responses.Include(r => r.Question);
-            return View(responses.ToList());
+           
+            return View();
         }
 
         // GET: InfoGraphics/Details/5

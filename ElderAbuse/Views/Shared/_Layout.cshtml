@@ -49,14 +49,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")" > <b>H.E.L.P</b></a>
+                <a href="@Url.Action("Index", "Home")" >
+                    <img src="~/img/helpblue.png" title="title" alt="additional title" style="height:40px;max-width:70px;margin:5px; float: left; display: inline-block;" />
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="top-navbar-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Assessment Quiz</a></li>
-                    <li><a href="@Url.Action("Index","Information")">Information</a></li>
+                    <li><a href="@Url.Action("Index","Information")">Elder Abuse Information</a></li>
                     <li><a href="@Url.Action("Index","Infographics")">Infographics</a></li>
                 </ul>
             </div>

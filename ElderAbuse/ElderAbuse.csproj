@@ -456,10 +456,6 @@
     <Content Include="Views\Information\Edit.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Questions\Postcode.cshtml" />
-    <Content Include="Views\InfoGraphics\Create.cshtml" />
-    <Content Include="Views\InfoGraphics\Delete.cshtml" />
-    <Content Include="Views\InfoGraphics\Details.cshtml" />
-    <Content Include="Views\InfoGraphics\Edit.cshtml" />
     <Content Include="Views\InfoGraphics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
