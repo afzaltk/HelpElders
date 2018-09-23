@@ -21,14 +21,14 @@ namespace ElderAbuse.Controllers
         }
 
         // GET: Solutions/Details/5
-        public ActionResult Details()
+        public ActionResult Financial()
         {
            
             return View();
         }
 
         // GET: Solutions/Create
-        public ActionResult Create()
+        public ActionResult Emotional()
         {
            
             return View();
