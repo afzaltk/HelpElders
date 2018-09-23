@@ -530,7 +530,7 @@ survey
             //Set List of abuses involved
             var d = "/Information/Index";
             if (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+                abuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
             }
             if (result.data.selffinancial1 == 1 && result.data.selffinancial2 == 1) {
                 abuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
@@ -613,7 +613,7 @@ survey
             
             var d = "/Information/Index";
             if (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 1) {
-                abuseList.push('<a href="' + d +'" target="_blank">Physical Abuse</a>');
+                abuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
             }   
             if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
                 abuseList.push('<a href="' + d +'" target="_blank">Financial Abuse</a>')

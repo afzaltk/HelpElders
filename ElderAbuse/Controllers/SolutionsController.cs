@@ -14,7 +14,7 @@ namespace ElderAbuse.Controllers
         
 
         // GET: Solutions
-        public ActionResult Index()
+        public ActionResult Physical()
         {
             
             return View();

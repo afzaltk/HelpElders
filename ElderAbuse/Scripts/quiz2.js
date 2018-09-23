@@ -661,10 +661,10 @@ survey
         //Set List of abuses involved with links
         var d = "/Information/Index";        
         if ((parseInt(result.data.selfPhysicalNext1, 10) + parseInt(result.data.selfPhysicalNext2, 10) + parseInt(result.data.selfPhysicalNext3, 10)) >=2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+            nextAbuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         else if ((parseInt(result.data.selfPhysicalNext1, 10) + parseInt(result.data.selfPhysicalNext2, 10) + parseInt(result.data.selfPhysicalNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+            nextAbuseListLow.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         if ((parseInt(result.data.selfFinancialNext1, 10) + parseInt(result.data.selfFinancialNext2, 10) + parseInt(result.data.selfFinancialNext3, 10)) >= 2) {
             nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
@@ -690,10 +690,10 @@ survey
 
 
         if ((parseInt(result.data.otherPhysicalNext1, 10) + parseInt(result.data.otherPhysicalNext2, 10) + parseInt(result.data.otherPhysicalNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+            nextAbuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         else if ((parseInt(result.data.otherPhysicalNext1, 10) + parseInt(result.data.otherPhysicalNext2, 10) + parseInt(result.data.otherPhysicalNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Physical Abuse</a>');
+            nextAbuseListLow.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         if ((parseInt(result.data.otherFinancialNext1, 10) + parseInt(result.data.otherFinancialNext2, 10) + parseInt(result.data.otherFinancialNext3, 10)) >= 2) {
             nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
@@ -781,7 +781,4 @@ survey
             document
                 .querySelector('#infobuttonNext')
                 .innerHTML += infobuttin;
-
-                
-       
     });

@@ -462,7 +462,7 @@
     <Content Include="Views\Solutions\Delete.cshtml" />
     <Content Include="Views\Solutions\Details.cshtml" />
     <Content Include="Views\Solutions\Edit.cshtml" />
-    <Content Include="Views\Solutions\Index.cshtml" />
+    <Content Include="Views\Solutions\Physical.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
