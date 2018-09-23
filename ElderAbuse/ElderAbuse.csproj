@@ -458,10 +458,10 @@
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Questions\Postcode.cshtml" />
     <Content Include="Views\InfoGraphics\Index.cshtml" />
-    <Content Include="Views\Solutions\Create.cshtml" />
-    <Content Include="Views\Solutions\Delete.cshtml" />
-    <Content Include="Views\Solutions\Details.cshtml" />
-    <Content Include="Views\Solutions\Edit.cshtml" />
+    <Content Include="Views\Solutions\Emotional.cshtml" />
+    <Content Include="Views\Solutions\Neglect.cshtml" />
+    <Content Include="Views\Solutions\Financial.cshtml" />
+    <Content Include="Views\Solutions\Sexual.cshtml" />
     <Content Include="Views\Solutions\Physical.cshtml" />
   </ItemGroup>
   <ItemGroup />

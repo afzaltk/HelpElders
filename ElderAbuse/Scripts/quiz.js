@@ -533,16 +533,16 @@ survey
                 abuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
             }
             if (result.data.selffinancial1 == 1 && result.data.selffinancial2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+                abuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
             }
             if (result.data.selfEmotional1 == 1 && result.data.selfEmotional2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
             }
             if (result.data.selfSexual1 == 1 && result.data.selfSexual2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+                abuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
             }
             if (result.data.selfNeglect1 == 1 && result.data.selfNeglect2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+                abuseList.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
             }
 
             if ((result.data.selfPhysical1 == 0 && result.data.selfPhysical2 == 1) || (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 0)) {
@@ -616,16 +616,16 @@ survey
                 abuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
             }   
             if (result.data.otherfinancial1 == 1 && result.data.otherfinancial2 == 1) {
-                abuseList.push('<a href="' + d +'" target="_blank">Financial Abuse</a>')
+                abuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
             }
             if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
             }
             if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+                abuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
             }
             if (result.data.otherNeglect1 == 1 && result.data.otherNeglect2 == 1) {
-                abuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+                abuseList.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
             }
             if ((result.data.otherPhysical1 == 0 && result.data.otherPhysical2 == 1) || (result.data.otherPhysical1 == 1 && result.data.otherPhysical2 == 0)) {
                 abuseListNext.push('otherPhysical');

@@ -667,25 +667,25 @@ survey
             nextAbuseListLow.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         if ((parseInt(result.data.selfFinancialNext1, 10) + parseInt(result.data.selfFinancialNext2, 10) + parseInt(result.data.selfFinancialNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
         }
         else if ((parseInt(result.data.selfFinancialNext1, 10) + parseInt(result.data.selfFinancialNext2, 10) + parseInt(result.data.selfFinancialNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
         }
         if ((parseInt(result.data.selfEmotionalNext1, 10) + parseInt(result.data.selfEmotionalNext2, 10) + parseInt(result.data.selfEmotionalNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
         }
         else if ((parseInt(result.data.selfEmotionalNext1, 10) + parseInt(result.data.selfEmotionalNext2, 10) + parseInt(result.data.selfEmotionalNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
         }
         if ((parseInt(result.data.selfSexualNext1, 10) + parseInt(result.data.selfSexualNext2, 10)) >= 1) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
         }        
         if ((parseInt(result.data.selfNeglectNext1, 10) + parseInt(result.data.selfNeglectNext2, 10) + parseInt(result.data.selfNeglectNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+            nextAbuseList.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
         }
         else if ((parseInt(result.data.selfNeglectNext1, 10) + parseInt(result.data.selfNeglectNext2, 10) + parseInt(result.data.selfNeglectNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Neglect</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
         }
 
 
@@ -696,25 +696,25 @@ survey
             nextAbuseListLow.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
         }
         if ((parseInt(result.data.otherFinancialNext1, 10) + parseInt(result.data.otherFinancialNext2, 10) + parseInt(result.data.otherFinancialNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
         }
         else if ((parseInt(result.data.otherFinancialNext1, 10) + parseInt(result.data.otherFinancialNext2, 10) + parseInt(result.data.otherFinancialNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Financial Abuse</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
         }
         if ((parseInt(result.data.otherEmotionalNext1, 10) + parseInt(result.data.otherEmotionalNext2, 10) + parseInt(result.data.otherEmotionalNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
         }
         else if ((parseInt(result.data.otherEmotionalNext1, 10) + parseInt(result.data.otherEmotionalNext2, 10) + parseInt(result.data.otherEmotionalNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Emotional Abuse</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
         }
         if ((parseInt(result.data.otherSexualNext1, 10) + parseInt(result.data.otherSexualNext2, 10)) >= 1) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Sexual Abuse</a>')
+            nextAbuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
         }
         if ((parseInt(result.data.otherNeglectNext1, 10) + parseInt(result.data.otherNeglectNext2, 10) + parseInt(result.data.otherNeglectNext3, 10)) >= 2) {
-            nextAbuseList.push('<a href="' + d + '" target="_blank">Neglect</a>')
+            nextAbuseList.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
         }
         else if ((parseInt(result.data.otherNeglectNext1, 10) + parseInt(result.data.otherNeglectNext2, 10) + parseInt(result.data.otherNeglectNext3, 10)) == 1) {
-            nextAbuseListLow.push('<a href="' + d + '" target="_blank">Neglect</a>')
+            nextAbuseListLow.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
         }
 
 

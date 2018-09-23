@@ -37,7 +37,7 @@ namespace ElderAbuse.Controllers
        
 
         // GET: Solutions/Edit/5
-        public ActionResult Edit()
+        public ActionResult Sexual()
         {
            
             return View();
@@ -46,7 +46,7 @@ namespace ElderAbuse.Controllers
         
 
         // GET: Solutions/Delete/5
-        public ActionResult Delete()
+        public ActionResult Neglect()
         {
           
             return View();
