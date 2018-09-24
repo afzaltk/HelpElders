@@ -4,6 +4,22 @@
     ViewBag.Title = "Physical Abuse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .graph-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+    }
+
+    .graph-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0
+    }
+    </style>
 <div><h2 style="padding-top:70px;background-color:white">Physical Abuse</h2></div>
 
 <div style="text-align:justify" class="col-sm-10" id="fontChange">
@@ -28,7 +44,7 @@
         <li><p> If you are deaf, have a hearing impairment or have difficulty being understood verbally, the National Relay Service can help by asssisting you with the <a href="https://relayservice.gov.au/making-a-call/emergency-calls/" target="_blank">emergency call.</a> </p></li>
         <li><p> The <a href="https://www.whiteribbon.org.au/find-help/domestic-violence-hotlines/" target="_blank">White Ribbon</a> provides hotline numbers that help prevent domestic violence. Kindly go through the website </p> </li>
     </ul>
-    
+
 
 </div>
 <div class="col-sm-2">
@@ -36,8 +52,15 @@
     <a href="javascript:decreaseFontSize();" style="font-size:18px">- Smaller Text</a>
 </div>
 <div>
-    <h3>Find the nearest police station here</h3>
-    <div id="map" style="width:400px;height:400px">
+    <h3>Find the nearest Medicare Centres here</h3>
+    <div class="row">
+        <div class="col-lg-12">
+            <iframe src="@Url.Content("~/HTML/map2.html")" frameborder="0" scrolling="no"
+                    style="height: 600px;
+                                                width: 100%; float: right; " height="600" width="100%"
+                    align="top"></iframe>
 
+
+        </div>
     </div>
 </div>

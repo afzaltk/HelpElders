@@ -277,6 +277,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="HTML\doughnut.html" />
     <Content Include="HTML\map.html" />
+    <Content Include="HTML\map2.html" />
     <Content Include="HTML\pic.html" />
     <Content Include="HTML\simpleD.html" />
     <Content Include="HTML\simpleD2.html" />
