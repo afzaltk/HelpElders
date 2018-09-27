@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
 	  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
@@ -90,7 +90,7 @@
     </style>
   </head>
   <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Type Postcode to find the nearest">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
@@ -98,9 +98,6 @@
       // pick list containing a mix of places and predicted search terms.
 
       // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -37.8136, lng: 144.9631},
@@ -171,7 +168,7 @@
           
         var latLng;
 		var markers1 = [];
-		d3.csv("VIC_Medicare.csv",function(error,data){
+		d3.csv("Medicare.csv",function(error,data){
 			var bounds = new google.maps.LatLngBounds();
 			for(var i=0; i<data.length;i++){
 				var no = data[i].SITENAME;
@@ -182,10 +179,13 @@
 				var close = data[i].Close;
 				var allIn = "Name :"+ data[i].SITENAME + "<br>"+ "Open time : "+ data[i].Open +"<br>"+"Close time : "+ data[i].Close;
 				bounds.extend(new google.maps.LatLng(latitude, longitude));
+				
+				var label2 = 'M';
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(latitude, longitude),
 					map:map,
 					title: no,
+					label: label2,
 //					animation:google.maps.Animation.BOUNCE
 				});
 				addInfoWindow(marker,allIn);
@@ -193,15 +193,49 @@
 			}
 		});
 	      
+	      var markers2 = [];
+		d3.csv("hospital.csv",function(error,data){
+			var bounds = new google.maps.LatLngBounds();
+			for(var i=0; i<data.length;i++){
+				var no = data[i].Name;
+				var latitude = data[i].lat;
+				var longitude = data[i].lon;
+				var postcode = data[i].Postcode;
+				var type = data[i].Type;
+				
+				var allIn = "Name :"+ data[i].Name + "<br>"+ "Type : "+ data[i].Type;
+				bounds.extend(new google.maps.LatLng(latitude, longitude));
+				var label1 = 'H';
+				var marker2 = new google.maps.Marker({
+					position: new google.maps.LatLng(latitude, longitude),
+					map:map,
+					title: no,
+					label: label1,
+//					animation:google.maps.Animation.BOUNCE
+				});
+				addInfoWindow1(marker2,allIn);
+				markers2.push(marker2);
+			}
+		});
+	      
       }
-	    function addInfoWindow(marker,allIn){
+	    function addInfoWindow(marker,info){
 		var infowindow = new google.maps.InfoWindow({
-			content: 'Detailed MediCare Info: '+ "<br>"+ allIn
+			content: 'MediCare Info: '+ "<br>"+ info
 		});
 		google.maps.event.addListener(marker,'click', function() {
 			infowindow.open(map, marker);
 		});
 	}
+	    function addInfoWindow1(marker,info){
+		var infowindow = new google.maps.InfoWindow({
+			content: 'Hospital Info: '+ "<br>"+ info
+		});
+		google.maps.event.addListener(marker,'click', function() {
+			infowindow.open(map, marker);
+		});
+	}
+	    
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBREuFDLAYSrxjj69koGsHLX_VejDMKWuE&libraries=places&callback=initAutocomplete"
