@@ -19,7 +19,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44302</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -169,6 +170,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfoGraphicsController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
@@ -303,49 +305,35 @@
     <Content Include="img\helpblue.png" />
     <Content Include="img\helpblue1.png" />
     <Content Include="img\helpred.png" />
+    <Content Include="img\infoimg\bangles.jpg" />
     <Content Include="img\infoimg\bx_loader.gif" />
     <Content Include="img\infoimg\close.png" />
     <Content Include="img\infoimg\elder.jpg" />
+    <Content Include="img\infoimg\hand1.jpg" />
+    <Content Include="img\infoimg\hand2.jpg" />
+    <Content Include="img\infoimg\hand3.jpg" />
     <Content Include="img\infoimg\hands.jpg" />
-    <Content Include="img\infoimg\iphone.jpg" />
     <Content Include="img\infoimg\loading.gif" />
     <Content Include="img\infoimg\money.jpg" />
-    <Content Include="img\infoimg\mortar.jpg" />
     <Content Include="img\infoimg\next.png" />
     <Content Include="img\infoimg\old.jpg" />
+    <Content Include="img\infoimg\pedestrian.jpg" />
     <Content Include="img\infoimg\people.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio01.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio02.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio03.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio04.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio05.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio06.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio07.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio08.jpg" />
-    <Content Include="img\infoimg\portfolio\templatemo_portfolio09.jpg" />
     <Content Include="img\infoimg\previous.png" />
-    <Content Include="img\infoimg\templatemo_about.jpg" />
+    <Content Include="img\infoimg\question.jpg" />
+    <Content Include="img\infoimg\sign.jpg" />
+    <Content Include="img\infoimg\tea.jpg" />
     <Content Include="img\infoimg\templatemo_arrow.png" />
     <Content Include="img\infoimg\templatemo_arrow_gap.png" />
-    <Content Include="img\infoimg\templatemo_contact1.jpg" />
-    <Content Include="img\infoimg\templatemo_home1.jpg" />
-    <Content Include="img\infoimg\templatemo_home2.jpg" />
-    <Content Include="img\infoimg\templatemo_home3.jpg" />
-    <Content Include="img\infoimg\templatemo_home4.jpg" />
     <Content Include="img\infoimg\templatemo_service1.jpg" />
-    <Content Include="img\infoimg\templatemo_service2.jpg" />
     <Content Include="img\infoimg\templatemo_servicebg.jpg" />
-    <Content Include="img\infoimg\templatemo_team.jpg" />
-    <Content Include="img\infoimg\templatemo_testimonial1.jpg" />
-    <Content Include="img\infoimg\templatemo_testimonial2.jpg" />
-    <Content Include="img\infoimg\templatemo_testimonial3.jpg" />
     <Content Include="img\infoimg\templatemo_testi_arrow.png" />
-    <Content Include="img\infoimg\templatemo_vision.jpg" />
-    <Content Include="img\infoimg\tie.jpg" />
     <Content Include="img\infoimg\tree.jpg" />
+    <Content Include="img\infoimg\woman.jpg" />
     <Content Include="img\line.jpg" />
     <Content Include="img\qst.png" />
     <Content Include="img\static.jpg" />
+    <Content Include="img\Untitled6.jpg" />
     <Content Include="Models\HelpEldersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HelpEldersModel.Context.cs</LastGenOutput>
@@ -476,6 +464,7 @@
     <Content Include="Views\Solutions\Financial.cshtml" />
     <Content Include="Views\Solutions\Sexual.cshtml" />
     <Content Include="Views\Solutions\Physical.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
