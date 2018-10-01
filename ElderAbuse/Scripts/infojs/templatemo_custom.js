@@ -37,7 +37,7 @@ jQuery(document).ready(function($){
 
 	$(".main_menu a.templatemo_page3").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
-        $('#menu-container .prevent').fadeIn(1000);
+        $('#menu-container .about').fadeIn(1000);
 	    });
 		return false;
 	});
@@ -77,7 +77,7 @@ jQuery(document).ready(function($){
 	});
 	
 	$(".main_menu a.templatemo_homecontact").click(function(){
-		$('#menu-container .contact').fadeOut(1000, function(){
+        $('#menu-container .prevent').fadeOut(1000, function(){
         $('#menu-container .homepage').fadeIn(1000);
 	    });
 		return false;
@@ -85,7 +85,7 @@ jQuery(document).ready(function($){
 	
 	$(".main_menu a.templatemo_page6").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
-        $('#menu-container .contact').fadeIn(1000);
+        $('#menu-container .prevent').fadeIn(1000);
 		loadScript();		
 	    });
 	});
