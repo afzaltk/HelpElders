@@ -85,12 +85,12 @@ img { max-width: 100%; }
 ul.navbar-nav {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 14px;
-	color: #0085b2;
+	color: white;
 	font-weight: 400;
 	text-transform: uppercase;
 }
 
-.navbar-inverse ul.navbar-nav li a { color: #0085b2; border: 0; }
+.navbar-inverse ul.navbar-nav li a { color: white; border: 0; }
 .navbar-inverse ul.navbar-nav li a:hover { color: red; border: 0; }
 .navbar-inverse ul.navbar-nav li a:focus { color: red; outline: 0; border: 0; }
 
