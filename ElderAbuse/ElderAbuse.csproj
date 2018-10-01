@@ -278,7 +278,6 @@
     <Content Include="HTML\doughnut.html" />
     <Content Include="HTML\map.html" />
     <Content Include="HTML\map2.html" />
-    <Content Include="HTML\map_asdf.html" />
     <Content Include="HTML\pic.html" />
     <Content Include="HTML\simpleD.html" />
     <Content Include="HTML\simpleD2.html" />
@@ -410,7 +409,6 @@
     <Content Include="Content\assets\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Content\assets\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\assets\font-awesome\scss\_variables.scss" />
-    <Content Include="HTML\VIC_Medicare.csv" />
     <Content Include="HTML\charges.csv" />
     <Content Include="HTML\hospital.csv" />
     <Content Include="HTML\Medicare.csv" />
