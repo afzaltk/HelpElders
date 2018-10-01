@@ -11,7 +11,7 @@
         <main id="main" role="main" class="main">
 
             <section class="lp-staticslider">
-                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/a.jpg" style="margin-top:60px;max-width:100%;height:auto;max-height:550px;" />
+                <img class="lp-staticslider-image" alt="H.E.L.P" src="~/img/a.jpg" style="margin-top:60px;max-width:100%;height:auto;max-height:565px;" />
                 <div class="staticslider-caption">
                     <h2 class="staticslider-caption-title" style="font-size:4vw;color:#003547">H.E.L.P</h2>
 
@@ -34,9 +34,9 @@
                 </div>
             </section>
 
-                <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-2" style="background-color:#FAFBFC">
+                <section id="lp-blocks1" class="lp-blocks lp-blocks1 lp-blocks-rows-3" style="background-color:#FAFBFC">
                     <div class="lp-blocks-inside">
-                        <div class="lp-block block1">
+                        <div class="lp-block block1 col-sm-4">
                             <i class="glyphicon glyphicon-pencil"></i>
                             <a href="@Url.Action("Questionnaire","Questions", new { id = 1 }) ">
                                 <div class="lp-block-content">
@@ -47,14 +47,25 @@
                                 </div>
                             </a>
                         </div><!-- lp-block -->
-                        <div class="lp-block block2">
+                        <div class="lp-block block2 col-sm-4">
                             @*<i class="flaticon-survey-1" style="display:inline;"></i>*@
                             <i class="glyphicon glyphicon-list"></i>
                             <a href="@Url.Action("Index","Information")">
                                 <div class="lp-block-content">
                                     <h5 class="lp-block-title" style="font-size:25px;font:bold">Information</h5>
-                                    <div class="lp-block-text" style="text-align:justify;font-size:22px;color:black">You can gain more support information like identifying Elder Abuse Types, &amp; the Signs of abuse and Risk factors. </div>
+                                    <div class="lp-block-text" style="text-align:justify;font-size:22px;color:black">You can gain more support information like identifying Elder Abuse Types, the Signs of abuse, Risk factors and how to prevent them. </div>
                                     <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Information")"> Read More <em class="screen-reader-text">"Information"</em> </a>
+                                </div>
+                            </a>
+                        </div><!-- lp-block -->
+                        <div class="lp-block block2 col-sm-4">
+                            @*<i class="flaticon-survey-1" style="display:inline;"></i>*@
+                            <i class="glyphicon glyphicon-stats"></i>
+                            <a href="@Url.Action("Index","Infographics")">
+                                <div class="lp-block-content">
+                                    <h5 class="lp-block-title" style="font-size:25px;font:bold">Infographics</h5>
+                                    <div class="lp-block-text" style="text-align:justify;font-size:22px;color:black">Understand how Elder abuse statistics are right now across Australia. See the responsive infographics to understand why elder abuse needs to be curbed</div>
+                                    <a class="lp-block-readmore" style="font-size:22px" href="@Url.Action("Index","Infographics")"> Read More <em class="screen-reader-text">"Infographics"</em> </a>
                                 </div>
                             </a>
                         </div><!-- lp-block -->
