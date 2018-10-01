@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Aged care locations</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -37.8136, lng: 144.9631},
+          zoom: 10,
+          mapTypeId: 'roadmap'
+        });
+
+   
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+       
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });  
+          
+        var markers = [];
+      
+          
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          
+          markers.forEach(function(marker) {
+          marker.setMap(null);
+          });
+          markers = [];
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location,
+              animation:google.maps.Animation.BOUNCE
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+  
+        
+        var latLng;
+		var markers1 = [];
+		d3.csv("aged-care.csv",function(error,data){
+			var bounds = new google.maps.LatLngBounds();
+			for(var i=0; i<data.length;i++){
+				var name = data[i].name;
+				var latitude = data[i].Latitude;
+				var longitude = data[i].Longitude;
+				var postcode = data[i].Postcode;
+				var type = data[i].Type;
+				var provider = data[i].Provider;
+				var allIn = "Name :"+ data[i].name+ "<br>"+ "Type : "+ data[i].Type +"<br>"+"Provider : "+ data[i].Provider+"<br>"+ "Organisation Type:"+ data[i].OrganisationType;
+				bounds.extend(new google.maps.LatLng(latitude, longitude));
+				
+				var label2 = 'A';
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(latitude, longitude),
+					map:map,
+					title: name,
+					label: label2,
+//					animation:google.maps.Animation.BOUNCE
+				});
+			addInfoWindow(marker,allIn);
+				markers1.push(marker);
+			}
+			var markerCluster = new MarkerClusterer(map, markers1,
+            {imagePath:'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+		});
+	      
+	      
+
+	      
+      }
+	    function addInfoWindow(marker,info){
+		var infowindow = new google.maps.InfoWindow({
+			content: 'Aged Care Info: '+ "<br>"+ info
+		});
+		google.maps.event.addListener(marker,'click', function() {
+			infowindow.open(map, marker);
+		});
+	}
+	   
+	    
+
+    </script>
+	  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBREuFDLAYSrxjj69koGsHLX_VejDMKWuE&libraries=places&callback=initAutocomplete"
+         async defer></script>
+      
+  </body>
+</html>

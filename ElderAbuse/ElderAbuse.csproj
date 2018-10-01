@@ -276,6 +276,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="HTML\9charges.html" />
+    <Content Include="HTML\aged-care-map.html" />
     <Content Include="HTML\doughnut.html" />
     <Content Include="HTML\experience-abuse.html" />
     <Content Include="HTML\map.html" />
@@ -421,6 +422,7 @@
     <Content Include="HTML\hospital.csv" />
     <Content Include="HTML\Medicare.csv" />
     <Content Include="HTML\9charges.csv" />
+    <Content Include="HTML\aged-care.csv" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\infojs\easyResponsiveTabs.js" />
