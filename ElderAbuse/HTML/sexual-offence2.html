@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Male', 'Female'],
+          ['2012', 8, 71],
+          ['2013', 17, 80],
+          ['2014', 28, 91],
+          ['2015', 28, 75],
+	['2016', 49, 118]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Sexual Abuse based on gender',
+            subtitle: '65 years and over(2012-2016)',
+	
+          },
+	        bars: 'horizontal'
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>

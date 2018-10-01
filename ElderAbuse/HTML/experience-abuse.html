@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>experience abuse</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+
+	<canvas id="marksChart" width="500" height="300"></canvas>
+</head>
+<body>
+
+<script>
+var marksAbuse = document.getElementById("marksChart");
+
+var abuseData = {
+  labels: ["Harassment", "Physical violence", "Psychological abuse", "Sexual abuse", "Stalking"],
+  datasets: [{
+    label: "Male",
+    borderColor : "#fffff",
+  
+    backgroundColor: "rgba(255,0,0,0.3)",
+    data: [279.9, 135.2, 99.3, 12.9, 29.4]
+  }, {
+    label: "Female",
+    borderColor : "#fffff",
+    backgroundColor:"rgba(0,0,255,0.3)",
+    data: [576.3, 104.4, 125.8, 55.5, 86.4]
+  }]
+};
+var options = {
+    scale: {
+        // Hides the scale
+        display: true,
+        pointLabels: {
+      	fontSize: 16
+    },
+	    gridLines: { color: 'grey' },
+	    anglLines: { color: 'grey' }
+	
+    },
+	title: {
+            display: true,
+            text: 'Abuse experienced based on gender',
+		fontSize:25
+        }
+};
+
+var radarChart = new Chart(marksAbuse, {
+  type: 'radar',
+  data: abuseData,
+  options: options
+});
+
+	</script>
+	</body>
+</html>
+
+
+
+
+

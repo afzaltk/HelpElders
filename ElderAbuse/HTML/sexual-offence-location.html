@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        
+        var data = google.visualization.arrayToDataTable([
+         ['Year', 'Education', 'Health', 'Religious', 'Public transport', 'Other transport', 'Justice','Open space','Street/footpath','Average'],
+         ['2012',  261, 67, 16, 189, 96, 44,379,546,200],
+         ['2013',  412, 96, 78, 237, 96, 59, 388,541,238],
+         ['2014',  404, 105, 48, 261, 109, 65, 451,486,241],
+         ['2015',  623, 133, 48, 236, 112,49,361,596,270],
+         ['2016',  581, 189, 54, 265, 179, 90, 461,597,302]
+      ]);
+
+    var options = {
+      title : 'Sexual offences at Community locations ',
+      vAxis: {title: 'Frequency'},
+      hAxis: {title: 'Year'},
+      seriesType: 'bars',
+      series: {8: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 650px; height: 500px;"></div>
+  </body>
+</html>

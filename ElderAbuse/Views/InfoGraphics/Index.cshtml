@@ -20,75 +20,65 @@
         border: 0
     }
 
-    body {
-        font-family: "Lato", sans-serif;
-    }
+    	body {
+		    font-family: "Lato", sans-serif;
 
-    .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
+		}
 
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
+		.sidenav {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    left: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		    padding-top: 60px;
 
-            .sidenav a:hover {
-                color: #f1f1f1;
-            }
+		}
 
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
+		.sidenav a {
+		    padding: 8px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: #818181;
+		    display: block;
+		    transition: 0.3s;
+		}
 
-    #main {
-        transition: margin-left .5s;
-        padding: 16px;
-    }
+		.sidenav a:hover {
+		    color: #f1f1f1;
+		}
 
-    body {
-        margin: 0;
-        font-family: sans-serif;
-    }
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+                    #main {
+		    transition: margin-left .5s;
+		    padding: 16px;
+		}
+		
 
-    .hero-image {
-        background-image: url("~/img/a.jpg");
-        background-color: #cccccc;
-        height: 600px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        overflow: hidden;
-        position: relative;
-    }
+	        body { margin:0;
+		font-family: sans-serif;}
+.hero-image { background-image: url("~/img/a.jpg"); background-color: #cccccc; height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; overflow: hidden; position: relative; }
+		  .hero-text {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
 
-    .hero-text {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+		  transform: translate(-50%, -50%);
+
+}
+
 </style>
-
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -115,6 +105,7 @@
             background-color: #555;
         }
 </style>
+
 <button onclick="topFunction()" id="myBtn" title="Go to top">Go to Top</button>
 <script>
     // When the user scrolls down 20px from the top of the document, show the button
@@ -134,134 +125,134 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-<div class="row" style="margin-top:100px;margin:10px">
-    <div style="padding-top:100px">
-        <p align="left" style="font-size:30px;color:steelblue;"><strong><i class="fa fa-pie-chart" style="font-size:48px;"></i> Australia violence condition</strong></p>
+<br />
+<br />
+<div class="row">
+
+
+    <div class="col-sm-6">
+
+        <iframe src="@Url.Content("~/HTML/9charges.html")" frameborder="0" scrolling="no"
+                style="height: 600;
+                                            width: 100%; float: right; " height="600" width="100%"
+                align="left"></iframe>
+    </div>
+    <div class="col-lg-6">
+        <iframe src="@Url.Content("~/HTML/pic.html")" frameborder="0" scrolling="no"
+                style="height: 600;
+                                            width: 100%; float: right; " height="600" width="100%"
+                align="right"></iframe>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-sm-6">
+        <iframe src="@Url.Content("~/HTML/experience-abuse.html")" frameborder="0" scrolling="no"
+                style="height: 600;
+                                            width: 600; float: left; " height="600" width=100%
+                align="left"></iframe>
+    </div>
+
+    <div class="col-sm-6">
+        <p align="left" style="font-size:30px;color:steelblue;"><strong><i class="fa fa-pie-chart" style="font-size:48px;"></i> Data Analysis of abuse experienced</strong></p>
         <br>
-        <p align="left" style="font-size:22px;text-align:justify">
-            In comparing population numbers from around the world, it is projected that there are over 20,000 unreported cases of abuse, neglect, and exploitation in Victoria per year and approximately 100,000 throughout Australia per year. Other estimates include 20,000 for NSW and 25,000 for Queensland. Almost four times as many new incidents of abuse, neglect, and exploitation are not reported as those that were reported to and substantiated by adult protective services agencies and/or ombudsman entities. These predictions are also accurate for Australia. Thus 20,000 become 80,000. 100,000 become 400,000.
+        <p align="left" style="font-size:22px;text-align:justify;max-width:600px">
+            In comparing population numbers from around the world, it is projected that there are over <b>20,000</b> unreported cases of abuse, neglect, and exploitation in Victoria per year and approximately 100,000 throughout Australia per year. Other estimates include 20,000 for NSW and 25,000 for Queensland. Almost four times as many new incidents.
 
         </p>
     </div>
-    <div class="graph-container">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD2.html")" frameborder="0" scrolling="no"></iframe>
-    </div>
-
-
 </div>
 
-<br>
 
-<style>
-    div.ex1 {
-        width: 100%;
-        height: 400px;
-        overflow: auto;
-    }
-</style>
-<p align="center" style="font-size:30px;color:steelblue;"><strong>Abuse situation based on various States</strong></p>
-<div class="row">
-    <div class="col-lg-5">
+<div class="row" style="margin-left:20px;">
 
-        <img src="~/img/c.jpg" class="img-rounded" alt="Cinque Terre" width=100% height=auto>
-    </div>
-    <div class="col-lg-7" style="background-color:#e9ecef;">
-        <div class="ex1">
-
-            <br>
-            <p style="font-size:22px;text-align:justify">
-                According to the recently survey, the age range for older women in that study was 55 plus, and the analysis was framed to assess violence against women, focusing on sexual assault by any perpetrator, and partner violence involving physical assault, physical threat, sexual assault and sexual threat by a cohabiting or intimate partner.
-                In Queensland, calls to the EAPU helpline have increased substantially over the period that it has been operating, from just over 200 in 2000-01 to nearly 1,300 in 2014-15 (Spike, 2015; see further discussion in sections 3.2-3.4). The EAPU analysis of call data from the past five years provides a profile of the elder abuse concerns notified to the helpline. The calls were mostly in relation to female victims (68% female cf. 31 male cf. 1% unknown). The most common age group of victims was 80-84 years (23%), followed by 75-79 years (16%) and 85-89 years (15%). Perpetrators were male in 50% of calls and female in 45% (unknown: 5%). Where perpetrator age was known, the most common age group was 50-54 years (17%).
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-
-    <div class="graph-container">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/simpleD.html")" frameborder="0" scrolling="no"></iframe>
-    </div>
-</div>
-
-<style>
-    div.ex3 {
-        width: 100%;
-        height: 560px;
-        overflow: auto;
-    }
-</style>
-
-<p align="center" style="font-size:25px;color:steelblue;"><strong> Abuse situation in Victoria</strong></p>
-<div class="row">
-
-    <div class="col-lg-5" style="background-color:#e9ecef;">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <div class="col-lg-6" style="background-color:#e9ecef;" >
+        <p align="center" style="font-size:25px;color:steelblue;"><strong> Physical & Psychological Abuse analysis</strong></p>
         <br>
-        <div class="ex3">
-            <p style="font-size:22px;text-align:justify">
-                In Victoria, a recent study by the National Ageing Research Institute (Joosten et al., 2015),commissioned by Seniors Rights Victoria (SRV), was based on an analysis of data derived from records of calls to a helpline operated by SRV between July 2012 and June 2014. Of 755 calls,455 involved discussion of a matter that raised elder abuse issues (including some that raised multiple types of abuse), and 236 raised issues not relating to elder abuse. The most common concerns raised in relation to elder abuse were about financial abuse (61%) and psychological or emotional abuse (59%). Physical abuse was raised much less frequently (16%), as were social abuse (9%), neglect (1%) and sexual abuse (0.4%). Elder abuse issues were most commonly reported in relation to female victims (73% females cf. 28% males) and the most commonly reported perpetrators were male (60% males cf. 40% females). The majority of perpetrators of the abuse reported to the SRV helpline were children of the victim (67%), with sons responsible for 40% of incidents reported, and daughters for 27%. Spouses were reported to be responsible in small proportions of cases (5% husbands and 3% wives).
+        <p style="font-size:22px;text-align:justify">
+            In Victoria, the most common concerns raised in relation to elder abuse were about <b>financial abuse</b> (61%) and <b>psychological</b> or <b>emotional abuse</b> (59%). Physical abuse was raised much less frequently (16%), as were social abuse (9%), neglect (1%) and sexual abuse (0.4%). Elder abuse issues were most commonly reported in relation to female victims (73% females cf. 28% males)
+        </p>
 
-            </p>
-
-
-        </div>
     </div>
-    <div class="graph-container col-lg-6">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/doughnut.html")" frameborder="0" scrolling="no"
+    <div class="col-lg-6">
+        <iframe src="@Url.Content("~/HTML/doughnut.html")" frameborder="0" scrolling="no"
+                style="height: 550;
+                                            max-width: 600px; float: right; " height="600" width="100%"
                 align="bottom"></iframe>
     </div>
 </div>
 
-<br>
-<br>
-<div class="row">
-    <div class="col-lg-6">
-        <img src="@Url.Content("~/img/heatmap.jpg")" class="img-rounded" alt="Cinque Terre" width=auto height=400px>
+
+<style>
+    div.ex1 {
+        width: "100%";
+        height: 400px;
+        overflow: auto;
+    }
+</style>
+
+<div class="row" style="margin-left:20px;">
+    <div class="col-sm-4" style="background-color:#e9ecef;">
+
+
+        <p align="center" style="font-size:30px;color:steelblue;"><strong>Sexual Abuse by gender</strong></p>
+        <br>
+        <p style="font-size:22px;text-align:justify">
+            According to the recently survey, the age range for “older women” in that study was 55 plus, and the analysis was framed to assess violence against women, focusing on sexual assault by any perpetrator, and partner violence involving physical assault, physical threat, sexual assault and sexual threat by a cohabiting or intimate partner.
+          
+        </p>
+
     </div>
-    <div class="col-lg-6">
-        <img src="@Url.Content("~/img/line.jpg")" class="img-rounded" alt="Cinque Terre" width=auto height=400px>
+    <div class="col-sm-8">
+
+        <iframe src="@Url.Content("~/HTML/sexual-offence2.html")" frameborder="0" scrolling="no"
+                style="height: 600; width: 100%; float: right;" height="600" width="100%"
+                align="bottom"></iframe>
     </div>
 
 </div>
-
 <div class="row">
-    <div class="col-lg-6">
-        <iframe src="@Url.Content("~/HTML/pic.html")" frameborder="0" scrolling="no"
-                style="height: 600px;
-                                            width: 100%; float: right; " height="600" width="100%"
+
+    <div class="col-sm-6">
+
+        <iframe src="@Url.Content("~/HTML/sexual-offence-location.html")" frameborder="0" scrolling="no"
+                style="height: 500;
+                                            width: 100%; float: right; " height="500" width="100%"
                 align="left"></iframe>
     </div>
-
-    <div class="graph-container col-lg-6">
-        <iframe class="graph-iframe" src="@Url.Content("~/HTML/sortB.html")" frameborder="0" scrolling="no"
+    <div class="col-sm-6">
+        <iframe src="@Url.Content("~/HTML/sexual-offence-residential.html")" frameborder="0" scrolling="no"
+                style="height: 500;
+                                            width: 100%; float: right; " height="500" width="100%"
                 align="right"></iframe>
     </div>
+
 </div>
-<br>
-<br>
 
 <div class="row">
-    <div class="col-lg-12">
-        <iframe src="@Url.Content("~/HTML/map.html")" frameborder="0" scrolling="no"
-                style="height: 600px;
-                                                width: 100%; float: right; " height="600" width="100%"
-                align="top"></iframe>
 
+    <div class="col-sm-7">
+
+        <iframe src="@Url.Content("~/HTML/sexual-offence-other-locations.html")" frameborder="0" scrolling="no"
+                style="height: 500;
+                                            width: 100%; float: right; " height="500" width="100%"
+                align="right"></iframe>
+    </div>
+    <div class="col-sm-4" style="background-color:#e9ecef;">
+
+
+        <p align="center" style="font-size:30px;color:steelblue;"><strong>Sexual Abuse analysis based on locations</strong></p>
+        <br>
+        <p style="font-size:22px;text-align:justify">
+            According to the recently survey, the age range for “older women” in that study was 55 plus, and the analysis was framed to assess violence against women, focusing on sexual assault by any perpetrator, and partner violence involving physical assault, physical threat, sexual assault and sexual threat by a cohabiting or intimate partner.
+            In Queensland, calls to the EAPU helpline have ..
+        </p>
 
     </div>
-</div>
-<br>
-<br>
 
-<div class="row">
-    <div class="col-lg-12" style="background-color:#e9ecef;height:20px">
-        <footer class="container-fluid text-center">
-
-            <p style="font-size:14px;color:dark;">H.E.L.P is a tool for senior and general public » If you have any questions, please email us <a href="thesentials@gmail.com" title="thesentials@gmail.com">thesentials@gmail.com</a></p>
-        </footer>
-
-    </div>
 </div>
 
+
+
+
+	 

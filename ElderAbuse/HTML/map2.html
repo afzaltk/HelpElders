@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
 	  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
@@ -136,7 +136,7 @@
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
             if (!place.geometry) {
-              console.log("Returned place contains no geometry");
+              //console.log("Returned place contains no geometry");
               return;
             }
             var icon = {

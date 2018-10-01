@@ -11,12 +11,12 @@ var surveyJSON = {
                 {
                     type: "html",
                     name: "Heading",
-                    html: " <h1 class='intro__heading intro__heading--quiz title'>                     Elder Abuse Questionnaire              </h1> "
+                    html: " <h1 class='intro__heading intro__heading--quiz title' style='text-align:center;'>                     Elder Abuse Questionnaire              </h1> "
                 },
                 {
                     type: "html",
                     name: "bodycontent",
-                    html: "<div style='font-size:20px' class='intro__body wysiwyg'>       <p>In this section, you will be asked about yourself or some elder that you know, on different scenarios of Elder Abuse.</p>       <p>You will be asked regarding the following types of Elder Abuse:</p>       <ul>        <li>        Physical Abuse        </li>        <li>        Financial Abuse      </li>        <li>        Emotional Abuse        </li><li>        Sexual Abuse        </li><li>        Neglect        </li>       </ul>         </div>"
+                    html: "<div style='font-size:20px;text-align:center;' class='intro__body wysiwyg'>       <p>In this section, you will be asked about yourself or some elder that you know, on different scenarios of Elder Abuse.</p>       <p>You will be asked regarding the following types of Elder Abuse:</p>       <ul>        <li>        Physical Abuse        </li>        <li>        Financial Abuse      </li>        <li>        Emotional Abuse        </li><li>        Sexual Abuse        </li><li>        Neglect        </li>       </ul>         </div>"
                 }
             ]
         },
@@ -65,7 +65,7 @@ var surveyJSON = {
                 {
                     type: "html",
                     name: "Physical",
-                    html: "<h1> Physical Abuse <h1>"
+                    
                 },
                 {
                     type: "radiogroup",

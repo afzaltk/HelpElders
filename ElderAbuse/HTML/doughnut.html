@@ -2,7 +2,6 @@
 <head>
   <meta charset="utf-8">
   <script src="https://d3js.org/d3.v4.min.js"></script>
-
   <style>
 
 body {
@@ -58,14 +57,11 @@ text {
 
 <body>
 
-    <form>
-        <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label><br>
-        <label><input type="radio" name="dataset" id="dataset" value="option1"> Physical violence</label><br>
-        <label><input type="radio" name="dataset" id="dataset" value="option2">Emotional abuse</label><br>
-        <label><input type="radio" name="dataset" id="dataset" value="option3">other types of abuse</label>
-
-    </form>
-  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <form>
+    <label><input type="radio" name="dataset" id="dataset" value="option1"> Physical Abuse</label><br>
+    <label><input type="radio" name="dataset" id="dataset" value="option2"> Psychological Abuse</label><br>
+</form>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
   <script>
     d3.select("input[value=\"total\"]").property("checked", true);
 
@@ -89,7 +85,7 @@ var width = 600,
 var pie = d3.layout.pie()
 	.sort(null)
 	.value(function(d) {
-    console.log(d);
+    //console.log(d);
 		return d.value;
 	});
 
@@ -110,47 +106,31 @@ svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
 var color = d3.scale.ordinal()
-	.range(["#009933" , "#12355b","#FFC30F"]);
+	.range(["#F9564F","#009933" , "#048BA8","#FFC30F","#C70039","#ACFFE9"]);
 	  
 	 
 
 
-datasetTotal = [
-    { label: "18 to 24 years", value: 69.8 },
-    { label: "25 to 34 years", value: 192.6 },
-    { label: "35 to 44 years", value: 166.7 },
-    { label: "45 to 54 years", value: 153.9 },
-    { label: "55 to 64 years", value: 87.8 },
-    { label: "65 years and over", value: 65.7 }
-        ];
-
 datasetOption1 = [
-    { label: "18 to 24 years", value: 14.9 },
-    { label: "25 to 34 years", value: 36.2 },
-    { label: "35 to 44 years", value: 29.5 },
-    { label: "45 to 54 years", value: 23.9 },
-    { label: "55 to 64 years", value: 10.1 },
-    { label: "65 years and over", value: 10.3 }
+        {label:"18 to 24 years", value:14.9}, 
+        {label:"25 to 34 years", value:36.2}, 
+        {label:"35 to 44 years", value:29.5},
+        {label:"45 to 54 years", value:23.9},
+        {label:"55 to 64 years", value:10.1},
+        {label:"65 years and over", value:10.3}
+	
         ];
 
 datasetOption2 = [
-    { label: "18 to 24 years", value: 37 },
-    { label: "25 to 34 years", value: 105.2 },
-    { label: "35 to 44 years", value: 104.7 },
-    { label: "45 to 54 years", value: 104 },
-    { label: "55 to 64 years", value: 63.4 },
-    { label: "65 years and over", value: 40.5 }
+        {label:"18 to 24 years", value:37}, 
+        {label:"25 to 34 years", value:105.2}, 
+        {label:"35 to 44 years", value:104.7},
+        {label:"45 to 54 years", value:104},
+        {label:"55 to 64 years", value:63.4},
+        {label:"65 years and over", value:40.5}
         ];
 
-datasetOption3 = [
-    { label: "18 to 24 years", value: 17.9 },
-    { label: "25 to 34 years", value: 51.2 },
-    { label: "35 to 44 years", value: 32.5 },
-    { label: "45 to 54 years", value: 26 },
-    { label: "55 to 64 years", value: 14.2 },
-    { label: "65 years and over", value: 14.9 }
-        ];
-change(datasetTotal);
+change(datasetOption1);
 
 
 d3.selectAll("input")
@@ -159,11 +139,7 @@ d3.selectAll("input")
 function selectDataset()
 {
 	var value = this.value;
-	if (value == "total")
-	{
-		change(datasetTotal);
-	}
-	else if (value == "option1")
+	 if (value == "option1")
 	{
 		change(datasetOption1);
 	}
@@ -171,11 +147,6 @@ function selectDataset()
 	{
 		change(datasetOption2);
 	}
-	else if (value == "option3")
-	{
-		change(datasetOption3);
-	}
-	
 }
 
 function change(data) {
@@ -239,7 +210,6 @@ function change(data) {
         .attr('y', legendRectSize - legendSpacing)
         .text(function(d) { return d; });
 
-    /* ------- TEXT LABELS -------*/
 
     var text = svg.select(".labelName").selectAll("text")
         .data(pie(data), function(d){ return d.data.label });
@@ -258,7 +228,7 @@ function change(data) {
     text
         .transition().duration(1000)
         .attrTween("transform", function(d) {
-      console.log(d);
+      //console.log(d);
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);
             this._current = interpolate(0);
@@ -285,8 +255,6 @@ function change(data) {
 
     text.exit()
         .remove();
-
-    /* ------- SLICE TO TEXT POLYLINES -------*/
 
     var polyline = svg.select(".lines").selectAll("polyline")
         .data(pie(data), function(d){ return d.data.label });
