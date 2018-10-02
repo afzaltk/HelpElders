@@ -252,7 +252,7 @@ var selfEmotionalNext = {
         {
             type: "html",
             name: "Emotional",
-            html: "<h1>Emotional Abuse <h1>"
+            html: "<h1>Psychological Abuse <h1>"
         },
         {
             type: "radiogroup",

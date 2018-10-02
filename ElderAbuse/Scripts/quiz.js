@@ -16,7 +16,7 @@ var surveyJSON = {
                 {
                     type: "html",
                     name: "bodycontent",
-                    html: "<div style='font-size:20px;text-align:center;' class='intro__body wysiwyg'>       <p>In this section, you will be asked about yourself or some elder that you know, on different scenarios of Elder Abuse.</p>       <p>You will be asked regarding the following types of Elder Abuse:</p>       <ul>        <li>        Physical Abuse        </li>        <li>        Financial Abuse      </li>        <li>        Emotional Abuse        </li><li>        Sexual Abuse        </li><li>        Neglect        </li>       </ul>         </div>"
+                    html: "<div style='font-size:20px;text-align:center;' class='intro__body wysiwyg'>       <p>In this section, you will be asked about yourself or some elder that you know, on different scenarios of Elder Abuse.</p>       <p>You will be asked regarding the following types of Elder Abuse:</p>       <ul>        <li>        Physical Abuse        </li>        <li>        Financial Abuse      </li>        <li>        Psychological Abuse        </li><li>        Sexual Abuse        </li><li>        Neglect        </li>       </ul>         </div>"
                 }
             ]
         },
@@ -65,6 +65,7 @@ var surveyJSON = {
                 {
                     type: "html",
                     name: "Physical",
+                    html: "<h1> Physical Abuse <h1>"
                     
                 },
                 {
@@ -229,7 +230,7 @@ var surveyJSON = {
                 {
                     type: "html",
                     name: "emotional",
-                    html: "<h1> Emotional Abuse <h1>"
+                    html: "<h1> Psychological Abuse <h1>"
                 },
                 {
                     type: "radiogroup",
@@ -536,7 +537,7 @@ survey
                 abuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
             }
             if (result.data.selfEmotional1 == 1 && result.data.selfEmotional2 == 1) {
-                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
+                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Psychological Abuse</a>')
             }
             if (result.data.selfSexual1 == 1 && result.data.selfSexual2 == 1) {
                 abuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
@@ -619,7 +620,7 @@ survey
                 abuseList.push('<a href="/Solutions/Financial" target="_blank">Financial Abuse</a>')
             }
             if (result.data.otherEmotional1 == 1 && result.data.otherEmotional2 == 1) {
-                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Emotional Abuse</a>')
+                abuseList.push('<a href="/Solutions/Emotional" target="_blank">Psychological Abuse</a>')
             }
             if (result.data.otherSexual1 == 1 && result.data.otherSexual2 == 1) {
                 abuseList.push('<a href="/Solutions/Sexual" target="_blank">Sexual Abuse</a>')
