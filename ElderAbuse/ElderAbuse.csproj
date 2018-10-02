@@ -19,8 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44302</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -284,6 +283,7 @@
     <Content Include="HTML\map.html" />
     <Content Include="HTML\map2.html" />
     <Content Include="HTML\pic.html" />
+    <Content Include="HTML\police-station-lawyer-map.html" />
     <Content Include="HTML\sexual-offence-location.html" />
     <Content Include="HTML\sexual-offence-other-locations.html" />
     <Content Include="HTML\sexual-offence-residential.html" />

@@ -4,7 +4,7 @@
 	  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Aged care locations</title>
+    <title>Police station locations</title>
     <style>
       #map {
         height: 100%;
@@ -98,9 +98,53 @@
           zoom: 10,
           mapTypeId: 'roadmap'
         });
+          
+        var infowindow = new google.maps.InfoWindow();
+        var service1 = new google.maps.places.PlacesService(map);
+        service1.nearbySearch({
+          location: {lat: -37.8136, lng: 144.9631},
+          radius: 25000,
+          type: ['police']
+          }, callback);
+          var service2 = new google.maps.places.PlacesService(map);
+          service2.nearbySearch({
+              location: { lat: -37.8136, lng: 144.9631 },
+              radius: 25000,
+              type: ['lawyer']
+          }, callback);
+          
+        function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
 
-   
+      function createMarker(place) {
+          var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        });
+          
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
         var input = document.getElementById('pac-input');
+          console.log(input.nodeValue)
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -110,7 +154,8 @@
         });  
           
         var markers = [];
-      
+          
+        var bounds = new google.maps.LatLngBounds();
           
         searchBox.addListener('places_changed', function() {
           var places = searchBox.getPlaces();
@@ -143,8 +188,7 @@
               map: map,
               icon: icon,
               title: place.name,
-              position: place.geometry.location,
-              animation:google.maps.Animation.BOUNCE
+              position: place.geometry.location
             }));
 
             if (place.geometry.viewport) {
@@ -156,48 +200,8 @@
           });
           map.fitBounds(bounds);
         });
-  
         
-        var latLng;
-		var markers1 = [];
-		d3.csv("aged-care.csv",function(error,data){
-			var bounds = new google.maps.LatLngBounds();
-			for(var i=0; i<data.length;i++){
-				var name = data[i].name;
-				var latitude = data[i].Latitude;
-				var longitude = data[i].Longitude;
-				var postcode = data[i].Postcode;
-				var type = data[i].Type;
-				var provider = data[i].Provider;
-				var allIn = "Name :"+ data[i].name+ "<br>"+ "Type : "+ data[i].Type +"<br>"+"Provider : "+ data[i].Provider+"<br>"+ "Organisation Type:"+ data[i].OrganisationType;
-				bounds.extend(new google.maps.LatLng(latitude, longitude));
-				
-				var label2 = 'A';
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(latitude, longitude),
-					map:map,
-					title: name,
-					label: label2,
-//					animation:google.maps.Animation.BOUNCE
-				});
-			addInfoWindow(marker,allIn);
-				markers1.push(marker);
-			}
-			var markerCluster = new MarkerClusterer(map, markers1,
-            {imagePath:'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-		});
-	      
-	      
-
-	      
-      }
-	    function addInfoWindow(marker,info){
-		var infowindow = new google.maps.InfoWindow({
-			content: 'Aged Care Info: '+ "<br>"+ info
-		});
-		google.maps.event.addListener(marker,'click', function() {
-			infowindow.open(map, marker);
-		});
+        
 	}
 	   
 	    

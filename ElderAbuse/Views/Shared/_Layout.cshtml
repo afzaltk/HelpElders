@@ -55,9 +55,30 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="top-navbar-1">
-                <ul class="nav navbar-nav navbar-right" style="padding-bottom:8px">
+                <ul id="nav" class="nav navbar-nav navbar-right" style="padding-bottom:8px">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Assessment Quiz</a></li>
+                    @*<div class="subnav">
+                        <button class="subnavbtn">WHAT TO DO ? <i class="fa fa-caret-down"></i></button>
+                        <div class="subnav-content">
+                                <li><a href="@Url.Action("Physical","Solutions")">Physical</a></li><br />
+                                <li><a href="@Url.Action("Financial","Solutions")">Financial</a></li><br />
+                                <li><a href="@Url.Action("Emotional","Solutions")">Emotional</a></li><br />
+                                <li><a href="@Url.Action("Sexual","Solutions")">Sexual</a></li><br />
+                                <li><a href="@Url.Action("Neglect","Solutions")">Neglect</a></li>
+                            
+                        </div>
+                    </div>*@
+                    @*<li>
+                        <a href="#" class="subnavbtn">What to do ? <i class="fa fa-caret-down"></i></a>
+                        <ul class="subnav subnav-content">
+                            <li><a href="@Url.Action("Physical","Solutions")">Physical Abuse</a></li>
+                            <li><a href="@Url.Action("Financial","Solutions")">Financial Abuse</a></li>
+                            <li><a href="@Url.Action("Emotional","Solutions")">Emotional Abuse</a></li>
+                            <li><a href="@Url.Action("Sexual","Solutions")">SexualAbuse</a></li>
+                            <li><a href="@Url.Action("Neglect","Solutions")">Neglect</a></li>
+                        </ul>
+                    </li>*@
                     <li><a href="@Url.Action("Index","Information")">Elder Abuse Information</a></li>
                     <li><a href="@Url.Action("Index","Infographics")">Infographics</a></li>
                     <li><a href="@Url.Action("Index","About")">About Us</a></li>
