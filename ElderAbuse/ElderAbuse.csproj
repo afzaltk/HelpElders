@@ -304,6 +304,7 @@
     <Content Include="img\heatmap.jpg" />
     <Content Include="img\helpblue.png" />
     <Content Include="img\helpblue1.png" />
+    <Content Include="img\helpbluelarge.png" />
     <Content Include="img\helpred.png" />
     <Content Include="img\infoimg\bangles.jpg" />
     <Content Include="img\infoimg\bx_loader.gif" />
