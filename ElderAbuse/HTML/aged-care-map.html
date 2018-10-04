@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
 	  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
@@ -88,7 +88,7 @@
     </style>
   </head>
   <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Input your PostCode here">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     <script>
       
@@ -171,13 +171,16 @@
 				var provider = data[i].Provider;
 				var allIn = "Name :"+ data[i].name+ "<br>"+ "Type : "+ data[i].Type +"<br>"+"Provider : "+ data[i].Provider+"<br>"+ "Organisation Type:"+ data[i].OrganisationType;
 				bounds.extend(new google.maps.LatLng(latitude, longitude));
-				
-				var label2 = 'A';
+				var icon = 'https://maps.google.com/mapfiles/kml/shapes/lodging_maps.png';
+
+			
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(latitude, longitude),
 					map:map,
-					title: name,
-					label: label2,
+					icon:icon,
+			
+					title: name
+				
 //					animation:google.maps.Animation.BOUNCE
 				});
 			addInfoWindow(marker,allIn);
