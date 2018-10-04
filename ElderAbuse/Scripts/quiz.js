@@ -108,7 +108,7 @@ var surveyJSON = {
                     type: "radiogroup",
                     name: "otherPhysical1",
                     visibleIf: "{whom} = \"0\"",
-                    title: "Has anyone close to this concerned person tried to hurt or harm that persont recently?",
+                    title: "Has anyone close to this concerned person tried to hurt or harm that person recently?",
                     isRequired: true,
                     choices: [
                         {
@@ -529,7 +529,7 @@ survey
             }
 
             //Set List of abuses involved
-            var d = "/Information/Index";
+            
             if (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 1) {
                 abuseList.push('<a href="/Solutions/Physical" target="_blank">Physical Abuse</a>');
             }
@@ -545,7 +545,6 @@ survey
             if (result.data.selfNeglect1 == 1 && result.data.selfNeglect2 == 1) {
                 abuseList.push('<a href="/Solutions/Neglect" target="_blank">Neglect</a>')
             }
-
             if ((result.data.selfPhysical1 == 0 && result.data.selfPhysical2 == 1) || (result.data.selfPhysical1 == 1 && result.data.selfPhysical2 == 0)) {
                 abuseListNext.push('selfPhysical');
             }
@@ -586,16 +585,15 @@ survey
 
                 document
                     .querySelector('#infobutton')
-                    .innerHTML += infobuttin;
+                    .innerHTML += infobuttin;                
+            }
+            if (abuseListNext.length > 0) {
 
-                if (abuseListNext.length > 0) {
-
-                var nextSurvey = 'Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess yourself';
+                var nextSurvey = 'There is a need for further assessment based on the answers given. <br/>Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess yourself';
 
                 document
                     .querySelector('#NextSurvey')
-                        .innerHTML += nextSurvey;
-                }
+                    .innerHTML += nextSurvey;
             }
 
         }
@@ -669,17 +667,17 @@ survey
                     .querySelector('#infobutton')
                     .innerHTML += infobuttin;
 
-                if (abuseListNext.length > 0) {
+               
+            }
 
-                var nextSurvey = 'Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess the person more';
+            if (abuseListNext.length > 0) {
+
+                var nextSurvey = 'There is a need for further assessment based on the answers given. <br/>Kindly <a href="/Questions/FurtherQuestions">Click here</a> to go further assess the person more';
 
                 document
                     .querySelector('#NextSurvey')
-                        .innerHTML += nextSurvey;
-                }
+                    .innerHTML += nextSurvey;
             }
-
-
         }
     });
 
