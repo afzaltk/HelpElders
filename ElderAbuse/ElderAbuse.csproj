@@ -335,6 +335,7 @@
     <Content Include="img\line.jpg" />
     <Content Include="img\qst.png" />
     <Content Include="img\static.jpg" />
+    <Content Include="img\Untitled6.jpg" />
     <Content Include="Models\HelpEldersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HelpEldersModel.Context.cs</LastGenOutput>
