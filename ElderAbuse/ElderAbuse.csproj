@@ -280,6 +280,7 @@
     <Content Include="HTML\aged-care-map.html" />
     <Content Include="HTML\doughnut.html" />
     <Content Include="HTML\experience-abuse.html" />
+    <Content Include="HTML\hospital-medicare-map.html" />
     <Content Include="HTML\map.html" />
     <Content Include="HTML\map2.html" />
     <Content Include="HTML\pic.html" />
