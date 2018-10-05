@@ -476,7 +476,7 @@ var surveyJSON = {
                 {
                     type: "text",
                     name: "Postcode",
-                    title: "Kindly type your Post code below",
+                    title: "Kindly type your post code below",
                     commentText: "Eg:-3100",
                     valueName: "Eg - 3001",
                     isRequired: true,
