@@ -279,7 +279,6 @@
     <Content Include="HTML\9charges.html" />
     <Content Include="HTML\aged-care-map.html" />
     <Content Include="HTML\doughnut.html" />
-    <Content Include="HTML\doughnut_old.html" />
     <Content Include="HTML\experience-abuse.html" />
     <Content Include="HTML\map.html" />
     <Content Include="HTML\map2.html" />
