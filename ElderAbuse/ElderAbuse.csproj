@@ -19,8 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44302</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -280,6 +279,7 @@
     <Content Include="HTML\9charges.html" />
     <Content Include="HTML\aged-care-map.html" />
     <Content Include="HTML\doughnut.html" />
+    <Content Include="HTML\doughnut_old.html" />
     <Content Include="HTML\experience-abuse.html" />
     <Content Include="HTML\map.html" />
     <Content Include="HTML\map2.html" />
@@ -454,10 +454,6 @@
     <Content Include="Views\Responses\Delete.cshtml" />
     <Content Include="Views\Responses\Edit.cshtml" />
     <Content Include="Views\Responses\Index.cshtml" />
-    <Content Include="Views\Information\Create.cshtml" />
-    <Content Include="Views\Information\Delete.cshtml" />
-    <Content Include="Views\Information\Details.cshtml" />
-    <Content Include="Views\Information\Edit.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Questions\Postcode.cshtml" />
     <Content Include="Views\InfoGraphics\Index.cshtml" />
