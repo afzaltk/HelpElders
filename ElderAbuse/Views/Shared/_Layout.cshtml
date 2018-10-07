@@ -42,45 +42,22 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-no-bg" role="navigation" style="background-color:#0085B2; color:#0085B2">
         <div class="container">
-            <div class="navbar-header" >
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1" >
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index", "Home")" >
-                    <img src="~/img/helpbluelargeno.png" title="H.E.L.P" alt="Help Elders Live Peacefully" id="brand" style="padding-bottom:4px"/>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/img/helpbluelargeno.png" title="H.E.L.P" alt="Help Elders Live Peacefully" id="brand" style="padding-bottom:4px" />
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="top-navbar-1">
                 <ul id="nav" class="nav navbar-nav navbar-right" style="padding-bottom:8px">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                    <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Assessment Quiz</a></li>
-                    
-
-                    @*<div class="subnav">
-            <button class="subnavbtn">WHAT TO DO ? <i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-                    <li><a href="@Url.Action("Physical","Solutions")">Physical</a></li><br />
-                    <li><a href="@Url.Action("Financial","Solutions")">Financial</a></li><br />
-                    <li><a href="@Url.Action("Emotional","Solutions")">Emotional</a></li><br />
-                    <li><a href="@Url.Action("Sexual","Solutions")">Sexual</a></li><br />
-                    <li><a href="@Url.Action("Neglect","Solutions")">Neglect</a></li>
-
-            </div>
-        </div>*@
-                    @*<li>
-            <a href="#" class="subnavbtn">What to do ? <i class="fa fa-caret-down"></i></a>
-            <ul class="subnav subnav-content">
-                <li><a href="@Url.Action("Physical","Solutions")">Physical Abuse</a></li>
-                <li><a href="@Url.Action("Financial","Solutions")">Financial Abuse</a></li>
-                <li><a href="@Url.Action("Emotional","Solutions")">Emotional Abuse</a></li>
-                <li><a href="@Url.Action("Sexual","Solutions")">SexualAbuse</a></li>
-                <li><a href="@Url.Action("Neglect","Solutions")">Neglect</a></li>
-            </ul>
-        </li>*@
+                    <li><a href="@Url.Action("Questionnaire","Questions", new { id = 1 })">Assessment Quiz</a></li>                  
                     <li><a href="@Url.Action("Index","Information")">Elder Abuse Information</a></li>
                     <li><a href="@Url.Action("Index","Infographics")">Infographics</a></li>
                     <li><a href="@Url.Action("Index","About")">About Us</a></li>
@@ -98,12 +75,43 @@
     <div>
         @RenderSection("scripts", required: false)
     </div>
-    <footer id="footer" class="cryout" role="contentinfo" style="height:20px"  itemscope itemtype="http://schema.org/WPFooter">
-        <div id="footer-inside" style="height:20px">
-            <a id="toTop"> <span class="screen-reader-text">Back to Top</span> <i class="icon-back2top"></i> </a><div id="site-copyright">
-                H.E.L.P is a tool for senior and general public to detect elder abuse 
 
-            </div> <!-- #footer-inside -->
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12" >
+                    <span class="logo" >
+                        <img src="~/img/helpbluelargeno.png" title="H.E.L.P"  alt="Help Elders Live Peacefully" class="img_c" />
+                        <p class="logo" style="text-align:center">H.E.L.P is an online assessment tool for seniors and general public to detect elder abuse</p>
+                    </span>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="menu">
+                        <div class="logo" style="border-bottom: 1px solid #c7c7c7;
+    display: block;
+    text-transform: uppercase;">References</div>
+                        <li><a href="https://aifs.gov.au/publications/elder-abuse" target="_blank">Australian Institure of Family Studies</a></li>
+                        <li><a href="http://www.dvrcv.org.au/support-services/victorian-services" target="_blank">Elder Abuse Hotline</a></li>
+                        <li><a href="http://www.elderabusehelpline.com.au/" target="_blank">Elder Abuse - NSW</a></li>
+                        <li><a href="https://www.eapu.com.au/" target="_blank">Elder Abuse Prevention Unit</a></li>
+                        <li><a href="https://www.myagedcare.gov.au/" target="_blank">My Aged Care</a></li>
+                        <li><a href="https://www.data.vic.gov.au/" target="_blank">Open Data -Victoria</a></li>
+                        <li><a href="https://seniorsrights.org.au/" target="_blank">Senior Rights Victoria</a></li>
+                        <li><a href="https://www.whiteribbon.org.au/find-help/domestic-violence-hotlines/" target="_blank">White Ribbon</a></li>
+                        <li><a href="http://www.who.int/ageing/projects/elder_abuse/en/" target="_blank">World Health Organization</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12" style="">
+                    <p class="logo">Web Design & Development by The Sentinals </p><br />
+                    <img src="~/img/Untitled6.jpg" style="max-height:120px;max-width:180px" class="img_c" />
+                </div>
+
+
+            </div>
         </div>
     </footer>
 

@@ -140,16 +140,6 @@ ul.navbar-nav {
 .features-box h3 { margin-top: 0; padding: 0 0 10px 0; }
 
 
-/***** Footer *****/
-
-footer { padding: 40px 0 45px 0; background: #f8f8f8; }
-
-.footer-copyright { padding-top: 15px; }
-.footer-copyright a { color: #888; border-bottom: 1px dotted #888; }
-.footer-copyright a:hover, .footer-copyright a:focus { color: red; border: 0; }
-
-
-
 /***** MEDIA QUERIES *****/
 
 
